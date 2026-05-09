@@ -14,6 +14,7 @@ Build a demo-ready, agent-driven web search product whose primary user-facing re
 | Path | Last-commit-time | Commit SHA | Mode |
 | --- | --- | --- | --- |
 | .initiatives/project_spec.md | 2026-05-09 18:11 (file mtime; not yet committed in source repo) | uncommitted | initial |
+| .initiatives/project_spec.md | 2026-05-09 (assess checkpoint answers OQ-001..OQ-005) | uncommitted | update |
 
 ## Functional requirements
 
@@ -53,11 +54,11 @@ Build a demo-ready, agent-driven web search product whose primary user-facing re
 | [NFR-002](non-functional/NFR-002-visual-polish.md) | Apply coherent visual system across the UI | usability | checklist coverage | approved | .initiatives/project_spec.md |
 | [NFR-003](non-functional/NFR-003-large-result-set-capacity.md) | Handle 1000-plus results per query without failure | performance | ≥ 1000 results/query | approved | .initiatives/project_spec.md |
 | [NFR-004](non-functional/NFR-004-no-full-scan-retrieval.md) | Retrieve without full scans of stored data | performance | chunks read < total chunks | approved | .initiatives/project_spec.md |
-| [NFR-005](non-functional/NFR-005-search-failure-resilience.md) | Recover from web search tool failures with retries | availability | open — see OQ-001 | draft | .initiatives/project_spec.md |
+| [NFR-005](non-functional/NFR-005-search-failure-resilience.md) | Recover from web search tool failures with retries | availability | 2 retries, 500ms fixed backoff, 10s budget | approved | .initiatives/project_spec.md |
 | [NFR-006](non-functional/NFR-006-scalable-not-hardcoded-flows.md) | Avoid hardcoded flows in agent and orchestration design | maintainability | zero hardcoded query branches | approved | .initiatives/project_spec.md |
 
 ## Supporting docs
 
-- [constraints.md](constraints.md) — non-acceptable outcomes, architectural prohibitions, required pattern vocabulary, deployment scope
+- [constraints.md](constraints.md) — non-acceptable outcomes, architectural prohibitions, required pattern vocabulary, deployment scope (local prototype only, single-user, no security regime)
 - [glossary.md](glossary.md) — domain terms (agent, MCP, contract, chunking, indexing, citation, LIVE / HISTORY / BOOKMARK, Neo workflow design patterns, synthesis step, answer summary)
-- [assumptions.md](assumptions.md) — open questions: retry policy (OQ-001), deployment scope (OQ-002), latency target (OQ-003), security regime (OQ-004), concurrency model (OQ-005)
+- [assumptions.md](assumptions.md) — resolved: retry policy (OQ-001), deployment scope (OQ-002), latency target (OQ-003), security regime (OQ-004), concurrency model (OQ-005); no open questions remain

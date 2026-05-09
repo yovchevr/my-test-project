@@ -37,4 +37,11 @@ Any pattern claims in the architecture document MUST be expressed in this vocabu
 
 ## Deployment scope
 
-The initiative does not pin a deployment scope (local-only, single-region, multi-region, hosted, etc.). This is logged as an open question in `assumptions.md`. Until resolved, design decisions SHOULD assume a single-environment prototype suitable for evaluation, and SHOULD NOT introduce multi-region or HA infrastructure that is unjustified by the initiative.
+The deployment scope is **local prototype only** — single machine, single user, no SLA, no hosted infrastructure (resolved via OQ-002, 2026-05-09). Design and implementation passes MUST treat this as binding:
+
+- The system MUST run on one developer machine end-to-end (UI, API, agent, tooling, data layer).
+- There MUST NOT be a hosted-environment deployment target, a single-region or multi-region topology, or an availability SLA in the design.
+- HA infrastructure (load balancers, replicated databases, multi-region failover, container orchestrators) MUST NOT be introduced — they are out of scope for this prototype.
+- Persistence MAY be a local filesystem store, embedded database, or equivalent; nothing requires a managed cloud service.
+- The system is **single-user** (resolved via OQ-005): no per-user partitioning, no session isolation, no multi-user concurrency handling.
+- There is **no security regime** (resolved via OQ-004): no auth on the API, no encryption-at-rest for stored data, no retention policy. This is acceptable specifically because the deliverable is an open local prototype.

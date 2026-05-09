@@ -16,6 +16,7 @@ The system MUST handle at least 1000 results per query end-to-end (ingest, store
 - The system MUST NOT load all 1000+ results into memory at once when serving a single page (see FR-017, FR-018).
 - The system MUST NOT crash, time out the user request, or render a blank state under the 1000+ load.
 - Performance under the 1000+ load MUST satisfy NFR-004 (no full-scan retrieval).
+- **No numeric end-to-end latency target is set** for the user submit → answer rendered path (best effort, per OQ-003). Loading affordances (FR-002, FR-006) remain mandatory regardless.
 
 ## Rationale
 The initiative makes 1000+ results per query a MANDATORY scale target and lists "System handles large dataset without failure" as an explicit test case.

@@ -14,6 +14,10 @@ The system MUST persist every search, along with its results, in a history store
 - Each history entry MUST capture the query, the timestamp, and the results (or a reference to the cached results — see FR-016).
 - Selecting the HISTORY filter (FR-003) MUST retrieve entries from this store.
 - History entries MUST survive a process restart (i.e. they MUST be persisted, not held in memory only).
+- The store is a **single-user, local prototype** (per OQ-002, OQ-005): there MUST NOT be per-user partitioning, multi-user concurrency handling, or session isolation.
+- There is **no auth requirement** on reading or writing history (per OQ-004); the API MUST NOT gate these operations behind authentication.
+- There is **no encryption-at-rest requirement** for the history store (per OQ-004); plain on-disk persistence is acceptable.
+- There is **no retention policy** (per OQ-004); the store MUST NOT auto-purge entries on age, size, or count by default.
 
 ## Rationale
 The initiative names the History Store as the first required data-layer component and ties it to the HISTORY filter. Persistence is the load-bearing word — in-memory only would break the test case "History persists + retrieves".
