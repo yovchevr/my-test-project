@@ -1,0 +1,21 @@
+{
+  "name": "@neo-search/integration-tests",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Cross-layer integration tests that compose the agent + tools + data layer end-to-end. Lives outside the boundary-tagged packages so it can import any layer for wire-up assertions; the production agent itself never imports the data layer.",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@neo-search/agent": "workspace:*",
+    "@neo-search/contracts": "workspace:*",
+    "@neo-search/data-bookmarks": "workspace:*",
+    "@neo-search/data-cache": "workspace:*",
+    "@neo-search/data-history": "workspace:*",
+    "@neo-search/tools": "workspace:*",
+    "@neo-search/tools-data-store": "workspace:*",
+    "@neo-search/tools-web-search": "workspace:*",
+    "@sinclair/typebox": "0.33.17"
+  }
+}
