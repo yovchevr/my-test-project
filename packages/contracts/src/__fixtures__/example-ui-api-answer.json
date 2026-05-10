@@ -1,0 +1,36 @@
+{
+  "answer_summary": "TypeBox is a TypeScript-first JSON Schema builder pinned at 0.33.17 in this project [1]. Fastify consumes its schemas natively for request validation [2].",
+  "references": [
+    {
+      "id": "ref-typebox",
+      "title": "TypeBox - JSON Schema in TypeScript",
+      "url": "https://github.com/sinclairzx81/typebox",
+      "context": "Source schema author tool used by @neo-search/contracts for the FR-021 boundary types."
+    },
+    {
+      "id": "ref-fastify",
+      "title": "Fastify - Validation and Serialization",
+      "url": "https://fastify.dev/docs/latest/Reference/Validation-and-Serialization/",
+      "context": "Documents Fastify's native JSON Schema validation hook used at the UI to API wire boundary."
+    }
+  ],
+  "results": [
+    {
+      "title": "TypeBox - JSON Schema in TypeScript",
+      "snippet": "TypeBox provides a fluent API for composing JSON Schema documents that double as TypeScript types via Static<T>.",
+      "domain": "github.com",
+      "url": "https://github.com/sinclairzx81/typebox"
+    },
+    {
+      "title": "Fastify - Validation and Serialization",
+      "snippet": "Fastify uses Ajv internally and accepts JSON Schema documents directly on route definitions.",
+      "domain": "fastify.dev",
+      "url": "https://fastify.dev/docs/latest/Reference/Validation-and-Serialization/"
+    }
+  ],
+  "pagination": {
+    "page": 1,
+    "totalChunks": 1,
+    "hasMore": false
+  }
+}
