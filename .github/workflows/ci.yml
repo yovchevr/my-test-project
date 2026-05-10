@@ -1,0 +1,145 @@
+# STORY-018 — quality-gates CI workflow.
+#
+# Runs every gate listed in `.design/technology/testing.md`:
+#   - format            (prettier --check)
+#   - lint              (eslint, including Nx enforce-module-boundaries)
+#   - type-check        (tsc --noEmit across the workspace via Nx)
+#   - cycle-check       (madge --circular)
+#   - unit + integration tests (vitest run)
+#   - coverage floor    (vitest run --coverage with thresholds in vitest.config.ts)
+#   - contract tests    (vitest run packages/contracts)
+#
+# The story's acceptance criterion:
+#   "The CI workflow MUST run each gate on push and on PR; a red gate MUST
+#    block merge."
+#
+# Each gate is a separate job so the cause of a red build is visible at a
+# glance. Jobs run in parallel where they can; `cycle-check` and `coverage`
+# depend on the same `pnpm install` step but otherwise share no state.
+#
+# E2E (Playwright) is NOT wired here — STORY-019 owns the Playwright config
+# and adds its own job. The `e2e:` job below is intentionally absent until
+# STORY-019.
+
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main, 'initiative/**']
+
+env:
+  NODE_VERSION: '22.11.0'
+  PNPM_VERSION: '9.12.3'
+
+jobs:
+  format:
+    name: format (prettier --check)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm format
+
+  lint:
+    name: lint (eslint + nx enforce-module-boundaries)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # Warm Nx project graph so `@nx/enforce-module-boundaries` can read it.
+      - run: pnpm exec nx show projects --json
+      - run: pnpm lint
+
+  type-check:
+    name: type-check (tsc --noEmit, all projects)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm type-check
+
+  cycle-check:
+    name: cycle-check (madge --circular)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm madge
+
+  unit-and-integration:
+    name: unit + integration (vitest run)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # Warm Nx project graph for boundary-lint integration tests.
+      - run: pnpm exec nx show projects --json
+      - run: pnpm test
+
+  coverage:
+    name: coverage (vitest run --coverage; ≥ 80% lines)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec nx show projects --json
+      - run: pnpm coverage
+
+  contract-tests:
+    name: contract tests (FR-021 boundary contracts)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec vitest run packages/contracts

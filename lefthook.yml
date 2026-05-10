@@ -1,0 +1,30 @@
+# STORY-018 — pre-commit gates.
+#
+# Per `.design/technology/tech-stack.md`:
+#   "lefthook 1.8.2 ... Runs `eslint --fix`, `prettier --check`, and
+#    `vitest --run --changed` on staged files."
+#
+# Every command here is also part of the CI gate set in `.github/workflows/ci.yml`,
+# so a developer who runs `pnpm pre-commit` locally sees the same failures
+# they'd see in CI.
+#
+# Per `.design/technology/testing.md` and the story acceptance criterion:
+#   "A red gate MUST NOT be bypassed by `--no-verify`."
+# Lefthook enforces this in CI by re-running the same gates.
+pre-commit:
+  parallel: true
+  commands:
+    prettier:
+      glob: '*.{ts,tsx,js,mjs,cjs,json,md,yml,yaml}'
+      run: pnpm exec prettier --check {staged_files}
+    eslint:
+      glob: '*.{ts,tsx,js,mjs,cjs}'
+      # `eslint --fix` mutates staged files; we only run with --max-warnings=0
+      # so the gate fails on any warning. The developer re-stages after fix.
+      run: pnpm exec eslint --max-warnings=0 {staged_files}
+    vitest-changed:
+      glob: '*.{ts,tsx}'
+      # `--changed` runs only the tests for the staged-file dependency closure.
+      # On a small staged set, this is fast; on a large set, it still beats the
+      # full suite the CI runs.
+      run: pnpm exec vitest run --changed

@@ -35,6 +35,11 @@ function placeholderOnSearch(request: SearchRequestContract): void {
   // dev-only seam: surface the request shape during local development so
   // the demo is visibly responsive without a backend. STORY-016 replaces
   // this entire function with a real fetch + isLoading state machine.
+  // STORY-018 lint exception: foundation/conventions.md forbids `console.log`
+  // in production code; this is the temporary STORY-014 dev-runtime entry
+  // point and STORY-016 removes it entirely. See FR-002 / FR-006 for the
+  // production replacement path.
+  // eslint-disable-next-line no-console
   console.info('[neo-search] search request (STORY-016 will wire this):', request);
 }
 
