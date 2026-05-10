@@ -102,11 +102,23 @@ importers:
 
   packages/data-bookmarks: {}
 
-  packages/data-cache: {}
+  packages/data-cache:
+    dependencies:
+      '@neo-search/contracts':
+        specifier: workspace:*
+        version: link:../contracts
+    devDependencies:
+      '@neo-search/test-fixtures':
+        specifier: workspace:*
+        version: link:../test-fixtures
 
   packages/data-history: {}
 
-  packages/test-fixtures: {}
+  packages/test-fixtures:
+    dependencies:
+      '@neo-search/contracts':
+        specifier: workspace:*
+        version: link:../contracts
 
   packages/tools: {}
 

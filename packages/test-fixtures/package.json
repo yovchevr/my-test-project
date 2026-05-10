@@ -12,5 +12,8 @@
     "build": "tsc --noEmit -p tsconfig.json",
     "type-check": "tsc --noEmit -p tsconfig.json",
     "lint": "eslint ."
+  },
+  "dependencies": {
+    "@neo-search/contracts": "workspace:*"
   }
 }

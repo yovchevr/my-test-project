@@ -1,0 +1,6002 @@
+[
+  {
+    "title": "Result 00000 — practical tutorial",
+    "snippet": "budget indexing partition (entry 0)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00000"
+  },
+  {
+    "title": "Result 00001 — reference tutorial",
+    "snippet": "agent search chunking (entry 1)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00001"
+  },
+  {
+    "title": "Result 00002 — dive guide",
+    "snippet": "agent partition budget (entry 2)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00002"
+  },
+  {
+    "title": "Result 00003 — deep dive",
+    "snippet": "tool search ordinal (entry 3)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00003"
+  },
+  {
+    "title": "Result 00004 — introduction practical",
+    "snippet": "cache cache deterministic (entry 4)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00004"
+  },
+  {
+    "title": "Result 00005 — guide guide",
+    "snippet": "deterministic deterministic pagination (entry 5)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00005"
+  },
+  {
+    "title": "Result 00006 — introduction practical",
+    "snippet": "partition cache search (entry 6)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00006"
+  },
+  {
+    "title": "Result 00007 — guide deep",
+    "snippet": "search summary budget (entry 7)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00007"
+  },
+  {
+    "title": "Result 00008 — tutorial deep",
+    "snippet": "cache summary search (entry 8)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00008"
+  },
+  {
+    "title": "Result 00009 — overview overview",
+    "snippet": "pagination chunking deterministic (entry 9)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00009"
+  },
+  {
+    "title": "Result 00010 — practical guide",
+    "snippet": "partition cache retrieval (entry 10)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00010"
+  },
+  {
+    "title": "Result 00011 — deep comparison",
+    "snippet": "tool tool retrieval (entry 11)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00011"
+  },
+  {
+    "title": "Result 00012 — reference reference",
+    "snippet": "chunking cache response (entry 12)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00012"
+  },
+  {
+    "title": "Result 00013 — comparison analysis",
+    "snippet": "pagination budget summary (entry 13)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00013"
+  },
+  {
+    "title": "Result 00014 — guide guide",
+    "snippet": "response summary search (entry 14)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00014"
+  },
+  {
+    "title": "Result 00015 — dive introduction",
+    "snippet": "response indexing indexing (entry 15)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00015"
+  },
+  {
+    "title": "Result 00016 — analysis guide",
+    "snippet": "response retrieval cache (entry 16)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00016"
+  },
+  {
+    "title": "Result 00017 — reference analysis",
+    "snippet": "chunking response chunking (entry 17)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00017"
+  },
+  {
+    "title": "Result 00018 — overview introduction",
+    "snippet": "deterministic ordinal response (entry 18)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00018"
+  },
+  {
+    "title": "Result 00019 — deep guide",
+    "snippet": "summary chunking agent (entry 19)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00019"
+  },
+  {
+    "title": "Result 00020 — comparison guide",
+    "snippet": "cache cache budget (entry 20)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00020"
+  },
+  {
+    "title": "Result 00021 — comparison reference",
+    "snippet": "agent summary indexing (entry 21)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00021"
+  },
+  {
+    "title": "Result 00022 — dive overview",
+    "snippet": "retrieval search budget (entry 22)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00022"
+  },
+  {
+    "title": "Result 00023 — reference tutorial",
+    "snippet": "partition deterministic retrieval (entry 23)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00023"
+  },
+  {
+    "title": "Result 00024 — practical reference",
+    "snippet": "agent response indexing (entry 24)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00024"
+  },
+  {
+    "title": "Result 00025 — reference deep",
+    "snippet": "ordinal agent budget (entry 25)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00025"
+  },
+  {
+    "title": "Result 00026 — comparison dive",
+    "snippet": "retrieval partition budget (entry 26)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00026"
+  },
+  {
+    "title": "Result 00027 — comparison overview",
+    "snippet": "retrieval budget chunking (entry 27)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00027"
+  },
+  {
+    "title": "Result 00028 — comparison reference",
+    "snippet": "ordinal agent response (entry 28)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00028"
+  },
+  {
+    "title": "Result 00029 — analysis analysis",
+    "snippet": "agent budget search (entry 29)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00029"
+  },
+  {
+    "title": "Result 00030 — practical introduction",
+    "snippet": "agent partition deterministic (entry 30)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00030"
+  },
+  {
+    "title": "Result 00031 — dive reference",
+    "snippet": "retrieval budget ordinal (entry 31)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00031"
+  },
+  {
+    "title": "Result 00032 — dive tutorial",
+    "snippet": "budget indexing retrieval (entry 32)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00032"
+  },
+  {
+    "title": "Result 00033 — analysis deep",
+    "snippet": "search ordinal chunking (entry 33)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00033"
+  },
+  {
+    "title": "Result 00034 — reference tutorial",
+    "snippet": "response agent cache (entry 34)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00034"
+  },
+  {
+    "title": "Result 00035 — analysis analysis",
+    "snippet": "agent cache partition (entry 35)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00035"
+  },
+  {
+    "title": "Result 00036 — dive dive",
+    "snippet": "indexing tool retrieval (entry 36)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00036"
+  },
+  {
+    "title": "Result 00037 — reference reference",
+    "snippet": "search budget response (entry 37)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00037"
+  },
+  {
+    "title": "Result 00038 — analysis overview",
+    "snippet": "chunking budget pagination (entry 38)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00038"
+  },
+  {
+    "title": "Result 00039 — guide practical",
+    "snippet": "budget partition retrieval (entry 39)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00039"
+  },
+  {
+    "title": "Result 00040 — reference deep",
+    "snippet": "partition tool retrieval (entry 40)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00040"
+  },
+  {
+    "title": "Result 00041 — analysis introduction",
+    "snippet": "summary chunking budget (entry 41)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00041"
+  },
+  {
+    "title": "Result 00042 — reference introduction",
+    "snippet": "indexing chunking response (entry 42)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00042"
+  },
+  {
+    "title": "Result 00043 — introduction deep",
+    "snippet": "partition ordinal partition (entry 43)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00043"
+  },
+  {
+    "title": "Result 00044 — tutorial practical",
+    "snippet": "budget summary summary (entry 44)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00044"
+  },
+  {
+    "title": "Result 00045 — comparison tutorial",
+    "snippet": "budget response search (entry 45)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00045"
+  },
+  {
+    "title": "Result 00046 — introduction reference",
+    "snippet": "cache cache deterministic (entry 46)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00046"
+  },
+  {
+    "title": "Result 00047 — deep guide",
+    "snippet": "ordinal chunking ordinal (entry 47)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00047"
+  },
+  {
+    "title": "Result 00048 — analysis guide",
+    "snippet": "partition search summary (entry 48)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00048"
+  },
+  {
+    "title": "Result 00049 — analysis guide",
+    "snippet": "indexing summary cache (entry 49)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00049"
+  },
+  {
+    "title": "Result 00050 — deep practical",
+    "snippet": "indexing pagination search (entry 50)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00050"
+  },
+  {
+    "title": "Result 00051 — tutorial analysis",
+    "snippet": "search chunking deterministic (entry 51)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00051"
+  },
+  {
+    "title": "Result 00052 — tutorial guide",
+    "snippet": "summary deterministic pagination (entry 52)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00052"
+  },
+  {
+    "title": "Result 00053 — reference dive",
+    "snippet": "response search indexing (entry 53)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00053"
+  },
+  {
+    "title": "Result 00054 — guide reference",
+    "snippet": "cache pagination retrieval (entry 54)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00054"
+  },
+  {
+    "title": "Result 00055 — overview deep",
+    "snippet": "response response summary (entry 55)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00055"
+  },
+  {
+    "title": "Result 00056 — practical analysis",
+    "snippet": "deterministic retrieval partition (entry 56)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00056"
+  },
+  {
+    "title": "Result 00057 — introduction reference",
+    "snippet": "deterministic tool partition (entry 57)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00057"
+  },
+  {
+    "title": "Result 00058 — comparison guide",
+    "snippet": "cache ordinal cache (entry 58)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00058"
+  },
+  {
+    "title": "Result 00059 — practical guide",
+    "snippet": "partition search summary (entry 59)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00059"
+  },
+  {
+    "title": "Result 00060 — guide deep",
+    "snippet": "indexing summary pagination (entry 60)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00060"
+  },
+  {
+    "title": "Result 00061 — guide overview",
+    "snippet": "ordinal summary cache (entry 61)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00061"
+  },
+  {
+    "title": "Result 00062 — reference analysis",
+    "snippet": "tool budget budget (entry 62)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00062"
+  },
+  {
+    "title": "Result 00063 — dive dive",
+    "snippet": "summary ordinal indexing (entry 63)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00063"
+  },
+  {
+    "title": "Result 00064 — introduction reference",
+    "snippet": "indexing tool response (entry 64)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00064"
+  },
+  {
+    "title": "Result 00065 — dive guide",
+    "snippet": "partition pagination response (entry 65)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00065"
+  },
+  {
+    "title": "Result 00066 — practical analysis",
+    "snippet": "response ordinal chunking (entry 66)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00066"
+  },
+  {
+    "title": "Result 00067 — reference reference",
+    "snippet": "summary summary agent (entry 67)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00067"
+  },
+  {
+    "title": "Result 00068 — comparison analysis",
+    "snippet": "chunking retrieval agent (entry 68)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00068"
+  },
+  {
+    "title": "Result 00069 — tutorial practical",
+    "snippet": "cache chunking search (entry 69)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00069"
+  },
+  {
+    "title": "Result 00070 — overview introduction",
+    "snippet": "search indexing ordinal (entry 70)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00070"
+  },
+  {
+    "title": "Result 00071 — overview practical",
+    "snippet": "partition deterministic agent (entry 71)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00071"
+  },
+  {
+    "title": "Result 00072 — deep practical",
+    "snippet": "indexing pagination chunking (entry 72)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00072"
+  },
+  {
+    "title": "Result 00073 — reference practical",
+    "snippet": "retrieval ordinal agent (entry 73)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00073"
+  },
+  {
+    "title": "Result 00074 — comparison tutorial",
+    "snippet": "deterministic search cache (entry 74)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00074"
+  },
+  {
+    "title": "Result 00075 — reference overview",
+    "snippet": "search pagination tool (entry 75)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00075"
+  },
+  {
+    "title": "Result 00076 — tutorial deep",
+    "snippet": "retrieval deterministic response (entry 76)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00076"
+  },
+  {
+    "title": "Result 00077 — practical overview",
+    "snippet": "pagination cache search (entry 77)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00077"
+  },
+  {
+    "title": "Result 00078 — dive deep",
+    "snippet": "ordinal summary tool (entry 78)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00078"
+  },
+  {
+    "title": "Result 00079 — practical comparison",
+    "snippet": "pagination deterministic budget (entry 79)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00079"
+  },
+  {
+    "title": "Result 00080 — deep introduction",
+    "snippet": "search pagination search (entry 80)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00080"
+  },
+  {
+    "title": "Result 00081 — guide introduction",
+    "snippet": "search budget cache (entry 81)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00081"
+  },
+  {
+    "title": "Result 00082 — comparison guide",
+    "snippet": "agent deterministic budget (entry 82)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00082"
+  },
+  {
+    "title": "Result 00083 — reference tutorial",
+    "snippet": "response agent ordinal (entry 83)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00083"
+  },
+  {
+    "title": "Result 00084 — dive practical",
+    "snippet": "pagination budget cache (entry 84)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00084"
+  },
+  {
+    "title": "Result 00085 — overview dive",
+    "snippet": "chunking cache cache (entry 85)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00085"
+  },
+  {
+    "title": "Result 00086 — overview analysis",
+    "snippet": "ordinal retrieval retrieval (entry 86)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00086"
+  },
+  {
+    "title": "Result 00087 — tutorial introduction",
+    "snippet": "search indexing ordinal (entry 87)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00087"
+  },
+  {
+    "title": "Result 00088 — overview deep",
+    "snippet": "ordinal ordinal agent (entry 88)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00088"
+  },
+  {
+    "title": "Result 00089 — introduction deep",
+    "snippet": "summary partition cache (entry 89)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00089"
+  },
+  {
+    "title": "Result 00090 — analysis reference",
+    "snippet": "ordinal chunking cache (entry 90)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00090"
+  },
+  {
+    "title": "Result 00091 — deep introduction",
+    "snippet": "indexing retrieval response (entry 91)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00091"
+  },
+  {
+    "title": "Result 00092 — dive analysis",
+    "snippet": "retrieval search cache (entry 92)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00092"
+  },
+  {
+    "title": "Result 00093 — guide tutorial",
+    "snippet": "response indexing partition (entry 93)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00093"
+  },
+  {
+    "title": "Result 00094 — introduction guide",
+    "snippet": "indexing partition agent (entry 94)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00094"
+  },
+  {
+    "title": "Result 00095 — tutorial reference",
+    "snippet": "search deterministic retrieval (entry 95)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00095"
+  },
+  {
+    "title": "Result 00096 — tutorial dive",
+    "snippet": "tool tool search (entry 96)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00096"
+  },
+  {
+    "title": "Result 00097 — deep introduction",
+    "snippet": "ordinal retrieval budget (entry 97)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00097"
+  },
+  {
+    "title": "Result 00098 — dive dive",
+    "snippet": "search agent ordinal (entry 98)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00098"
+  },
+  {
+    "title": "Result 00099 — introduction reference",
+    "snippet": "chunking summary response (entry 99)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00099"
+  },
+  {
+    "title": "Result 00100 — analysis reference",
+    "snippet": "retrieval response ordinal (entry 100)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00100"
+  },
+  {
+    "title": "Result 00101 — practical guide",
+    "snippet": "deterministic budget cache (entry 101)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00101"
+  },
+  {
+    "title": "Result 00102 — comparison reference",
+    "snippet": "tool agent retrieval (entry 102)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00102"
+  },
+  {
+    "title": "Result 00103 — reference reference",
+    "snippet": "pagination tool agent (entry 103)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00103"
+  },
+  {
+    "title": "Result 00104 — deep analysis",
+    "snippet": "summary partition deterministic (entry 104)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00104"
+  },
+  {
+    "title": "Result 00105 — introduction overview",
+    "snippet": "retrieval deterministic tool (entry 105)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00105"
+  },
+  {
+    "title": "Result 00106 — reference overview",
+    "snippet": "summary pagination agent (entry 106)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00106"
+  },
+  {
+    "title": "Result 00107 — tutorial practical",
+    "snippet": "response chunking pagination (entry 107)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00107"
+  },
+  {
+    "title": "Result 00108 — analysis analysis",
+    "snippet": "retrieval retrieval response (entry 108)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00108"
+  },
+  {
+    "title": "Result 00109 — deep analysis",
+    "snippet": "budget pagination ordinal (entry 109)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00109"
+  },
+  {
+    "title": "Result 00110 — overview dive",
+    "snippet": "pagination partition pagination (entry 110)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00110"
+  },
+  {
+    "title": "Result 00111 — comparison dive",
+    "snippet": "budget cache chunking (entry 111)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00111"
+  },
+  {
+    "title": "Result 00112 — overview overview",
+    "snippet": "response agent summary (entry 112)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00112"
+  },
+  {
+    "title": "Result 00113 — introduction overview",
+    "snippet": "agent indexing cache (entry 113)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00113"
+  },
+  {
+    "title": "Result 00114 — introduction comparison",
+    "snippet": "summary partition partition (entry 114)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00114"
+  },
+  {
+    "title": "Result 00115 — tutorial dive",
+    "snippet": "budget cache ordinal (entry 115)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00115"
+  },
+  {
+    "title": "Result 00116 — comparison dive",
+    "snippet": "tool retrieval partition (entry 116)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00116"
+  },
+  {
+    "title": "Result 00117 — practical tutorial",
+    "snippet": "chunking deterministic search (entry 117)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00117"
+  },
+  {
+    "title": "Result 00118 — reference practical",
+    "snippet": "pagination retrieval ordinal (entry 118)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00118"
+  },
+  {
+    "title": "Result 00119 — analysis deep",
+    "snippet": "cache indexing chunking (entry 119)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00119"
+  },
+  {
+    "title": "Result 00120 — deep comparison",
+    "snippet": "ordinal indexing deterministic (entry 120)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00120"
+  },
+  {
+    "title": "Result 00121 — tutorial practical",
+    "snippet": "deterministic summary retrieval (entry 121)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00121"
+  },
+  {
+    "title": "Result 00122 — reference comparison",
+    "snippet": "indexing indexing agent (entry 122)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00122"
+  },
+  {
+    "title": "Result 00123 — practical deep",
+    "snippet": "cache indexing indexing (entry 123)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00123"
+  },
+  {
+    "title": "Result 00124 — reference practical",
+    "snippet": "indexing deterministic summary (entry 124)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00124"
+  },
+  {
+    "title": "Result 00125 — reference dive",
+    "snippet": "retrieval pagination agent (entry 125)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00125"
+  },
+  {
+    "title": "Result 00126 — practical overview",
+    "snippet": "retrieval partition budget (entry 126)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00126"
+  },
+  {
+    "title": "Result 00127 — analysis practical",
+    "snippet": "partition indexing budget (entry 127)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00127"
+  },
+  {
+    "title": "Result 00128 — introduction deep",
+    "snippet": "partition partition budget (entry 128)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00128"
+  },
+  {
+    "title": "Result 00129 — practical comparison",
+    "snippet": "agent budget retrieval (entry 129)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00129"
+  },
+  {
+    "title": "Result 00130 — dive overview",
+    "snippet": "summary budget summary (entry 130)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00130"
+  },
+  {
+    "title": "Result 00131 — deep tutorial",
+    "snippet": "summary retrieval ordinal (entry 131)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00131"
+  },
+  {
+    "title": "Result 00132 — overview tutorial",
+    "snippet": "agent summary partition (entry 132)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00132"
+  },
+  {
+    "title": "Result 00133 — reference deep",
+    "snippet": "cache pagination cache (entry 133)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00133"
+  },
+  {
+    "title": "Result 00134 — analysis guide",
+    "snippet": "pagination partition summary (entry 134)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00134"
+  },
+  {
+    "title": "Result 00135 — tutorial overview",
+    "snippet": "search indexing summary (entry 135)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00135"
+  },
+  {
+    "title": "Result 00136 — deep reference",
+    "snippet": "tool partition chunking (entry 136)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00136"
+  },
+  {
+    "title": "Result 00137 — introduction introduction",
+    "snippet": "chunking ordinal agent (entry 137)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00137"
+  },
+  {
+    "title": "Result 00138 — deep guide",
+    "snippet": "retrieval response tool (entry 138)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00138"
+  },
+  {
+    "title": "Result 00139 — overview practical",
+    "snippet": "tool response agent (entry 139)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00139"
+  },
+  {
+    "title": "Result 00140 — dive guide",
+    "snippet": "response deterministic cache (entry 140)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00140"
+  },
+  {
+    "title": "Result 00141 — comparison dive",
+    "snippet": "ordinal ordinal summary (entry 141)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00141"
+  },
+  {
+    "title": "Result 00142 — practical analysis",
+    "snippet": "response response summary (entry 142)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00142"
+  },
+  {
+    "title": "Result 00143 — overview guide",
+    "snippet": "pagination deterministic partition (entry 143)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00143"
+  },
+  {
+    "title": "Result 00144 — comparison guide",
+    "snippet": "response chunking partition (entry 144)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00144"
+  },
+  {
+    "title": "Result 00145 — practical introduction",
+    "snippet": "ordinal indexing partition (entry 145)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00145"
+  },
+  {
+    "title": "Result 00146 — tutorial dive",
+    "snippet": "cache indexing retrieval (entry 146)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00146"
+  },
+  {
+    "title": "Result 00147 — practical practical",
+    "snippet": "deterministic summary tool (entry 147)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00147"
+  },
+  {
+    "title": "Result 00148 — deep analysis",
+    "snippet": "response pagination agent (entry 148)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00148"
+  },
+  {
+    "title": "Result 00149 — tutorial deep",
+    "snippet": "ordinal summary tool (entry 149)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00149"
+  },
+  {
+    "title": "Result 00150 — practical guide",
+    "snippet": "indexing chunking retrieval (entry 150)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00150"
+  },
+  {
+    "title": "Result 00151 — comparison practical",
+    "snippet": "indexing response indexing (entry 151)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00151"
+  },
+  {
+    "title": "Result 00152 — guide reference",
+    "snippet": "agent pagination chunking (entry 152)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00152"
+  },
+  {
+    "title": "Result 00153 — introduction introduction",
+    "snippet": "summary agent agent (entry 153)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00153"
+  },
+  {
+    "title": "Result 00154 — comparison analysis",
+    "snippet": "cache response pagination (entry 154)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00154"
+  },
+  {
+    "title": "Result 00155 — dive analysis",
+    "snippet": "summary pagination chunking (entry 155)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00155"
+  },
+  {
+    "title": "Result 00156 — deep overview",
+    "snippet": "chunking agent cache (entry 156)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00156"
+  },
+  {
+    "title": "Result 00157 — guide introduction",
+    "snippet": "search partition response (entry 157)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00157"
+  },
+  {
+    "title": "Result 00158 — overview overview",
+    "snippet": "agent budget cache (entry 158)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00158"
+  },
+  {
+    "title": "Result 00159 — guide tutorial",
+    "snippet": "retrieval retrieval search (entry 159)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00159"
+  },
+  {
+    "title": "Result 00160 — overview reference",
+    "snippet": "pagination deterministic summary (entry 160)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00160"
+  },
+  {
+    "title": "Result 00161 — introduction overview",
+    "snippet": "pagination tool response (entry 161)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00161"
+  },
+  {
+    "title": "Result 00162 — practical reference",
+    "snippet": "pagination deterministic ordinal (entry 162)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00162"
+  },
+  {
+    "title": "Result 00163 — tutorial introduction",
+    "snippet": "budget deterministic summary (entry 163)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00163"
+  },
+  {
+    "title": "Result 00164 — comparison tutorial",
+    "snippet": "deterministic search summary (entry 164)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00164"
+  },
+  {
+    "title": "Result 00165 — deep practical",
+    "snippet": "budget pagination chunking (entry 165)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00165"
+  },
+  {
+    "title": "Result 00166 — reference introduction",
+    "snippet": "retrieval indexing budget (entry 166)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00166"
+  },
+  {
+    "title": "Result 00167 — deep practical",
+    "snippet": "chunking response budget (entry 167)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00167"
+  },
+  {
+    "title": "Result 00168 — analysis comparison",
+    "snippet": "ordinal cache deterministic (entry 168)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00168"
+  },
+  {
+    "title": "Result 00169 — comparison overview",
+    "snippet": "ordinal retrieval search (entry 169)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00169"
+  },
+  {
+    "title": "Result 00170 — deep dive",
+    "snippet": "tool tool pagination (entry 170)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00170"
+  },
+  {
+    "title": "Result 00171 — deep comparison",
+    "snippet": "partition summary ordinal (entry 171)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00171"
+  },
+  {
+    "title": "Result 00172 — introduction tutorial",
+    "snippet": "indexing tool tool (entry 172)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00172"
+  },
+  {
+    "title": "Result 00173 — analysis introduction",
+    "snippet": "cache partition indexing (entry 173)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00173"
+  },
+  {
+    "title": "Result 00174 — comparison guide",
+    "snippet": "search summary budget (entry 174)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00174"
+  },
+  {
+    "title": "Result 00175 — guide overview",
+    "snippet": "partition response chunking (entry 175)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00175"
+  },
+  {
+    "title": "Result 00176 — guide analysis",
+    "snippet": "cache response tool (entry 176)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00176"
+  },
+  {
+    "title": "Result 00177 — reference overview",
+    "snippet": "partition ordinal pagination (entry 177)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00177"
+  },
+  {
+    "title": "Result 00178 — tutorial dive",
+    "snippet": "response retrieval retrieval (entry 178)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00178"
+  },
+  {
+    "title": "Result 00179 — dive introduction",
+    "snippet": "ordinal deterministic search (entry 179)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00179"
+  },
+  {
+    "title": "Result 00180 — analysis guide",
+    "snippet": "budget agent chunking (entry 180)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00180"
+  },
+  {
+    "title": "Result 00181 — reference analysis",
+    "snippet": "deterministic indexing deterministic (entry 181)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00181"
+  },
+  {
+    "title": "Result 00182 — dive introduction",
+    "snippet": "response agent partition (entry 182)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00182"
+  },
+  {
+    "title": "Result 00183 — tutorial comparison",
+    "snippet": "tool deterministic budget (entry 183)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00183"
+  },
+  {
+    "title": "Result 00184 — analysis dive",
+    "snippet": "tool partition agent (entry 184)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00184"
+  },
+  {
+    "title": "Result 00185 — tutorial dive",
+    "snippet": "summary chunking partition (entry 185)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00185"
+  },
+  {
+    "title": "Result 00186 — dive deep",
+    "snippet": "budget partition cache (entry 186)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00186"
+  },
+  {
+    "title": "Result 00187 — practical tutorial",
+    "snippet": "agent chunking pagination (entry 187)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00187"
+  },
+  {
+    "title": "Result 00188 — reference analysis",
+    "snippet": "summary tool budget (entry 188)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00188"
+  },
+  {
+    "title": "Result 00189 — overview deep",
+    "snippet": "partition tool budget (entry 189)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00189"
+  },
+  {
+    "title": "Result 00190 — tutorial deep",
+    "snippet": "partition chunking budget (entry 190)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00190"
+  },
+  {
+    "title": "Result 00191 — reference introduction",
+    "snippet": "response ordinal summary (entry 191)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00191"
+  },
+  {
+    "title": "Result 00192 — comparison reference",
+    "snippet": "retrieval pagination summary (entry 192)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00192"
+  },
+  {
+    "title": "Result 00193 — guide deep",
+    "snippet": "ordinal agent cache (entry 193)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00193"
+  },
+  {
+    "title": "Result 00194 — dive deep",
+    "snippet": "cache agent cache (entry 194)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00194"
+  },
+  {
+    "title": "Result 00195 — tutorial guide",
+    "snippet": "summary pagination chunking (entry 195)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00195"
+  },
+  {
+    "title": "Result 00196 — guide dive",
+    "snippet": "chunking agent partition (entry 196)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00196"
+  },
+  {
+    "title": "Result 00197 — guide reference",
+    "snippet": "indexing cache pagination (entry 197)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00197"
+  },
+  {
+    "title": "Result 00198 — introduction analysis",
+    "snippet": "chunking retrieval chunking (entry 198)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00198"
+  },
+  {
+    "title": "Result 00199 — deep guide",
+    "snippet": "response chunking chunking (entry 199)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00199"
+  },
+  {
+    "title": "Result 00200 — reference guide",
+    "snippet": "partition partition ordinal (entry 200)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00200"
+  },
+  {
+    "title": "Result 00201 — practical overview",
+    "snippet": "summary pagination pagination (entry 201)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00201"
+  },
+  {
+    "title": "Result 00202 — overview guide",
+    "snippet": "deterministic response indexing (entry 202)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00202"
+  },
+  {
+    "title": "Result 00203 — tutorial overview",
+    "snippet": "cache summary budget (entry 203)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00203"
+  },
+  {
+    "title": "Result 00204 — practical comparison",
+    "snippet": "search partition agent (entry 204)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00204"
+  },
+  {
+    "title": "Result 00205 — reference deep",
+    "snippet": "chunking response tool (entry 205)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00205"
+  },
+  {
+    "title": "Result 00206 — reference tutorial",
+    "snippet": "ordinal response agent (entry 206)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00206"
+  },
+  {
+    "title": "Result 00207 — tutorial overview",
+    "snippet": "pagination ordinal summary (entry 207)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00207"
+  },
+  {
+    "title": "Result 00208 — deep practical",
+    "snippet": "agent response agent (entry 208)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00208"
+  },
+  {
+    "title": "Result 00209 — analysis overview",
+    "snippet": "cache chunking response (entry 209)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00209"
+  },
+  {
+    "title": "Result 00210 — comparison tutorial",
+    "snippet": "summary chunking summary (entry 210)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00210"
+  },
+  {
+    "title": "Result 00211 — practical comparison",
+    "snippet": "budget ordinal cache (entry 211)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00211"
+  },
+  {
+    "title": "Result 00212 — tutorial overview",
+    "snippet": "chunking partition ordinal (entry 212)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00212"
+  },
+  {
+    "title": "Result 00213 — comparison tutorial",
+    "snippet": "summary agent partition (entry 213)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00213"
+  },
+  {
+    "title": "Result 00214 — introduction tutorial",
+    "snippet": "partition deterministic cache (entry 214)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00214"
+  },
+  {
+    "title": "Result 00215 — tutorial analysis",
+    "snippet": "budget indexing search (entry 215)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00215"
+  },
+  {
+    "title": "Result 00216 — tutorial comparison",
+    "snippet": "deterministic partition retrieval (entry 216)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00216"
+  },
+  {
+    "title": "Result 00217 — guide introduction",
+    "snippet": "summary pagination retrieval (entry 217)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00217"
+  },
+  {
+    "title": "Result 00218 — practical deep",
+    "snippet": "agent pagination search (entry 218)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00218"
+  },
+  {
+    "title": "Result 00219 — analysis practical",
+    "snippet": "tool budget summary (entry 219)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00219"
+  },
+  {
+    "title": "Result 00220 — guide guide",
+    "snippet": "indexing agent ordinal (entry 220)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00220"
+  },
+  {
+    "title": "Result 00221 — reference introduction",
+    "snippet": "cache deterministic cache (entry 221)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00221"
+  },
+  {
+    "title": "Result 00222 — guide guide",
+    "snippet": "chunking response deterministic (entry 222)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00222"
+  },
+  {
+    "title": "Result 00223 — dive comparison",
+    "snippet": "pagination search summary (entry 223)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00223"
+  },
+  {
+    "title": "Result 00224 — dive dive",
+    "snippet": "summary pagination search (entry 224)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00224"
+  },
+  {
+    "title": "Result 00225 — dive overview",
+    "snippet": "ordinal retrieval tool (entry 225)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00225"
+  },
+  {
+    "title": "Result 00226 — guide tutorial",
+    "snippet": "summary pagination chunking (entry 226)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00226"
+  },
+  {
+    "title": "Result 00227 — introduction tutorial",
+    "snippet": "ordinal budget budget (entry 227)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00227"
+  },
+  {
+    "title": "Result 00228 — introduction reference",
+    "snippet": "summary cache ordinal (entry 228)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00228"
+  },
+  {
+    "title": "Result 00229 — deep dive",
+    "snippet": "summary ordinal pagination (entry 229)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00229"
+  },
+  {
+    "title": "Result 00230 — comparison analysis",
+    "snippet": "budget chunking summary (entry 230)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00230"
+  },
+  {
+    "title": "Result 00231 — analysis comparison",
+    "snippet": "chunking budget retrieval (entry 231)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00231"
+  },
+  {
+    "title": "Result 00232 — reference analysis",
+    "snippet": "tool search ordinal (entry 232)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00232"
+  },
+  {
+    "title": "Result 00233 — comparison guide",
+    "snippet": "chunking pagination retrieval (entry 233)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00233"
+  },
+  {
+    "title": "Result 00234 — dive overview",
+    "snippet": "pagination agent summary (entry 234)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00234"
+  },
+  {
+    "title": "Result 00235 — analysis dive",
+    "snippet": "tool chunking response (entry 235)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00235"
+  },
+  {
+    "title": "Result 00236 — deep tutorial",
+    "snippet": "chunking partition tool (entry 236)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00236"
+  },
+  {
+    "title": "Result 00237 — analysis introduction",
+    "snippet": "indexing retrieval budget (entry 237)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00237"
+  },
+  {
+    "title": "Result 00238 — guide dive",
+    "snippet": "indexing response indexing (entry 238)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00238"
+  },
+  {
+    "title": "Result 00239 — tutorial overview",
+    "snippet": "summary deterministic search (entry 239)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00239"
+  },
+  {
+    "title": "Result 00240 — practical comparison",
+    "snippet": "deterministic ordinal search (entry 240)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00240"
+  },
+  {
+    "title": "Result 00241 — comparison practical",
+    "snippet": "summary retrieval deterministic (entry 241)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00241"
+  },
+  {
+    "title": "Result 00242 — introduction comparison",
+    "snippet": "ordinal pagination tool (entry 242)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00242"
+  },
+  {
+    "title": "Result 00243 — tutorial practical",
+    "snippet": "tool agent response (entry 243)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00243"
+  },
+  {
+    "title": "Result 00244 — guide tutorial",
+    "snippet": "indexing response partition (entry 244)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00244"
+  },
+  {
+    "title": "Result 00245 — tutorial introduction",
+    "snippet": "cache ordinal cache (entry 245)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00245"
+  },
+  {
+    "title": "Result 00246 — overview overview",
+    "snippet": "retrieval partition deterministic (entry 246)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00246"
+  },
+  {
+    "title": "Result 00247 — deep overview",
+    "snippet": "agent cache deterministic (entry 247)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00247"
+  },
+  {
+    "title": "Result 00248 — analysis analysis",
+    "snippet": "tool search chunking (entry 248)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00248"
+  },
+  {
+    "title": "Result 00249 — dive dive",
+    "snippet": "agent chunking ordinal (entry 249)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00249"
+  },
+  {
+    "title": "Result 00250 — practical guide",
+    "snippet": "search tool retrieval (entry 250)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00250"
+  },
+  {
+    "title": "Result 00251 — comparison tutorial",
+    "snippet": "search summary deterministic (entry 251)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00251"
+  },
+  {
+    "title": "Result 00252 — deep practical",
+    "snippet": "agent cache search (entry 252)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00252"
+  },
+  {
+    "title": "Result 00253 — guide analysis",
+    "snippet": "search agent agent (entry 253)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00253"
+  },
+  {
+    "title": "Result 00254 — dive overview",
+    "snippet": "summary summary search (entry 254)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00254"
+  },
+  {
+    "title": "Result 00255 — guide tutorial",
+    "snippet": "summary summary indexing (entry 255)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00255"
+  },
+  {
+    "title": "Result 00256 — analysis analysis",
+    "snippet": "chunking agent deterministic (entry 256)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00256"
+  },
+  {
+    "title": "Result 00257 — reference reference",
+    "snippet": "partition cache agent (entry 257)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00257"
+  },
+  {
+    "title": "Result 00258 — guide dive",
+    "snippet": "partition budget chunking (entry 258)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00258"
+  },
+  {
+    "title": "Result 00259 — guide comparison",
+    "snippet": "indexing chunking pagination (entry 259)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00259"
+  },
+  {
+    "title": "Result 00260 — comparison introduction",
+    "snippet": "search deterministic indexing (entry 260)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00260"
+  },
+  {
+    "title": "Result 00261 — practical practical",
+    "snippet": "search agent retrieval (entry 261)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00261"
+  },
+  {
+    "title": "Result 00262 — comparison guide",
+    "snippet": "ordinal pagination cache (entry 262)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00262"
+  },
+  {
+    "title": "Result 00263 — reference comparison",
+    "snippet": "response deterministic indexing (entry 263)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00263"
+  },
+  {
+    "title": "Result 00264 — introduction comparison",
+    "snippet": "budget deterministic summary (entry 264)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00264"
+  },
+  {
+    "title": "Result 00265 — comparison deep",
+    "snippet": "agent ordinal tool (entry 265)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00265"
+  },
+  {
+    "title": "Result 00266 — comparison deep",
+    "snippet": "retrieval deterministic indexing (entry 266)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00266"
+  },
+  {
+    "title": "Result 00267 — reference dive",
+    "snippet": "partition ordinal partition (entry 267)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00267"
+  },
+  {
+    "title": "Result 00268 — dive overview",
+    "snippet": "ordinal deterministic tool (entry 268)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00268"
+  },
+  {
+    "title": "Result 00269 — practical analysis",
+    "snippet": "chunking response summary (entry 269)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00269"
+  },
+  {
+    "title": "Result 00270 — dive analysis",
+    "snippet": "chunking partition tool (entry 270)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00270"
+  },
+  {
+    "title": "Result 00271 — dive practical",
+    "snippet": "summary cache deterministic (entry 271)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00271"
+  },
+  {
+    "title": "Result 00272 — analysis overview",
+    "snippet": "agent summary tool (entry 272)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00272"
+  },
+  {
+    "title": "Result 00273 — tutorial deep",
+    "snippet": "budget pagination ordinal (entry 273)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00273"
+  },
+  {
+    "title": "Result 00274 — reference reference",
+    "snippet": "pagination search summary (entry 274)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00274"
+  },
+  {
+    "title": "Result 00275 — guide introduction",
+    "snippet": "search indexing cache (entry 275)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00275"
+  },
+  {
+    "title": "Result 00276 — dive comparison",
+    "snippet": "cache deterministic search (entry 276)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00276"
+  },
+  {
+    "title": "Result 00277 — overview dive",
+    "snippet": "deterministic indexing deterministic (entry 277)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00277"
+  },
+  {
+    "title": "Result 00278 — introduction practical",
+    "snippet": "retrieval summary indexing (entry 278)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00278"
+  },
+  {
+    "title": "Result 00279 — comparison dive",
+    "snippet": "retrieval pagination tool (entry 279)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00279"
+  },
+  {
+    "title": "Result 00280 — reference comparison",
+    "snippet": "cache retrieval search (entry 280)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00280"
+  },
+  {
+    "title": "Result 00281 — dive tutorial",
+    "snippet": "retrieval budget deterministic (entry 281)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00281"
+  },
+  {
+    "title": "Result 00282 — dive reference",
+    "snippet": "partition response tool (entry 282)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00282"
+  },
+  {
+    "title": "Result 00283 — dive guide",
+    "snippet": "retrieval cache chunking (entry 283)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00283"
+  },
+  {
+    "title": "Result 00284 — dive overview",
+    "snippet": "budget chunking ordinal (entry 284)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00284"
+  },
+  {
+    "title": "Result 00285 — comparison guide",
+    "snippet": "cache budget pagination (entry 285)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00285"
+  },
+  {
+    "title": "Result 00286 — analysis practical",
+    "snippet": "response retrieval pagination (entry 286)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00286"
+  },
+  {
+    "title": "Result 00287 — introduction introduction",
+    "snippet": "pagination deterministic search (entry 287)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00287"
+  },
+  {
+    "title": "Result 00288 — overview guide",
+    "snippet": "cache cache tool (entry 288)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00288"
+  },
+  {
+    "title": "Result 00289 — guide tutorial",
+    "snippet": "partition chunking indexing (entry 289)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00289"
+  },
+  {
+    "title": "Result 00290 — tutorial guide",
+    "snippet": "ordinal tool search (entry 290)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00290"
+  },
+  {
+    "title": "Result 00291 — tutorial practical",
+    "snippet": "partition budget retrieval (entry 291)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00291"
+  },
+  {
+    "title": "Result 00292 — guide practical",
+    "snippet": "indexing agent summary (entry 292)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00292"
+  },
+  {
+    "title": "Result 00293 — tutorial reference",
+    "snippet": "response pagination ordinal (entry 293)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00293"
+  },
+  {
+    "title": "Result 00294 — reference reference",
+    "snippet": "budget response partition (entry 294)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00294"
+  },
+  {
+    "title": "Result 00295 — deep introduction",
+    "snippet": "response indexing partition (entry 295)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00295"
+  },
+  {
+    "title": "Result 00296 — deep tutorial",
+    "snippet": "summary partition budget (entry 296)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00296"
+  },
+  {
+    "title": "Result 00297 — introduction reference",
+    "snippet": "budget deterministic summary (entry 297)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00297"
+  },
+  {
+    "title": "Result 00298 — guide reference",
+    "snippet": "chunking indexing deterministic (entry 298)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00298"
+  },
+  {
+    "title": "Result 00299 — overview overview",
+    "snippet": "retrieval partition ordinal (entry 299)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00299"
+  },
+  {
+    "title": "Result 00300 — deep dive",
+    "snippet": "cache pagination tool (entry 300)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00300"
+  },
+  {
+    "title": "Result 00301 — comparison introduction",
+    "snippet": "ordinal response partition (entry 301)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00301"
+  },
+  {
+    "title": "Result 00302 — tutorial guide",
+    "snippet": "retrieval indexing pagination (entry 302)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00302"
+  },
+  {
+    "title": "Result 00303 — reference dive",
+    "snippet": "pagination chunking chunking (entry 303)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00303"
+  },
+  {
+    "title": "Result 00304 — guide comparison",
+    "snippet": "pagination summary tool (entry 304)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00304"
+  },
+  {
+    "title": "Result 00305 — reference practical",
+    "snippet": "deterministic cache agent (entry 305)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00305"
+  },
+  {
+    "title": "Result 00306 — overview dive",
+    "snippet": "ordinal partition deterministic (entry 306)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00306"
+  },
+  {
+    "title": "Result 00307 — deep introduction",
+    "snippet": "agent cache budget (entry 307)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00307"
+  },
+  {
+    "title": "Result 00308 — comparison overview",
+    "snippet": "partition budget chunking (entry 308)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00308"
+  },
+  {
+    "title": "Result 00309 — dive comparison",
+    "snippet": "cache response cache (entry 309)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00309"
+  },
+  {
+    "title": "Result 00310 — introduction overview",
+    "snippet": "cache response indexing (entry 310)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00310"
+  },
+  {
+    "title": "Result 00311 — overview tutorial",
+    "snippet": "search pagination cache (entry 311)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00311"
+  },
+  {
+    "title": "Result 00312 — practical reference",
+    "snippet": "search chunking partition (entry 312)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00312"
+  },
+  {
+    "title": "Result 00313 — comparison overview",
+    "snippet": "ordinal deterministic pagination (entry 313)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00313"
+  },
+  {
+    "title": "Result 00314 — dive overview",
+    "snippet": "chunking indexing retrieval (entry 314)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00314"
+  },
+  {
+    "title": "Result 00315 — analysis analysis",
+    "snippet": "partition agent search (entry 315)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00315"
+  },
+  {
+    "title": "Result 00316 — introduction comparison",
+    "snippet": "cache summary pagination (entry 316)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00316"
+  },
+  {
+    "title": "Result 00317 — analysis deep",
+    "snippet": "partition budget retrieval (entry 317)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00317"
+  },
+  {
+    "title": "Result 00318 — analysis introduction",
+    "snippet": "retrieval indexing pagination (entry 318)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00318"
+  },
+  {
+    "title": "Result 00319 — overview analysis",
+    "snippet": "summary response indexing (entry 319)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00319"
+  },
+  {
+    "title": "Result 00320 — analysis introduction",
+    "snippet": "chunking response cache (entry 320)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00320"
+  },
+  {
+    "title": "Result 00321 — reference overview",
+    "snippet": "cache retrieval pagination (entry 321)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00321"
+  },
+  {
+    "title": "Result 00322 — analysis reference",
+    "snippet": "indexing pagination tool (entry 322)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00322"
+  },
+  {
+    "title": "Result 00323 — comparison tutorial",
+    "snippet": "budget chunking ordinal (entry 323)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00323"
+  },
+  {
+    "title": "Result 00324 — dive deep",
+    "snippet": "summary deterministic cache (entry 324)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00324"
+  },
+  {
+    "title": "Result 00325 — introduction tutorial",
+    "snippet": "summary chunking retrieval (entry 325)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00325"
+  },
+  {
+    "title": "Result 00326 — deep overview",
+    "snippet": "ordinal budget ordinal (entry 326)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00326"
+  },
+  {
+    "title": "Result 00327 — guide analysis",
+    "snippet": "indexing cache tool (entry 327)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00327"
+  },
+  {
+    "title": "Result 00328 — tutorial dive",
+    "snippet": "agent ordinal budget (entry 328)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00328"
+  },
+  {
+    "title": "Result 00329 — overview comparison",
+    "snippet": "agent retrieval ordinal (entry 329)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00329"
+  },
+  {
+    "title": "Result 00330 — guide guide",
+    "snippet": "partition partition tool (entry 330)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00330"
+  },
+  {
+    "title": "Result 00331 — reference reference",
+    "snippet": "ordinal response cache (entry 331)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00331"
+  },
+  {
+    "title": "Result 00332 — tutorial deep",
+    "snippet": "tool cache chunking (entry 332)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00332"
+  },
+  {
+    "title": "Result 00333 — introduction introduction",
+    "snippet": "agent pagination ordinal (entry 333)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00333"
+  },
+  {
+    "title": "Result 00334 — deep analysis",
+    "snippet": "ordinal agent chunking (entry 334)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00334"
+  },
+  {
+    "title": "Result 00335 — reference reference",
+    "snippet": "cache ordinal agent (entry 335)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00335"
+  },
+  {
+    "title": "Result 00336 — dive reference",
+    "snippet": "search budget response (entry 336)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00336"
+  },
+  {
+    "title": "Result 00337 — deep practical",
+    "snippet": "budget deterministic summary (entry 337)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00337"
+  },
+  {
+    "title": "Result 00338 — introduction deep",
+    "snippet": "chunking retrieval search (entry 338)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00338"
+  },
+  {
+    "title": "Result 00339 — overview analysis",
+    "snippet": "retrieval pagination search (entry 339)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00339"
+  },
+  {
+    "title": "Result 00340 — tutorial deep",
+    "snippet": "budget chunking pagination (entry 340)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00340"
+  },
+  {
+    "title": "Result 00341 — dive introduction",
+    "snippet": "budget pagination search (entry 341)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00341"
+  },
+  {
+    "title": "Result 00342 — reference analysis",
+    "snippet": "deterministic summary partition (entry 342)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00342"
+  },
+  {
+    "title": "Result 00343 — introduction reference",
+    "snippet": "indexing tool retrieval (entry 343)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00343"
+  },
+  {
+    "title": "Result 00344 — overview analysis",
+    "snippet": "indexing response response (entry 344)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00344"
+  },
+  {
+    "title": "Result 00345 — analysis introduction",
+    "snippet": "chunking partition retrieval (entry 345)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00345"
+  },
+  {
+    "title": "Result 00346 — analysis overview",
+    "snippet": "chunking retrieval deterministic (entry 346)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00346"
+  },
+  {
+    "title": "Result 00347 — tutorial practical",
+    "snippet": "search ordinal partition (entry 347)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00347"
+  },
+  {
+    "title": "Result 00348 — guide reference",
+    "snippet": "agent pagination budget (entry 348)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00348"
+  },
+  {
+    "title": "Result 00349 — tutorial reference",
+    "snippet": "ordinal retrieval retrieval (entry 349)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00349"
+  },
+  {
+    "title": "Result 00350 — comparison tutorial",
+    "snippet": "cache pagination retrieval (entry 350)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00350"
+  },
+  {
+    "title": "Result 00351 — dive tutorial",
+    "snippet": "budget chunking tool (entry 351)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00351"
+  },
+  {
+    "title": "Result 00352 — practical guide",
+    "snippet": "summary search chunking (entry 352)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00352"
+  },
+  {
+    "title": "Result 00353 — tutorial introduction",
+    "snippet": "pagination chunking pagination (entry 353)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00353"
+  },
+  {
+    "title": "Result 00354 — introduction reference",
+    "snippet": "search ordinal budget (entry 354)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00354"
+  },
+  {
+    "title": "Result 00355 — tutorial analysis",
+    "snippet": "retrieval pagination partition (entry 355)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00355"
+  },
+  {
+    "title": "Result 00356 — reference dive",
+    "snippet": "partition partition cache (entry 356)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00356"
+  },
+  {
+    "title": "Result 00357 — practical comparison",
+    "snippet": "agent partition search (entry 357)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00357"
+  },
+  {
+    "title": "Result 00358 — analysis reference",
+    "snippet": "chunking indexing ordinal (entry 358)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00358"
+  },
+  {
+    "title": "Result 00359 — overview dive",
+    "snippet": "tool agent summary (entry 359)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00359"
+  },
+  {
+    "title": "Result 00360 — practical deep",
+    "snippet": "ordinal budget search (entry 360)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00360"
+  },
+  {
+    "title": "Result 00361 — introduction reference",
+    "snippet": "retrieval summary response (entry 361)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00361"
+  },
+  {
+    "title": "Result 00362 — reference analysis",
+    "snippet": "summary agent partition (entry 362)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00362"
+  },
+  {
+    "title": "Result 00363 — analysis comparison",
+    "snippet": "deterministic tool retrieval (entry 363)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00363"
+  },
+  {
+    "title": "Result 00364 — deep comparison",
+    "snippet": "budget search indexing (entry 364)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00364"
+  },
+  {
+    "title": "Result 00365 — tutorial practical",
+    "snippet": "partition deterministic indexing (entry 365)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00365"
+  },
+  {
+    "title": "Result 00366 — guide overview",
+    "snippet": "search deterministic cache (entry 366)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00366"
+  },
+  {
+    "title": "Result 00367 — deep introduction",
+    "snippet": "chunking deterministic pagination (entry 367)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00367"
+  },
+  {
+    "title": "Result 00368 — reference reference",
+    "snippet": "chunking cache budget (entry 368)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00368"
+  },
+  {
+    "title": "Result 00369 — reference overview",
+    "snippet": "partition budget response (entry 369)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00369"
+  },
+  {
+    "title": "Result 00370 — comparison practical",
+    "snippet": "tool deterministic response (entry 370)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00370"
+  },
+  {
+    "title": "Result 00371 — deep reference",
+    "snippet": "deterministic deterministic partition (entry 371)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00371"
+  },
+  {
+    "title": "Result 00372 — guide overview",
+    "snippet": "partition response summary (entry 372)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00372"
+  },
+  {
+    "title": "Result 00373 — practical analysis",
+    "snippet": "ordinal partition agent (entry 373)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00373"
+  },
+  {
+    "title": "Result 00374 — guide tutorial",
+    "snippet": "budget chunking summary (entry 374)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00374"
+  },
+  {
+    "title": "Result 00375 — comparison overview",
+    "snippet": "indexing agent cache (entry 375)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00375"
+  },
+  {
+    "title": "Result 00376 — deep reference",
+    "snippet": "tool agent ordinal (entry 376)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00376"
+  },
+  {
+    "title": "Result 00377 — tutorial tutorial",
+    "snippet": "chunking tool tool (entry 377)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00377"
+  },
+  {
+    "title": "Result 00378 — guide deep",
+    "snippet": "pagination response retrieval (entry 378)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00378"
+  },
+  {
+    "title": "Result 00379 — introduction dive",
+    "snippet": "cache budget response (entry 379)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00379"
+  },
+  {
+    "title": "Result 00380 — reference analysis",
+    "snippet": "budget tool pagination (entry 380)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00380"
+  },
+  {
+    "title": "Result 00381 — introduction tutorial",
+    "snippet": "indexing retrieval ordinal (entry 381)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00381"
+  },
+  {
+    "title": "Result 00382 — introduction comparison",
+    "snippet": "summary agent response (entry 382)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00382"
+  },
+  {
+    "title": "Result 00383 — tutorial practical",
+    "snippet": "response indexing budget (entry 383)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00383"
+  },
+  {
+    "title": "Result 00384 — guide guide",
+    "snippet": "pagination tool response (entry 384)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00384"
+  },
+  {
+    "title": "Result 00385 — introduction practical",
+    "snippet": "tool ordinal response (entry 385)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00385"
+  },
+  {
+    "title": "Result 00386 — comparison tutorial",
+    "snippet": "retrieval pagination search (entry 386)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00386"
+  },
+  {
+    "title": "Result 00387 — overview guide",
+    "snippet": "search chunking agent (entry 387)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00387"
+  },
+  {
+    "title": "Result 00388 — dive introduction",
+    "snippet": "partition indexing deterministic (entry 388)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00388"
+  },
+  {
+    "title": "Result 00389 — deep reference",
+    "snippet": "response budget response (entry 389)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00389"
+  },
+  {
+    "title": "Result 00390 — guide overview",
+    "snippet": "agent partition deterministic (entry 390)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00390"
+  },
+  {
+    "title": "Result 00391 — practical introduction",
+    "snippet": "indexing response response (entry 391)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00391"
+  },
+  {
+    "title": "Result 00392 — introduction tutorial",
+    "snippet": "chunking pagination cache (entry 392)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00392"
+  },
+  {
+    "title": "Result 00393 — practical introduction",
+    "snippet": "chunking agent partition (entry 393)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00393"
+  },
+  {
+    "title": "Result 00394 — analysis practical",
+    "snippet": "summary pagination chunking (entry 394)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00394"
+  },
+  {
+    "title": "Result 00395 — dive tutorial",
+    "snippet": "response partition budget (entry 395)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00395"
+  },
+  {
+    "title": "Result 00396 — dive tutorial",
+    "snippet": "tool response chunking (entry 396)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00396"
+  },
+  {
+    "title": "Result 00397 — analysis overview",
+    "snippet": "indexing search partition (entry 397)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00397"
+  },
+  {
+    "title": "Result 00398 — practical dive",
+    "snippet": "chunking search budget (entry 398)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00398"
+  },
+  {
+    "title": "Result 00399 — deep comparison",
+    "snippet": "cache budget pagination (entry 399)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00399"
+  },
+  {
+    "title": "Result 00400 — reference practical",
+    "snippet": "chunking retrieval summary (entry 400)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00400"
+  },
+  {
+    "title": "Result 00401 — guide analysis",
+    "snippet": "summary ordinal retrieval (entry 401)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00401"
+  },
+  {
+    "title": "Result 00402 — practical deep",
+    "snippet": "budget budget search (entry 402)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00402"
+  },
+  {
+    "title": "Result 00403 — comparison comparison",
+    "snippet": "response pagination budget (entry 403)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00403"
+  },
+  {
+    "title": "Result 00404 — tutorial tutorial",
+    "snippet": "budget response search (entry 404)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00404"
+  },
+  {
+    "title": "Result 00405 — comparison tutorial",
+    "snippet": "chunking budget response (entry 405)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00405"
+  },
+  {
+    "title": "Result 00406 — guide reference",
+    "snippet": "tool summary tool (entry 406)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00406"
+  },
+  {
+    "title": "Result 00407 — deep tutorial",
+    "snippet": "budget retrieval summary (entry 407)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00407"
+  },
+  {
+    "title": "Result 00408 — guide reference",
+    "snippet": "chunking chunking summary (entry 408)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00408"
+  },
+  {
+    "title": "Result 00409 — deep overview",
+    "snippet": "budget summary pagination (entry 409)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00409"
+  },
+  {
+    "title": "Result 00410 — tutorial comparison",
+    "snippet": "cache tool response (entry 410)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00410"
+  },
+  {
+    "title": "Result 00411 — reference comparison",
+    "snippet": "cache indexing chunking (entry 411)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00411"
+  },
+  {
+    "title": "Result 00412 — deep comparison",
+    "snippet": "deterministic summary search (entry 412)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00412"
+  },
+  {
+    "title": "Result 00413 — guide guide",
+    "snippet": "partition agent partition (entry 413)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00413"
+  },
+  {
+    "title": "Result 00414 — deep analysis",
+    "snippet": "pagination pagination retrieval (entry 414)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00414"
+  },
+  {
+    "title": "Result 00415 — overview reference",
+    "snippet": "pagination summary search (entry 415)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00415"
+  },
+  {
+    "title": "Result 00416 — practical introduction",
+    "snippet": "partition ordinal ordinal (entry 416)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00416"
+  },
+  {
+    "title": "Result 00417 — practical overview",
+    "snippet": "deterministic pagination summary (entry 417)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00417"
+  },
+  {
+    "title": "Result 00418 — analysis practical",
+    "snippet": "partition tool partition (entry 418)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00418"
+  },
+  {
+    "title": "Result 00419 — comparison comparison",
+    "snippet": "tool chunking chunking (entry 419)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00419"
+  },
+  {
+    "title": "Result 00420 — reference reference",
+    "snippet": "retrieval chunking partition (entry 420)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00420"
+  },
+  {
+    "title": "Result 00421 — dive introduction",
+    "snippet": "partition chunking budget (entry 421)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00421"
+  },
+  {
+    "title": "Result 00422 — overview analysis",
+    "snippet": "agent budget cache (entry 422)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00422"
+  },
+  {
+    "title": "Result 00423 — comparison practical",
+    "snippet": "response deterministic search (entry 423)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00423"
+  },
+  {
+    "title": "Result 00424 — comparison analysis",
+    "snippet": "indexing search summary (entry 424)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00424"
+  },
+  {
+    "title": "Result 00425 — practical guide",
+    "snippet": "tool partition search (entry 425)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00425"
+  },
+  {
+    "title": "Result 00426 — dive practical",
+    "snippet": "partition pagination cache (entry 426)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00426"
+  },
+  {
+    "title": "Result 00427 — practical comparison",
+    "snippet": "summary search retrieval (entry 427)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00427"
+  },
+  {
+    "title": "Result 00428 — reference reference",
+    "snippet": "cache deterministic chunking (entry 428)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00428"
+  },
+  {
+    "title": "Result 00429 — introduction overview",
+    "snippet": "summary partition deterministic (entry 429)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00429"
+  },
+  {
+    "title": "Result 00430 — comparison dive",
+    "snippet": "partition ordinal retrieval (entry 430)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00430"
+  },
+  {
+    "title": "Result 00431 — overview analysis",
+    "snippet": "tool response tool (entry 431)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00431"
+  },
+  {
+    "title": "Result 00432 — deep analysis",
+    "snippet": "agent indexing budget (entry 432)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00432"
+  },
+  {
+    "title": "Result 00433 — practical practical",
+    "snippet": "cache ordinal partition (entry 433)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00433"
+  },
+  {
+    "title": "Result 00434 — analysis comparison",
+    "snippet": "budget tool response (entry 434)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00434"
+  },
+  {
+    "title": "Result 00435 — tutorial deep",
+    "snippet": "retrieval deterministic chunking (entry 435)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00435"
+  },
+  {
+    "title": "Result 00436 — dive introduction",
+    "snippet": "tool ordinal budget (entry 436)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00436"
+  },
+  {
+    "title": "Result 00437 — practical guide",
+    "snippet": "search pagination deterministic (entry 437)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00437"
+  },
+  {
+    "title": "Result 00438 — dive analysis",
+    "snippet": "tool ordinal retrieval (entry 438)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00438"
+  },
+  {
+    "title": "Result 00439 — guide introduction",
+    "snippet": "budget agent response (entry 439)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00439"
+  },
+  {
+    "title": "Result 00440 — overview introduction",
+    "snippet": "chunking budget indexing (entry 440)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00440"
+  },
+  {
+    "title": "Result 00441 — guide overview",
+    "snippet": "tool ordinal ordinal (entry 441)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00441"
+  },
+  {
+    "title": "Result 00442 — reference analysis",
+    "snippet": "tool summary indexing (entry 442)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00442"
+  },
+  {
+    "title": "Result 00443 — practical tutorial",
+    "snippet": "partition partition budget (entry 443)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00443"
+  },
+  {
+    "title": "Result 00444 — guide introduction",
+    "snippet": "cache cache partition (entry 444)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00444"
+  },
+  {
+    "title": "Result 00445 — overview dive",
+    "snippet": "retrieval tool summary (entry 445)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00445"
+  },
+  {
+    "title": "Result 00446 — deep reference",
+    "snippet": "response chunking summary (entry 446)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00446"
+  },
+  {
+    "title": "Result 00447 — dive dive",
+    "snippet": "retrieval indexing response (entry 447)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00447"
+  },
+  {
+    "title": "Result 00448 — overview introduction",
+    "snippet": "partition cache response (entry 448)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00448"
+  },
+  {
+    "title": "Result 00449 — practical guide",
+    "snippet": "search summary indexing (entry 449)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00449"
+  },
+  {
+    "title": "Result 00450 — deep overview",
+    "snippet": "partition ordinal ordinal (entry 450)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00450"
+  },
+  {
+    "title": "Result 00451 — practical tutorial",
+    "snippet": "partition summary pagination (entry 451)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00451"
+  },
+  {
+    "title": "Result 00452 — deep overview",
+    "snippet": "retrieval summary pagination (entry 452)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00452"
+  },
+  {
+    "title": "Result 00453 — overview comparison",
+    "snippet": "response search search (entry 453)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00453"
+  },
+  {
+    "title": "Result 00454 — practical deep",
+    "snippet": "ordinal partition search (entry 454)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00454"
+  },
+  {
+    "title": "Result 00455 — dive dive",
+    "snippet": "agent search indexing (entry 455)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00455"
+  },
+  {
+    "title": "Result 00456 — overview analysis",
+    "snippet": "summary indexing ordinal (entry 456)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00456"
+  },
+  {
+    "title": "Result 00457 — tutorial overview",
+    "snippet": "retrieval indexing search (entry 457)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00457"
+  },
+  {
+    "title": "Result 00458 — dive overview",
+    "snippet": "indexing search search (entry 458)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00458"
+  },
+  {
+    "title": "Result 00459 — guide introduction",
+    "snippet": "ordinal summary deterministic (entry 459)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00459"
+  },
+  {
+    "title": "Result 00460 — dive reference",
+    "snippet": "search summary indexing (entry 460)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00460"
+  },
+  {
+    "title": "Result 00461 — deep analysis",
+    "snippet": "ordinal budget ordinal (entry 461)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00461"
+  },
+  {
+    "title": "Result 00462 — guide overview",
+    "snippet": "retrieval response budget (entry 462)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00462"
+  },
+  {
+    "title": "Result 00463 — introduction analysis",
+    "snippet": "cache response ordinal (entry 463)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00463"
+  },
+  {
+    "title": "Result 00464 — reference overview",
+    "snippet": "partition retrieval agent (entry 464)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00464"
+  },
+  {
+    "title": "Result 00465 — guide comparison",
+    "snippet": "partition response indexing (entry 465)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00465"
+  },
+  {
+    "title": "Result 00466 — introduction tutorial",
+    "snippet": "chunking deterministic ordinal (entry 466)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00466"
+  },
+  {
+    "title": "Result 00467 — deep overview",
+    "snippet": "chunking ordinal response (entry 467)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00467"
+  },
+  {
+    "title": "Result 00468 — practical introduction",
+    "snippet": "partition retrieval pagination (entry 468)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00468"
+  },
+  {
+    "title": "Result 00469 — guide deep",
+    "snippet": "cache tool tool (entry 469)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00469"
+  },
+  {
+    "title": "Result 00470 — overview tutorial",
+    "snippet": "chunking pagination search (entry 470)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00470"
+  },
+  {
+    "title": "Result 00471 — deep guide",
+    "snippet": "pagination chunking ordinal (entry 471)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00471"
+  },
+  {
+    "title": "Result 00472 — tutorial guide",
+    "snippet": "indexing pagination retrieval (entry 472)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00472"
+  },
+  {
+    "title": "Result 00473 — practical reference",
+    "snippet": "partition ordinal ordinal (entry 473)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00473"
+  },
+  {
+    "title": "Result 00474 — deep practical",
+    "snippet": "summary ordinal ordinal (entry 474)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00474"
+  },
+  {
+    "title": "Result 00475 — guide dive",
+    "snippet": "chunking summary cache (entry 475)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00475"
+  },
+  {
+    "title": "Result 00476 — comparison reference",
+    "snippet": "ordinal budget ordinal (entry 476)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00476"
+  },
+  {
+    "title": "Result 00477 — introduction overview",
+    "snippet": "response cache cache (entry 477)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00477"
+  },
+  {
+    "title": "Result 00478 — reference dive",
+    "snippet": "tool chunking deterministic (entry 478)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00478"
+  },
+  {
+    "title": "Result 00479 — introduction tutorial",
+    "snippet": "ordinal budget budget (entry 479)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00479"
+  },
+  {
+    "title": "Result 00480 — practical introduction",
+    "snippet": "cache summary agent (entry 480)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00480"
+  },
+  {
+    "title": "Result 00481 — introduction reference",
+    "snippet": "pagination ordinal search (entry 481)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00481"
+  },
+  {
+    "title": "Result 00482 — comparison guide",
+    "snippet": "agent agent search (entry 482)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00482"
+  },
+  {
+    "title": "Result 00483 — reference overview",
+    "snippet": "cache indexing tool (entry 483)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00483"
+  },
+  {
+    "title": "Result 00484 — tutorial comparison",
+    "snippet": "response tool search (entry 484)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00484"
+  },
+  {
+    "title": "Result 00485 — analysis deep",
+    "snippet": "ordinal search cache (entry 485)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00485"
+  },
+  {
+    "title": "Result 00486 — guide deep",
+    "snippet": "response chunking search (entry 486)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00486"
+  },
+  {
+    "title": "Result 00487 — introduction practical",
+    "snippet": "tool agent retrieval (entry 487)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00487"
+  },
+  {
+    "title": "Result 00488 — guide tutorial",
+    "snippet": "chunking pagination partition (entry 488)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00488"
+  },
+  {
+    "title": "Result 00489 — practical practical",
+    "snippet": "deterministic retrieval pagination (entry 489)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00489"
+  },
+  {
+    "title": "Result 00490 — comparison analysis",
+    "snippet": "chunking budget deterministic (entry 490)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00490"
+  },
+  {
+    "title": "Result 00491 — reference guide",
+    "snippet": "indexing pagination ordinal (entry 491)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00491"
+  },
+  {
+    "title": "Result 00492 — dive analysis",
+    "snippet": "ordinal pagination tool (entry 492)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00492"
+  },
+  {
+    "title": "Result 00493 — analysis reference",
+    "snippet": "summary response summary (entry 493)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00493"
+  },
+  {
+    "title": "Result 00494 — analysis dive",
+    "snippet": "tool pagination search (entry 494)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00494"
+  },
+  {
+    "title": "Result 00495 — comparison guide",
+    "snippet": "tool deterministic ordinal (entry 495)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00495"
+  },
+  {
+    "title": "Result 00496 — comparison overview",
+    "snippet": "tool cache pagination (entry 496)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00496"
+  },
+  {
+    "title": "Result 00497 — tutorial dive",
+    "snippet": "tool agent ordinal (entry 497)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00497"
+  },
+  {
+    "title": "Result 00498 — overview introduction",
+    "snippet": "tool search pagination (entry 498)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00498"
+  },
+  {
+    "title": "Result 00499 — dive practical",
+    "snippet": "response response pagination (entry 499)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00499"
+  },
+  {
+    "title": "Result 00500 — reference reference",
+    "snippet": "response pagination response (entry 500)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00500"
+  },
+  {
+    "title": "Result 00501 — dive practical",
+    "snippet": "tool partition budget (entry 501)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00501"
+  },
+  {
+    "title": "Result 00502 — comparison reference",
+    "snippet": "response retrieval pagination (entry 502)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00502"
+  },
+  {
+    "title": "Result 00503 — tutorial reference",
+    "snippet": "deterministic agent cache (entry 503)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00503"
+  },
+  {
+    "title": "Result 00504 — reference introduction",
+    "snippet": "chunking tool pagination (entry 504)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00504"
+  },
+  {
+    "title": "Result 00505 — comparison guide",
+    "snippet": "ordinal cache partition (entry 505)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00505"
+  },
+  {
+    "title": "Result 00506 — overview reference",
+    "snippet": "tool chunking budget (entry 506)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00506"
+  },
+  {
+    "title": "Result 00507 — reference dive",
+    "snippet": "indexing summary ordinal (entry 507)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00507"
+  },
+  {
+    "title": "Result 00508 — practical deep",
+    "snippet": "response agent retrieval (entry 508)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00508"
+  },
+  {
+    "title": "Result 00509 — deep overview",
+    "snippet": "indexing summary ordinal (entry 509)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00509"
+  },
+  {
+    "title": "Result 00510 — tutorial guide",
+    "snippet": "summary ordinal pagination (entry 510)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00510"
+  },
+  {
+    "title": "Result 00511 — comparison analysis",
+    "snippet": "search summary response (entry 511)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00511"
+  },
+  {
+    "title": "Result 00512 — introduction tutorial",
+    "snippet": "partition budget budget (entry 512)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00512"
+  },
+  {
+    "title": "Result 00513 — dive dive",
+    "snippet": "ordinal tool summary (entry 513)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00513"
+  },
+  {
+    "title": "Result 00514 — deep analysis",
+    "snippet": "search pagination indexing (entry 514)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00514"
+  },
+  {
+    "title": "Result 00515 — introduction reference",
+    "snippet": "agent agent agent (entry 515)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00515"
+  },
+  {
+    "title": "Result 00516 — deep dive",
+    "snippet": "agent partition ordinal (entry 516)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00516"
+  },
+  {
+    "title": "Result 00517 — dive guide",
+    "snippet": "cache deterministic summary (entry 517)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00517"
+  },
+  {
+    "title": "Result 00518 — guide reference",
+    "snippet": "ordinal deterministic summary (entry 518)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00518"
+  },
+  {
+    "title": "Result 00519 — reference overview",
+    "snippet": "deterministic summary agent (entry 519)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00519"
+  },
+  {
+    "title": "Result 00520 — reference analysis",
+    "snippet": "deterministic chunking chunking (entry 520)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00520"
+  },
+  {
+    "title": "Result 00521 — guide overview",
+    "snippet": "retrieval deterministic search (entry 521)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00521"
+  },
+  {
+    "title": "Result 00522 — practical dive",
+    "snippet": "deterministic ordinal retrieval (entry 522)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00522"
+  },
+  {
+    "title": "Result 00523 — analysis dive",
+    "snippet": "ordinal deterministic indexing (entry 523)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00523"
+  },
+  {
+    "title": "Result 00524 — overview guide",
+    "snippet": "cache response chunking (entry 524)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00524"
+  },
+  {
+    "title": "Result 00525 — analysis guide",
+    "snippet": "tool budget indexing (entry 525)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00525"
+  },
+  {
+    "title": "Result 00526 — introduction dive",
+    "snippet": "tool chunking agent (entry 526)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00526"
+  },
+  {
+    "title": "Result 00527 — guide reference",
+    "snippet": "summary chunking partition (entry 527)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00527"
+  },
+  {
+    "title": "Result 00528 — tutorial reference",
+    "snippet": "chunking indexing response (entry 528)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00528"
+  },
+  {
+    "title": "Result 00529 — comparison dive",
+    "snippet": "chunking budget tool (entry 529)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00529"
+  },
+  {
+    "title": "Result 00530 — analysis deep",
+    "snippet": "cache agent search (entry 530)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00530"
+  },
+  {
+    "title": "Result 00531 — analysis introduction",
+    "snippet": "budget budget search (entry 531)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00531"
+  },
+  {
+    "title": "Result 00532 — overview analysis",
+    "snippet": "response summary cache (entry 532)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00532"
+  },
+  {
+    "title": "Result 00533 — deep deep",
+    "snippet": "chunking tool budget (entry 533)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00533"
+  },
+  {
+    "title": "Result 00534 — overview dive",
+    "snippet": "summary tool budget (entry 534)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00534"
+  },
+  {
+    "title": "Result 00535 — guide guide",
+    "snippet": "search agent summary (entry 535)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00535"
+  },
+  {
+    "title": "Result 00536 — tutorial comparison",
+    "snippet": "response chunking partition (entry 536)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00536"
+  },
+  {
+    "title": "Result 00537 — guide tutorial",
+    "snippet": "pagination deterministic cache (entry 537)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00537"
+  },
+  {
+    "title": "Result 00538 — practical tutorial",
+    "snippet": "agent budget tool (entry 538)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00538"
+  },
+  {
+    "title": "Result 00539 — analysis guide",
+    "snippet": "tool chunking partition (entry 539)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00539"
+  },
+  {
+    "title": "Result 00540 — tutorial tutorial",
+    "snippet": "search chunking budget (entry 540)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00540"
+  },
+  {
+    "title": "Result 00541 — practical overview",
+    "snippet": "indexing chunking deterministic (entry 541)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00541"
+  },
+  {
+    "title": "Result 00542 — comparison dive",
+    "snippet": "agent partition retrieval (entry 542)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00542"
+  },
+  {
+    "title": "Result 00543 — tutorial practical",
+    "snippet": "summary agent tool (entry 543)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00543"
+  },
+  {
+    "title": "Result 00544 — analysis deep",
+    "snippet": "chunking budget indexing (entry 544)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00544"
+  },
+  {
+    "title": "Result 00545 — guide comparison",
+    "snippet": "tool cache budget (entry 545)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00545"
+  },
+  {
+    "title": "Result 00546 — reference guide",
+    "snippet": "search tool retrieval (entry 546)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00546"
+  },
+  {
+    "title": "Result 00547 — deep reference",
+    "snippet": "summary ordinal chunking (entry 547)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00547"
+  },
+  {
+    "title": "Result 00548 — dive tutorial",
+    "snippet": "retrieval agent pagination (entry 548)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00548"
+  },
+  {
+    "title": "Result 00549 — reference overview",
+    "snippet": "partition cache summary (entry 549)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00549"
+  },
+  {
+    "title": "Result 00550 — dive dive",
+    "snippet": "deterministic indexing budget (entry 550)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00550"
+  },
+  {
+    "title": "Result 00551 — dive practical",
+    "snippet": "partition response indexing (entry 551)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00551"
+  },
+  {
+    "title": "Result 00552 — tutorial introduction",
+    "snippet": "cache summary search (entry 552)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00552"
+  },
+  {
+    "title": "Result 00553 — analysis comparison",
+    "snippet": "retrieval cache deterministic (entry 553)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00553"
+  },
+  {
+    "title": "Result 00554 — reference introduction",
+    "snippet": "indexing agent search (entry 554)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00554"
+  },
+  {
+    "title": "Result 00555 — deep introduction",
+    "snippet": "retrieval tool indexing (entry 555)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00555"
+  },
+  {
+    "title": "Result 00556 — overview deep",
+    "snippet": "chunking pagination response (entry 556)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00556"
+  },
+  {
+    "title": "Result 00557 — overview reference",
+    "snippet": "indexing budget pagination (entry 557)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00557"
+  },
+  {
+    "title": "Result 00558 — dive analysis",
+    "snippet": "indexing response ordinal (entry 558)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00558"
+  },
+  {
+    "title": "Result 00559 — analysis dive",
+    "snippet": "ordinal cache pagination (entry 559)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00559"
+  },
+  {
+    "title": "Result 00560 — tutorial tutorial",
+    "snippet": "budget search chunking (entry 560)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00560"
+  },
+  {
+    "title": "Result 00561 — reference analysis",
+    "snippet": "ordinal summary ordinal (entry 561)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00561"
+  },
+  {
+    "title": "Result 00562 — tutorial dive",
+    "snippet": "pagination tool response (entry 562)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00562"
+  },
+  {
+    "title": "Result 00563 — analysis practical",
+    "snippet": "cache cache chunking (entry 563)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00563"
+  },
+  {
+    "title": "Result 00564 — comparison analysis",
+    "snippet": "budget chunking response (entry 564)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00564"
+  },
+  {
+    "title": "Result 00565 — reference practical",
+    "snippet": "budget budget agent (entry 565)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00565"
+  },
+  {
+    "title": "Result 00566 — tutorial introduction",
+    "snippet": "ordinal chunking deterministic (entry 566)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00566"
+  },
+  {
+    "title": "Result 00567 — dive overview",
+    "snippet": "deterministic pagination tool (entry 567)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00567"
+  },
+  {
+    "title": "Result 00568 — dive overview",
+    "snippet": "retrieval agent agent (entry 568)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00568"
+  },
+  {
+    "title": "Result 00569 — analysis practical",
+    "snippet": "tool tool pagination (entry 569)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00569"
+  },
+  {
+    "title": "Result 00570 — deep dive",
+    "snippet": "ordinal response retrieval (entry 570)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00570"
+  },
+  {
+    "title": "Result 00571 — overview tutorial",
+    "snippet": "partition agent retrieval (entry 571)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00571"
+  },
+  {
+    "title": "Result 00572 — deep tutorial",
+    "snippet": "response budget retrieval (entry 572)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00572"
+  },
+  {
+    "title": "Result 00573 — practical guide",
+    "snippet": "agent budget response (entry 573)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00573"
+  },
+  {
+    "title": "Result 00574 — overview introduction",
+    "snippet": "cache pagination cache (entry 574)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00574"
+  },
+  {
+    "title": "Result 00575 — guide reference",
+    "snippet": "pagination summary ordinal (entry 575)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00575"
+  },
+  {
+    "title": "Result 00576 — tutorial analysis",
+    "snippet": "chunking search budget (entry 576)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00576"
+  },
+  {
+    "title": "Result 00577 — deep introduction",
+    "snippet": "deterministic indexing budget (entry 577)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00577"
+  },
+  {
+    "title": "Result 00578 — analysis dive",
+    "snippet": "budget pagination summary (entry 578)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00578"
+  },
+  {
+    "title": "Result 00579 — overview introduction",
+    "snippet": "retrieval tool indexing (entry 579)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00579"
+  },
+  {
+    "title": "Result 00580 — analysis overview",
+    "snippet": "agent cache search (entry 580)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00580"
+  },
+  {
+    "title": "Result 00581 — reference analysis",
+    "snippet": "partition summary indexing (entry 581)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00581"
+  },
+  {
+    "title": "Result 00582 — dive comparison",
+    "snippet": "budget budget partition (entry 582)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00582"
+  },
+  {
+    "title": "Result 00583 — dive guide",
+    "snippet": "deterministic budget pagination (entry 583)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00583"
+  },
+  {
+    "title": "Result 00584 — deep reference",
+    "snippet": "retrieval pagination pagination (entry 584)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00584"
+  },
+  {
+    "title": "Result 00585 — overview analysis",
+    "snippet": "budget agent chunking (entry 585)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00585"
+  },
+  {
+    "title": "Result 00586 — comparison comparison",
+    "snippet": "ordinal summary partition (entry 586)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00586"
+  },
+  {
+    "title": "Result 00587 — analysis overview",
+    "snippet": "summary ordinal response (entry 587)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00587"
+  },
+  {
+    "title": "Result 00588 — introduction comparison",
+    "snippet": "retrieval deterministic agent (entry 588)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00588"
+  },
+  {
+    "title": "Result 00589 — guide dive",
+    "snippet": "agent response partition (entry 589)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00589"
+  },
+  {
+    "title": "Result 00590 — reference tutorial",
+    "snippet": "deterministic chunking partition (entry 590)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00590"
+  },
+  {
+    "title": "Result 00591 — analysis practical",
+    "snippet": "deterministic summary cache (entry 591)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00591"
+  },
+  {
+    "title": "Result 00592 — practical deep",
+    "snippet": "deterministic cache pagination (entry 592)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00592"
+  },
+  {
+    "title": "Result 00593 — dive tutorial",
+    "snippet": "pagination deterministic agent (entry 593)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00593"
+  },
+  {
+    "title": "Result 00594 — practical practical",
+    "snippet": "chunking deterministic pagination (entry 594)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00594"
+  },
+  {
+    "title": "Result 00595 — guide dive",
+    "snippet": "summary agent summary (entry 595)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00595"
+  },
+  {
+    "title": "Result 00596 — deep practical",
+    "snippet": "retrieval summary partition (entry 596)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00596"
+  },
+  {
+    "title": "Result 00597 — dive introduction",
+    "snippet": "agent indexing budget (entry 597)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00597"
+  },
+  {
+    "title": "Result 00598 — analysis comparison",
+    "snippet": "pagination partition agent (entry 598)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00598"
+  },
+  {
+    "title": "Result 00599 — practical overview",
+    "snippet": "partition search budget (entry 599)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00599"
+  },
+  {
+    "title": "Result 00600 — comparison comparison",
+    "snippet": "chunking indexing response (entry 600)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00600"
+  },
+  {
+    "title": "Result 00601 — introduction dive",
+    "snippet": "partition tool budget (entry 601)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00601"
+  },
+  {
+    "title": "Result 00602 — practical overview",
+    "snippet": "retrieval ordinal response (entry 602)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00602"
+  },
+  {
+    "title": "Result 00603 — guide deep",
+    "snippet": "retrieval summary search (entry 603)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00603"
+  },
+  {
+    "title": "Result 00604 — dive tutorial",
+    "snippet": "indexing partition chunking (entry 604)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00604"
+  },
+  {
+    "title": "Result 00605 — tutorial introduction",
+    "snippet": "deterministic tool budget (entry 605)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00605"
+  },
+  {
+    "title": "Result 00606 — guide dive",
+    "snippet": "cache response response (entry 606)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00606"
+  },
+  {
+    "title": "Result 00607 — deep overview",
+    "snippet": "deterministic tool budget (entry 607)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00607"
+  },
+  {
+    "title": "Result 00608 — practical comparison",
+    "snippet": "partition retrieval summary (entry 608)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00608"
+  },
+  {
+    "title": "Result 00609 — comparison practical",
+    "snippet": "budget deterministic ordinal (entry 609)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00609"
+  },
+  {
+    "title": "Result 00610 — practical tutorial",
+    "snippet": "partition tool partition (entry 610)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00610"
+  },
+  {
+    "title": "Result 00611 — analysis reference",
+    "snippet": "deterministic search summary (entry 611)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00611"
+  },
+  {
+    "title": "Result 00612 — deep practical",
+    "snippet": "retrieval tool search (entry 612)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00612"
+  },
+  {
+    "title": "Result 00613 — analysis reference",
+    "snippet": "response budget search (entry 613)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00613"
+  },
+  {
+    "title": "Result 00614 — comparison overview",
+    "snippet": "response indexing agent (entry 614)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00614"
+  },
+  {
+    "title": "Result 00615 — reference dive",
+    "snippet": "retrieval agent pagination (entry 615)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00615"
+  },
+  {
+    "title": "Result 00616 — tutorial guide",
+    "snippet": "chunking agent chunking (entry 616)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00616"
+  },
+  {
+    "title": "Result 00617 — introduction overview",
+    "snippet": "retrieval budget chunking (entry 617)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00617"
+  },
+  {
+    "title": "Result 00618 — practical tutorial",
+    "snippet": "cache chunking chunking (entry 618)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00618"
+  },
+  {
+    "title": "Result 00619 — dive guide",
+    "snippet": "search chunking retrieval (entry 619)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00619"
+  },
+  {
+    "title": "Result 00620 — comparison reference",
+    "snippet": "retrieval cache budget (entry 620)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00620"
+  },
+  {
+    "title": "Result 00621 — guide analysis",
+    "snippet": "cache chunking tool (entry 621)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00621"
+  },
+  {
+    "title": "Result 00622 — comparison reference",
+    "snippet": "deterministic ordinal summary (entry 622)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00622"
+  },
+  {
+    "title": "Result 00623 — tutorial dive",
+    "snippet": "agent pagination response (entry 623)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00623"
+  },
+  {
+    "title": "Result 00624 — dive overview",
+    "snippet": "retrieval cache cache (entry 624)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00624"
+  },
+  {
+    "title": "Result 00625 — introduction guide",
+    "snippet": "partition pagination ordinal (entry 625)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00625"
+  },
+  {
+    "title": "Result 00626 — reference dive",
+    "snippet": "indexing response partition (entry 626)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00626"
+  },
+  {
+    "title": "Result 00627 — practical deep",
+    "snippet": "deterministic budget chunking (entry 627)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00627"
+  },
+  {
+    "title": "Result 00628 — guide comparison",
+    "snippet": "chunking budget cache (entry 628)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00628"
+  },
+  {
+    "title": "Result 00629 — practical analysis",
+    "snippet": "partition agent cache (entry 629)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00629"
+  },
+  {
+    "title": "Result 00630 — introduction overview",
+    "snippet": "deterministic response ordinal (entry 630)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00630"
+  },
+  {
+    "title": "Result 00631 — comparison practical",
+    "snippet": "cache chunking summary (entry 631)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00631"
+  },
+  {
+    "title": "Result 00632 — practical comparison",
+    "snippet": "ordinal summary partition (entry 632)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00632"
+  },
+  {
+    "title": "Result 00633 — reference overview",
+    "snippet": "pagination indexing pagination (entry 633)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00633"
+  },
+  {
+    "title": "Result 00634 — tutorial analysis",
+    "snippet": "deterministic search agent (entry 634)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00634"
+  },
+  {
+    "title": "Result 00635 — guide guide",
+    "snippet": "indexing partition ordinal (entry 635)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00635"
+  },
+  {
+    "title": "Result 00636 — introduction comparison",
+    "snippet": "response retrieval indexing (entry 636)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00636"
+  },
+  {
+    "title": "Result 00637 — guide practical",
+    "snippet": "tool deterministic retrieval (entry 637)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00637"
+  },
+  {
+    "title": "Result 00638 — reference dive",
+    "snippet": "response summary search (entry 638)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00638"
+  },
+  {
+    "title": "Result 00639 — introduction practical",
+    "snippet": "retrieval ordinal cache (entry 639)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00639"
+  },
+  {
+    "title": "Result 00640 — reference comparison",
+    "snippet": "partition pagination summary (entry 640)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00640"
+  },
+  {
+    "title": "Result 00641 — dive overview",
+    "snippet": "summary budget cache (entry 641)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00641"
+  },
+  {
+    "title": "Result 00642 — analysis practical",
+    "snippet": "cache response ordinal (entry 642)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00642"
+  },
+  {
+    "title": "Result 00643 — tutorial overview",
+    "snippet": "summary tool agent (entry 643)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00643"
+  },
+  {
+    "title": "Result 00644 — tutorial comparison",
+    "snippet": "cache budget chunking (entry 644)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00644"
+  },
+  {
+    "title": "Result 00645 — overview dive",
+    "snippet": "budget response indexing (entry 645)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00645"
+  },
+  {
+    "title": "Result 00646 — dive practical",
+    "snippet": "cache indexing agent (entry 646)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00646"
+  },
+  {
+    "title": "Result 00647 — practical reference",
+    "snippet": "retrieval indexing cache (entry 647)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00647"
+  },
+  {
+    "title": "Result 00648 — tutorial deep",
+    "snippet": "chunking chunking partition (entry 648)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00648"
+  },
+  {
+    "title": "Result 00649 — practical overview",
+    "snippet": "retrieval summary budget (entry 649)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00649"
+  },
+  {
+    "title": "Result 00650 — overview tutorial",
+    "snippet": "ordinal summary deterministic (entry 650)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00650"
+  },
+  {
+    "title": "Result 00651 — analysis tutorial",
+    "snippet": "pagination budget pagination (entry 651)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00651"
+  },
+  {
+    "title": "Result 00652 — overview tutorial",
+    "snippet": "agent tool partition (entry 652)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00652"
+  },
+  {
+    "title": "Result 00653 — practical deep",
+    "snippet": "ordinal retrieval chunking (entry 653)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00653"
+  },
+  {
+    "title": "Result 00654 — dive comparison",
+    "snippet": "response ordinal search (entry 654)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00654"
+  },
+  {
+    "title": "Result 00655 — guide guide",
+    "snippet": "deterministic deterministic chunking (entry 655)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00655"
+  },
+  {
+    "title": "Result 00656 — practical guide",
+    "snippet": "chunking partition response (entry 656)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00656"
+  },
+  {
+    "title": "Result 00657 — reference tutorial",
+    "snippet": "agent search agent (entry 657)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00657"
+  },
+  {
+    "title": "Result 00658 — analysis reference",
+    "snippet": "search cache summary (entry 658)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00658"
+  },
+  {
+    "title": "Result 00659 — introduction introduction",
+    "snippet": "retrieval pagination partition (entry 659)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00659"
+  },
+  {
+    "title": "Result 00660 — tutorial deep",
+    "snippet": "chunking partition budget (entry 660)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00660"
+  },
+  {
+    "title": "Result 00661 — deep deep",
+    "snippet": "tool indexing response (entry 661)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00661"
+  },
+  {
+    "title": "Result 00662 — deep analysis",
+    "snippet": "cache indexing agent (entry 662)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00662"
+  },
+  {
+    "title": "Result 00663 — tutorial practical",
+    "snippet": "indexing ordinal chunking (entry 663)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00663"
+  },
+  {
+    "title": "Result 00664 — deep reference",
+    "snippet": "search deterministic search (entry 664)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00664"
+  },
+  {
+    "title": "Result 00665 — overview introduction",
+    "snippet": "budget pagination response (entry 665)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00665"
+  },
+  {
+    "title": "Result 00666 — comparison deep",
+    "snippet": "retrieval ordinal pagination (entry 666)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00666"
+  },
+  {
+    "title": "Result 00667 — comparison comparison",
+    "snippet": "response summary response (entry 667)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00667"
+  },
+  {
+    "title": "Result 00668 — guide dive",
+    "snippet": "budget indexing chunking (entry 668)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00668"
+  },
+  {
+    "title": "Result 00669 — practical overview",
+    "snippet": "tool agent cache (entry 669)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00669"
+  },
+  {
+    "title": "Result 00670 — guide practical",
+    "snippet": "agent cache budget (entry 670)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00670"
+  },
+  {
+    "title": "Result 00671 — practical reference",
+    "snippet": "deterministic partition retrieval (entry 671)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00671"
+  },
+  {
+    "title": "Result 00672 — tutorial analysis",
+    "snippet": "budget response response (entry 672)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00672"
+  },
+  {
+    "title": "Result 00673 — guide introduction",
+    "snippet": "tool agent ordinal (entry 673)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00673"
+  },
+  {
+    "title": "Result 00674 — reference practical",
+    "snippet": "summary search indexing (entry 674)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00674"
+  },
+  {
+    "title": "Result 00675 — comparison deep",
+    "snippet": "retrieval deterministic chunking (entry 675)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00675"
+  },
+  {
+    "title": "Result 00676 — deep deep",
+    "snippet": "agent cache budget (entry 676)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00676"
+  },
+  {
+    "title": "Result 00677 — introduction comparison",
+    "snippet": "partition agent deterministic (entry 677)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00677"
+  },
+  {
+    "title": "Result 00678 — deep practical",
+    "snippet": "tool partition chunking (entry 678)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00678"
+  },
+  {
+    "title": "Result 00679 — overview comparison",
+    "snippet": "indexing retrieval pagination (entry 679)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00679"
+  },
+  {
+    "title": "Result 00680 — introduction practical",
+    "snippet": "indexing search chunking (entry 680)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00680"
+  },
+  {
+    "title": "Result 00681 — guide guide",
+    "snippet": "agent tool ordinal (entry 681)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00681"
+  },
+  {
+    "title": "Result 00682 — introduction tutorial",
+    "snippet": "tool tool tool (entry 682)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00682"
+  },
+  {
+    "title": "Result 00683 — comparison tutorial",
+    "snippet": "retrieval deterministic pagination (entry 683)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00683"
+  },
+  {
+    "title": "Result 00684 — overview guide",
+    "snippet": "deterministic pagination chunking (entry 684)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00684"
+  },
+  {
+    "title": "Result 00685 — reference deep",
+    "snippet": "partition chunking cache (entry 685)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00685"
+  },
+  {
+    "title": "Result 00686 — practical deep",
+    "snippet": "partition pagination cache (entry 686)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00686"
+  },
+  {
+    "title": "Result 00687 — guide deep",
+    "snippet": "deterministic tool retrieval (entry 687)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00687"
+  },
+  {
+    "title": "Result 00688 — guide deep",
+    "snippet": "search deterministic ordinal (entry 688)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00688"
+  },
+  {
+    "title": "Result 00689 — guide comparison",
+    "snippet": "response summary response (entry 689)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00689"
+  },
+  {
+    "title": "Result 00690 — practical practical",
+    "snippet": "cache retrieval retrieval (entry 690)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00690"
+  },
+  {
+    "title": "Result 00691 — reference analysis",
+    "snippet": "budget response deterministic (entry 691)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00691"
+  },
+  {
+    "title": "Result 00692 — analysis practical",
+    "snippet": "indexing indexing summary (entry 692)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00692"
+  },
+  {
+    "title": "Result 00693 — overview analysis",
+    "snippet": "tool indexing chunking (entry 693)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00693"
+  },
+  {
+    "title": "Result 00694 — deep reference",
+    "snippet": "deterministic cache retrieval (entry 694)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00694"
+  },
+  {
+    "title": "Result 00695 — deep guide",
+    "snippet": "budget chunking tool (entry 695)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00695"
+  },
+  {
+    "title": "Result 00696 — deep overview",
+    "snippet": "indexing indexing ordinal (entry 696)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00696"
+  },
+  {
+    "title": "Result 00697 — guide reference",
+    "snippet": "cache budget deterministic (entry 697)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00697"
+  },
+  {
+    "title": "Result 00698 — deep overview",
+    "snippet": "retrieval tool tool (entry 698)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00698"
+  },
+  {
+    "title": "Result 00699 — reference analysis",
+    "snippet": "retrieval partition response (entry 699)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00699"
+  },
+  {
+    "title": "Result 00700 — overview comparison",
+    "snippet": "summary partition ordinal (entry 700)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00700"
+  },
+  {
+    "title": "Result 00701 — comparison practical",
+    "snippet": "retrieval indexing cache (entry 701)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00701"
+  },
+  {
+    "title": "Result 00702 — comparison deep",
+    "snippet": "indexing partition budget (entry 702)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00702"
+  },
+  {
+    "title": "Result 00703 — comparison dive",
+    "snippet": "partition indexing agent (entry 703)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00703"
+  },
+  {
+    "title": "Result 00704 — analysis reference",
+    "snippet": "search budget deterministic (entry 704)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00704"
+  },
+  {
+    "title": "Result 00705 — deep overview",
+    "snippet": "pagination cache ordinal (entry 705)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00705"
+  },
+  {
+    "title": "Result 00706 — analysis comparison",
+    "snippet": "deterministic tool deterministic (entry 706)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00706"
+  },
+  {
+    "title": "Result 00707 — comparison tutorial",
+    "snippet": "agent response ordinal (entry 707)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00707"
+  },
+  {
+    "title": "Result 00708 — practical deep",
+    "snippet": "ordinal cache response (entry 708)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00708"
+  },
+  {
+    "title": "Result 00709 — reference analysis",
+    "snippet": "chunking deterministic response (entry 709)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00709"
+  },
+  {
+    "title": "Result 00710 — dive guide",
+    "snippet": "budget ordinal partition (entry 710)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00710"
+  },
+  {
+    "title": "Result 00711 — practical reference",
+    "snippet": "pagination ordinal deterministic (entry 711)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00711"
+  },
+  {
+    "title": "Result 00712 — overview reference",
+    "snippet": "retrieval deterministic response (entry 712)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00712"
+  },
+  {
+    "title": "Result 00713 — reference deep",
+    "snippet": "partition indexing agent (entry 713)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00713"
+  },
+  {
+    "title": "Result 00714 — deep dive",
+    "snippet": "agent agent pagination (entry 714)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00714"
+  },
+  {
+    "title": "Result 00715 — guide analysis",
+    "snippet": "ordinal partition response (entry 715)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00715"
+  },
+  {
+    "title": "Result 00716 — overview guide",
+    "snippet": "search retrieval agent (entry 716)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00716"
+  },
+  {
+    "title": "Result 00717 — overview analysis",
+    "snippet": "partition partition tool (entry 717)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00717"
+  },
+  {
+    "title": "Result 00718 — tutorial comparison",
+    "snippet": "chunking budget partition (entry 718)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00718"
+  },
+  {
+    "title": "Result 00719 — guide comparison",
+    "snippet": "search partition indexing (entry 719)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00719"
+  },
+  {
+    "title": "Result 00720 — overview comparison",
+    "snippet": "chunking chunking indexing (entry 720)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00720"
+  },
+  {
+    "title": "Result 00721 — overview guide",
+    "snippet": "search response indexing (entry 721)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00721"
+  },
+  {
+    "title": "Result 00722 — practical comparison",
+    "snippet": "agent agent pagination (entry 722)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00722"
+  },
+  {
+    "title": "Result 00723 — tutorial overview",
+    "snippet": "agent chunking partition (entry 723)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00723"
+  },
+  {
+    "title": "Result 00724 — tutorial overview",
+    "snippet": "budget summary cache (entry 724)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00724"
+  },
+  {
+    "title": "Result 00725 — deep comparison",
+    "snippet": "retrieval budget deterministic (entry 725)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00725"
+  },
+  {
+    "title": "Result 00726 — introduction analysis",
+    "snippet": "partition response chunking (entry 726)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00726"
+  },
+  {
+    "title": "Result 00727 — reference comparison",
+    "snippet": "indexing partition indexing (entry 727)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00727"
+  },
+  {
+    "title": "Result 00728 — tutorial practical",
+    "snippet": "tool indexing search (entry 728)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00728"
+  },
+  {
+    "title": "Result 00729 — reference tutorial",
+    "snippet": "summary pagination pagination (entry 729)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00729"
+  },
+  {
+    "title": "Result 00730 — tutorial introduction",
+    "snippet": "summary partition partition (entry 730)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00730"
+  },
+  {
+    "title": "Result 00731 — analysis overview",
+    "snippet": "budget summary tool (entry 731)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00731"
+  },
+  {
+    "title": "Result 00732 — dive dive",
+    "snippet": "pagination ordinal indexing (entry 732)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00732"
+  },
+  {
+    "title": "Result 00733 — tutorial comparison",
+    "snippet": "deterministic pagination response (entry 733)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00733"
+  },
+  {
+    "title": "Result 00734 — comparison analysis",
+    "snippet": "partition budget ordinal (entry 734)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00734"
+  },
+  {
+    "title": "Result 00735 — reference dive",
+    "snippet": "partition search tool (entry 735)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00735"
+  },
+  {
+    "title": "Result 00736 — dive deep",
+    "snippet": "budget ordinal deterministic (entry 736)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00736"
+  },
+  {
+    "title": "Result 00737 — reference guide",
+    "snippet": "tool response response (entry 737)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00737"
+  },
+  {
+    "title": "Result 00738 — practical practical",
+    "snippet": "pagination partition deterministic (entry 738)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00738"
+  },
+  {
+    "title": "Result 00739 — introduction comparison",
+    "snippet": "indexing tool budget (entry 739)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00739"
+  },
+  {
+    "title": "Result 00740 — overview overview",
+    "snippet": "deterministic response indexing (entry 740)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00740"
+  },
+  {
+    "title": "Result 00741 — reference analysis",
+    "snippet": "indexing cache indexing (entry 741)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00741"
+  },
+  {
+    "title": "Result 00742 — comparison guide",
+    "snippet": "budget summary search (entry 742)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00742"
+  },
+  {
+    "title": "Result 00743 — dive guide",
+    "snippet": "search chunking ordinal (entry 743)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00743"
+  },
+  {
+    "title": "Result 00744 — reference reference",
+    "snippet": "pagination pagination summary (entry 744)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00744"
+  },
+  {
+    "title": "Result 00745 — introduction tutorial",
+    "snippet": "response agent budget (entry 745)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00745"
+  },
+  {
+    "title": "Result 00746 — practical tutorial",
+    "snippet": "retrieval chunking budget (entry 746)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00746"
+  },
+  {
+    "title": "Result 00747 — reference practical",
+    "snippet": "search tool tool (entry 747)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00747"
+  },
+  {
+    "title": "Result 00748 — deep tutorial",
+    "snippet": "ordinal budget search (entry 748)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00748"
+  },
+  {
+    "title": "Result 00749 — dive comparison",
+    "snippet": "ordinal cache ordinal (entry 749)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00749"
+  },
+  {
+    "title": "Result 00750 — introduction guide",
+    "snippet": "indexing retrieval search (entry 750)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00750"
+  },
+  {
+    "title": "Result 00751 — comparison analysis",
+    "snippet": "indexing search cache (entry 751)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00751"
+  },
+  {
+    "title": "Result 00752 — comparison deep",
+    "snippet": "deterministic chunking ordinal (entry 752)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00752"
+  },
+  {
+    "title": "Result 00753 — deep practical",
+    "snippet": "chunking ordinal cache (entry 753)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00753"
+  },
+  {
+    "title": "Result 00754 — guide dive",
+    "snippet": "pagination pagination retrieval (entry 754)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00754"
+  },
+  {
+    "title": "Result 00755 — comparison dive",
+    "snippet": "cache agent chunking (entry 755)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00755"
+  },
+  {
+    "title": "Result 00756 — guide reference",
+    "snippet": "ordinal retrieval search (entry 756)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00756"
+  },
+  {
+    "title": "Result 00757 — practical reference",
+    "snippet": "budget response chunking (entry 757)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00757"
+  },
+  {
+    "title": "Result 00758 — deep tutorial",
+    "snippet": "ordinal agent chunking (entry 758)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00758"
+  },
+  {
+    "title": "Result 00759 — reference guide",
+    "snippet": "cache ordinal cache (entry 759)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00759"
+  },
+  {
+    "title": "Result 00760 — dive overview",
+    "snippet": "deterministic partition tool (entry 760)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00760"
+  },
+  {
+    "title": "Result 00761 — reference reference",
+    "snippet": "chunking partition ordinal (entry 761)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00761"
+  },
+  {
+    "title": "Result 00762 — reference tutorial",
+    "snippet": "pagination tool ordinal (entry 762)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00762"
+  },
+  {
+    "title": "Result 00763 — introduction tutorial",
+    "snippet": "tool summary tool (entry 763)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00763"
+  },
+  {
+    "title": "Result 00764 — introduction reference",
+    "snippet": "tool retrieval summary (entry 764)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00764"
+  },
+  {
+    "title": "Result 00765 — comparison deep",
+    "snippet": "tool retrieval indexing (entry 765)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00765"
+  },
+  {
+    "title": "Result 00766 — comparison guide",
+    "snippet": "deterministic deterministic summary (entry 766)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00766"
+  },
+  {
+    "title": "Result 00767 — deep introduction",
+    "snippet": "retrieval summary retrieval (entry 767)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00767"
+  },
+  {
+    "title": "Result 00768 — overview guide",
+    "snippet": "indexing indexing tool (entry 768)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00768"
+  },
+  {
+    "title": "Result 00769 — analysis comparison",
+    "snippet": "ordinal tool agent (entry 769)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00769"
+  },
+  {
+    "title": "Result 00770 — practical practical",
+    "snippet": "retrieval summary pagination (entry 770)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00770"
+  },
+  {
+    "title": "Result 00771 — reference dive",
+    "snippet": "ordinal tool cache (entry 771)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00771"
+  },
+  {
+    "title": "Result 00772 — analysis introduction",
+    "snippet": "pagination summary retrieval (entry 772)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00772"
+  },
+  {
+    "title": "Result 00773 — practical guide",
+    "snippet": "chunking response tool (entry 773)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00773"
+  },
+  {
+    "title": "Result 00774 — practical deep",
+    "snippet": "indexing partition response (entry 774)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00774"
+  },
+  {
+    "title": "Result 00775 — tutorial deep",
+    "snippet": "deterministic ordinal tool (entry 775)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00775"
+  },
+  {
+    "title": "Result 00776 — reference analysis",
+    "snippet": "retrieval search budget (entry 776)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00776"
+  },
+  {
+    "title": "Result 00777 — introduction practical",
+    "snippet": "deterministic search indexing (entry 777)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00777"
+  },
+  {
+    "title": "Result 00778 — deep reference",
+    "snippet": "response response agent (entry 778)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00778"
+  },
+  {
+    "title": "Result 00779 — reference dive",
+    "snippet": "partition cache tool (entry 779)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00779"
+  },
+  {
+    "title": "Result 00780 — overview deep",
+    "snippet": "pagination tool tool (entry 780)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00780"
+  },
+  {
+    "title": "Result 00781 — introduction overview",
+    "snippet": "partition pagination retrieval (entry 781)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00781"
+  },
+  {
+    "title": "Result 00782 — comparison analysis",
+    "snippet": "response retrieval summary (entry 782)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00782"
+  },
+  {
+    "title": "Result 00783 — analysis analysis",
+    "snippet": "indexing response tool (entry 783)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00783"
+  },
+  {
+    "title": "Result 00784 — tutorial deep",
+    "snippet": "retrieval search tool (entry 784)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00784"
+  },
+  {
+    "title": "Result 00785 — overview analysis",
+    "snippet": "deterministic tool ordinal (entry 785)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00785"
+  },
+  {
+    "title": "Result 00786 — guide reference",
+    "snippet": "indexing ordinal pagination (entry 786)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00786"
+  },
+  {
+    "title": "Result 00787 — dive reference",
+    "snippet": "response agent budget (entry 787)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00787"
+  },
+  {
+    "title": "Result 00788 — overview introduction",
+    "snippet": "indexing chunking response (entry 788)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00788"
+  },
+  {
+    "title": "Result 00789 — dive reference",
+    "snippet": "pagination indexing tool (entry 789)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00789"
+  },
+  {
+    "title": "Result 00790 — practical tutorial",
+    "snippet": "tool summary partition (entry 790)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00790"
+  },
+  {
+    "title": "Result 00791 — overview comparison",
+    "snippet": "budget pagination agent (entry 791)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00791"
+  },
+  {
+    "title": "Result 00792 — guide analysis",
+    "snippet": "ordinal indexing summary (entry 792)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00792"
+  },
+  {
+    "title": "Result 00793 — tutorial dive",
+    "snippet": "chunking summary cache (entry 793)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00793"
+  },
+  {
+    "title": "Result 00794 — introduction deep",
+    "snippet": "summary search chunking (entry 794)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00794"
+  },
+  {
+    "title": "Result 00795 — dive introduction",
+    "snippet": "tool search tool (entry 795)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00795"
+  },
+  {
+    "title": "Result 00796 — deep comparison",
+    "snippet": "response tool chunking (entry 796)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00796"
+  },
+  {
+    "title": "Result 00797 — comparison guide",
+    "snippet": "ordinal budget partition (entry 797)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00797"
+  },
+  {
+    "title": "Result 00798 — dive introduction",
+    "snippet": "tool chunking partition (entry 798)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00798"
+  },
+  {
+    "title": "Result 00799 — overview comparison",
+    "snippet": "agent retrieval pagination (entry 799)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00799"
+  },
+  {
+    "title": "Result 00800 — tutorial reference",
+    "snippet": "budget chunking search (entry 800)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00800"
+  },
+  {
+    "title": "Result 00801 — guide overview",
+    "snippet": "ordinal deterministic chunking (entry 801)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00801"
+  },
+  {
+    "title": "Result 00802 — analysis overview",
+    "snippet": "deterministic tool retrieval (entry 802)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00802"
+  },
+  {
+    "title": "Result 00803 — guide tutorial",
+    "snippet": "ordinal deterministic retrieval (entry 803)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00803"
+  },
+  {
+    "title": "Result 00804 — analysis reference",
+    "snippet": "budget deterministic cache (entry 804)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00804"
+  },
+  {
+    "title": "Result 00805 — practical deep",
+    "snippet": "retrieval summary agent (entry 805)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00805"
+  },
+  {
+    "title": "Result 00806 — analysis introduction",
+    "snippet": "response search partition (entry 806)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00806"
+  },
+  {
+    "title": "Result 00807 — overview comparison",
+    "snippet": "partition response partition (entry 807)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00807"
+  },
+  {
+    "title": "Result 00808 — introduction analysis",
+    "snippet": "agent retrieval summary (entry 808)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00808"
+  },
+  {
+    "title": "Result 00809 — reference overview",
+    "snippet": "budget search pagination (entry 809)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00809"
+  },
+  {
+    "title": "Result 00810 — overview guide",
+    "snippet": "search summary search (entry 810)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00810"
+  },
+  {
+    "title": "Result 00811 — deep dive",
+    "snippet": "tool cache summary (entry 811)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00811"
+  },
+  {
+    "title": "Result 00812 — overview deep",
+    "snippet": "ordinal summary agent (entry 812)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00812"
+  },
+  {
+    "title": "Result 00813 — tutorial practical",
+    "snippet": "ordinal tool deterministic (entry 813)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00813"
+  },
+  {
+    "title": "Result 00814 — analysis practical",
+    "snippet": "pagination indexing deterministic (entry 814)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00814"
+  },
+  {
+    "title": "Result 00815 — reference reference",
+    "snippet": "ordinal chunking budget (entry 815)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00815"
+  },
+  {
+    "title": "Result 00816 — overview deep",
+    "snippet": "budget partition search (entry 816)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00816"
+  },
+  {
+    "title": "Result 00817 — practical overview",
+    "snippet": "cache partition cache (entry 817)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00817"
+  },
+  {
+    "title": "Result 00818 — analysis dive",
+    "snippet": "retrieval summary indexing (entry 818)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00818"
+  },
+  {
+    "title": "Result 00819 — analysis tutorial",
+    "snippet": "retrieval chunking ordinal (entry 819)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00819"
+  },
+  {
+    "title": "Result 00820 — dive dive",
+    "snippet": "response cache budget (entry 820)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00820"
+  },
+  {
+    "title": "Result 00821 — dive comparison",
+    "snippet": "ordinal deterministic budget (entry 821)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00821"
+  },
+  {
+    "title": "Result 00822 — introduction analysis",
+    "snippet": "retrieval search indexing (entry 822)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00822"
+  },
+  {
+    "title": "Result 00823 — guide overview",
+    "snippet": "chunking indexing budget (entry 823)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00823"
+  },
+  {
+    "title": "Result 00824 — dive comparison",
+    "snippet": "partition tool response (entry 824)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00824"
+  },
+  {
+    "title": "Result 00825 — reference analysis",
+    "snippet": "chunking tool ordinal (entry 825)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00825"
+  },
+  {
+    "title": "Result 00826 — guide tutorial",
+    "snippet": "deterministic cache agent (entry 826)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00826"
+  },
+  {
+    "title": "Result 00827 — deep guide",
+    "snippet": "budget deterministic pagination (entry 827)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00827"
+  },
+  {
+    "title": "Result 00828 — analysis introduction",
+    "snippet": "agent deterministic response (entry 828)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00828"
+  },
+  {
+    "title": "Result 00829 — dive tutorial",
+    "snippet": "summary pagination indexing (entry 829)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00829"
+  },
+  {
+    "title": "Result 00830 — reference dive",
+    "snippet": "summary chunking partition (entry 830)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00830"
+  },
+  {
+    "title": "Result 00831 — guide reference",
+    "snippet": "chunking indexing cache (entry 831)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00831"
+  },
+  {
+    "title": "Result 00832 — introduction reference",
+    "snippet": "response retrieval agent (entry 832)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00832"
+  },
+  {
+    "title": "Result 00833 — comparison dive",
+    "snippet": "tool indexing search (entry 833)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00833"
+  },
+  {
+    "title": "Result 00834 — deep overview",
+    "snippet": "search budget ordinal (entry 834)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00834"
+  },
+  {
+    "title": "Result 00835 — introduction comparison",
+    "snippet": "pagination retrieval budget (entry 835)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00835"
+  },
+  {
+    "title": "Result 00836 — reference tutorial",
+    "snippet": "pagination search search (entry 836)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00836"
+  },
+  {
+    "title": "Result 00837 — comparison practical",
+    "snippet": "cache pagination chunking (entry 837)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00837"
+  },
+  {
+    "title": "Result 00838 — reference dive",
+    "snippet": "ordinal agent search (entry 838)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00838"
+  },
+  {
+    "title": "Result 00839 — comparison reference",
+    "snippet": "ordinal chunking summary (entry 839)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00839"
+  },
+  {
+    "title": "Result 00840 — deep deep",
+    "snippet": "agent tool agent (entry 840)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00840"
+  },
+  {
+    "title": "Result 00841 — overview guide",
+    "snippet": "retrieval agent partition (entry 841)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00841"
+  },
+  {
+    "title": "Result 00842 — tutorial guide",
+    "snippet": "cache pagination cache (entry 842)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00842"
+  },
+  {
+    "title": "Result 00843 — reference overview",
+    "snippet": "pagination search indexing (entry 843)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00843"
+  },
+  {
+    "title": "Result 00844 — comparison overview",
+    "snippet": "tool agent pagination (entry 844)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00844"
+  },
+  {
+    "title": "Result 00845 — comparison introduction",
+    "snippet": "cache indexing indexing (entry 845)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00845"
+  },
+  {
+    "title": "Result 00846 — practical practical",
+    "snippet": "retrieval ordinal deterministic (entry 846)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00846"
+  },
+  {
+    "title": "Result 00847 — dive reference",
+    "snippet": "ordinal chunking search (entry 847)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00847"
+  },
+  {
+    "title": "Result 00848 — guide introduction",
+    "snippet": "budget tool retrieval (entry 848)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00848"
+  },
+  {
+    "title": "Result 00849 — practical dive",
+    "snippet": "budget summary tool (entry 849)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00849"
+  },
+  {
+    "title": "Result 00850 — analysis guide",
+    "snippet": "pagination tool search (entry 850)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00850"
+  },
+  {
+    "title": "Result 00851 — introduction deep",
+    "snippet": "cache search budget (entry 851)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00851"
+  },
+  {
+    "title": "Result 00852 — practical tutorial",
+    "snippet": "chunking deterministic pagination (entry 852)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00852"
+  },
+  {
+    "title": "Result 00853 — comparison practical",
+    "snippet": "search response pagination (entry 853)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00853"
+  },
+  {
+    "title": "Result 00854 — dive tutorial",
+    "snippet": "ordinal pagination deterministic (entry 854)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00854"
+  },
+  {
+    "title": "Result 00855 — comparison comparison",
+    "snippet": "deterministic partition tool (entry 855)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00855"
+  },
+  {
+    "title": "Result 00856 — deep analysis",
+    "snippet": "response budget summary (entry 856)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00856"
+  },
+  {
+    "title": "Result 00857 — tutorial practical",
+    "snippet": "retrieval chunking chunking (entry 857)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00857"
+  },
+  {
+    "title": "Result 00858 — deep deep",
+    "snippet": "retrieval summary chunking (entry 858)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00858"
+  },
+  {
+    "title": "Result 00859 — introduction guide",
+    "snippet": "budget indexing tool (entry 859)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00859"
+  },
+  {
+    "title": "Result 00860 — practical reference",
+    "snippet": "deterministic agent partition (entry 860)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00860"
+  },
+  {
+    "title": "Result 00861 — practical comparison",
+    "snippet": "indexing ordinal pagination (entry 861)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00861"
+  },
+  {
+    "title": "Result 00862 — guide overview",
+    "snippet": "summary ordinal ordinal (entry 862)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00862"
+  },
+  {
+    "title": "Result 00863 — tutorial comparison",
+    "snippet": "response chunking retrieval (entry 863)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00863"
+  },
+  {
+    "title": "Result 00864 — tutorial analysis",
+    "snippet": "agent budget indexing (entry 864)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00864"
+  },
+  {
+    "title": "Result 00865 — introduction guide",
+    "snippet": "summary partition agent (entry 865)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00865"
+  },
+  {
+    "title": "Result 00866 — analysis tutorial",
+    "snippet": "agent search retrieval (entry 866)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00866"
+  },
+  {
+    "title": "Result 00867 — introduction tutorial",
+    "snippet": "cache indexing budget (entry 867)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00867"
+  },
+  {
+    "title": "Result 00868 — deep dive",
+    "snippet": "cache indexing tool (entry 868)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00868"
+  },
+  {
+    "title": "Result 00869 — dive analysis",
+    "snippet": "chunking partition deterministic (entry 869)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00869"
+  },
+  {
+    "title": "Result 00870 — deep tutorial",
+    "snippet": "summary partition pagination (entry 870)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00870"
+  },
+  {
+    "title": "Result 00871 — analysis tutorial",
+    "snippet": "tool budget pagination (entry 871)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00871"
+  },
+  {
+    "title": "Result 00872 — analysis practical",
+    "snippet": "retrieval pagination cache (entry 872)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00872"
+  },
+  {
+    "title": "Result 00873 — practical analysis",
+    "snippet": "budget ordinal pagination (entry 873)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00873"
+  },
+  {
+    "title": "Result 00874 — dive guide",
+    "snippet": "response chunking chunking (entry 874)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00874"
+  },
+  {
+    "title": "Result 00875 — guide deep",
+    "snippet": "cache summary indexing (entry 875)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00875"
+  },
+  {
+    "title": "Result 00876 — introduction reference",
+    "snippet": "tool ordinal chunking (entry 876)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00876"
+  },
+  {
+    "title": "Result 00877 — analysis analysis",
+    "snippet": "chunking pagination agent (entry 877)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00877"
+  },
+  {
+    "title": "Result 00878 — tutorial comparison",
+    "snippet": "summary summary retrieval (entry 878)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00878"
+  },
+  {
+    "title": "Result 00879 — tutorial tutorial",
+    "snippet": "agent deterministic budget (entry 879)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00879"
+  },
+  {
+    "title": "Result 00880 — comparison reference",
+    "snippet": "summary search response (entry 880)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00880"
+  },
+  {
+    "title": "Result 00881 — deep comparison",
+    "snippet": "chunking partition pagination (entry 881)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00881"
+  },
+  {
+    "title": "Result 00882 — dive reference",
+    "snippet": "cache response deterministic (entry 882)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00882"
+  },
+  {
+    "title": "Result 00883 — dive deep",
+    "snippet": "agent search cache (entry 883)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00883"
+  },
+  {
+    "title": "Result 00884 — practical practical",
+    "snippet": "pagination search summary (entry 884)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00884"
+  },
+  {
+    "title": "Result 00885 — comparison overview",
+    "snippet": "summary budget budget (entry 885)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00885"
+  },
+  {
+    "title": "Result 00886 — tutorial introduction",
+    "snippet": "indexing chunking partition (entry 886)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00886"
+  },
+  {
+    "title": "Result 00887 — tutorial introduction",
+    "snippet": "partition budget chunking (entry 887)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00887"
+  },
+  {
+    "title": "Result 00888 — overview reference",
+    "snippet": "agent ordinal partition (entry 888)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00888"
+  },
+  {
+    "title": "Result 00889 — analysis tutorial",
+    "snippet": "ordinal search summary (entry 889)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00889"
+  },
+  {
+    "title": "Result 00890 — overview dive",
+    "snippet": "tool tool summary (entry 890)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00890"
+  },
+  {
+    "title": "Result 00891 — guide comparison",
+    "snippet": "retrieval cache search (entry 891)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00891"
+  },
+  {
+    "title": "Result 00892 — overview guide",
+    "snippet": "retrieval pagination budget (entry 892)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00892"
+  },
+  {
+    "title": "Result 00893 — dive comparison",
+    "snippet": "search deterministic search (entry 893)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00893"
+  },
+  {
+    "title": "Result 00894 — introduction analysis",
+    "snippet": "retrieval summary pagination (entry 894)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00894"
+  },
+  {
+    "title": "Result 00895 — deep dive",
+    "snippet": "chunking cache partition (entry 895)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00895"
+  },
+  {
+    "title": "Result 00896 — overview dive",
+    "snippet": "agent partition agent (entry 896)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00896"
+  },
+  {
+    "title": "Result 00897 — reference tutorial",
+    "snippet": "ordinal indexing indexing (entry 897)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00897"
+  },
+  {
+    "title": "Result 00898 — analysis guide",
+    "snippet": "summary cache response (entry 898)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00898"
+  },
+  {
+    "title": "Result 00899 — tutorial introduction",
+    "snippet": "summary cache cache (entry 899)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00899"
+  },
+  {
+    "title": "Result 00900 — deep comparison",
+    "snippet": "budget summary tool (entry 900)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00900"
+  },
+  {
+    "title": "Result 00901 — tutorial deep",
+    "snippet": "agent response pagination (entry 901)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00901"
+  },
+  {
+    "title": "Result 00902 — dive reference",
+    "snippet": "budget response summary (entry 902)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00902"
+  },
+  {
+    "title": "Result 00903 — reference practical",
+    "snippet": "chunking pagination deterministic (entry 903)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00903"
+  },
+  {
+    "title": "Result 00904 — analysis dive",
+    "snippet": "retrieval indexing budget (entry 904)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00904"
+  },
+  {
+    "title": "Result 00905 — deep comparison",
+    "snippet": "response cache summary (entry 905)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00905"
+  },
+  {
+    "title": "Result 00906 — overview introduction",
+    "snippet": "ordinal ordinal ordinal (entry 906)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00906"
+  },
+  {
+    "title": "Result 00907 — tutorial comparison",
+    "snippet": "deterministic chunking ordinal (entry 907)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00907"
+  },
+  {
+    "title": "Result 00908 — deep deep",
+    "snippet": "partition ordinal summary (entry 908)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00908"
+  },
+  {
+    "title": "Result 00909 — reference deep",
+    "snippet": "retrieval indexing agent (entry 909)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00909"
+  },
+  {
+    "title": "Result 00910 — comparison introduction",
+    "snippet": "deterministic agent agent (entry 910)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00910"
+  },
+  {
+    "title": "Result 00911 — reference introduction",
+    "snippet": "cache indexing retrieval (entry 911)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00911"
+  },
+  {
+    "title": "Result 00912 — reference dive",
+    "snippet": "response partition cache (entry 912)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00912"
+  },
+  {
+    "title": "Result 00913 — analysis deep",
+    "snippet": "partition search pagination (entry 913)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00913"
+  },
+  {
+    "title": "Result 00914 — dive introduction",
+    "snippet": "pagination deterministic partition (entry 914)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00914"
+  },
+  {
+    "title": "Result 00915 — tutorial dive",
+    "snippet": "summary cache search (entry 915)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00915"
+  },
+  {
+    "title": "Result 00916 — deep comparison",
+    "snippet": "search search retrieval (entry 916)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00916"
+  },
+  {
+    "title": "Result 00917 — practical comparison",
+    "snippet": "tool response indexing (entry 917)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00917"
+  },
+  {
+    "title": "Result 00918 — reference reference",
+    "snippet": "ordinal budget agent (entry 918)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00918"
+  },
+  {
+    "title": "Result 00919 — introduction tutorial",
+    "snippet": "deterministic deterministic partition (entry 919)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00919"
+  },
+  {
+    "title": "Result 00920 — introduction overview",
+    "snippet": "tool search tool (entry 920)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00920"
+  },
+  {
+    "title": "Result 00921 — comparison guide",
+    "snippet": "agent ordinal budget (entry 921)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00921"
+  },
+  {
+    "title": "Result 00922 — guide dive",
+    "snippet": "ordinal response budget (entry 922)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00922"
+  },
+  {
+    "title": "Result 00923 — overview reference",
+    "snippet": "search response pagination (entry 923)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00923"
+  },
+  {
+    "title": "Result 00924 — comparison guide",
+    "snippet": "pagination pagination chunking (entry 924)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00924"
+  },
+  {
+    "title": "Result 00925 — introduction practical",
+    "snippet": "indexing pagination summary (entry 925)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00925"
+  },
+  {
+    "title": "Result 00926 — reference comparison",
+    "snippet": "response cache indexing (entry 926)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00926"
+  },
+  {
+    "title": "Result 00927 — practical dive",
+    "snippet": "search response indexing (entry 927)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00927"
+  },
+  {
+    "title": "Result 00928 — dive introduction",
+    "snippet": "budget search budget (entry 928)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00928"
+  },
+  {
+    "title": "Result 00929 — guide guide",
+    "snippet": "agent pagination search (entry 929)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00929"
+  },
+  {
+    "title": "Result 00930 — analysis comparison",
+    "snippet": "response partition ordinal (entry 930)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00930"
+  },
+  {
+    "title": "Result 00931 — comparison analysis",
+    "snippet": "partition search ordinal (entry 931)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00931"
+  },
+  {
+    "title": "Result 00932 — dive introduction",
+    "snippet": "search pagination retrieval (entry 932)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00932"
+  },
+  {
+    "title": "Result 00933 — guide dive",
+    "snippet": "indexing agent ordinal (entry 933)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00933"
+  },
+  {
+    "title": "Result 00934 — deep overview",
+    "snippet": "pagination tool pagination (entry 934)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00934"
+  },
+  {
+    "title": "Result 00935 — introduction introduction",
+    "snippet": "summary partition ordinal (entry 935)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00935"
+  },
+  {
+    "title": "Result 00936 — reference analysis",
+    "snippet": "agent ordinal cache (entry 936)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00936"
+  },
+  {
+    "title": "Result 00937 — comparison guide",
+    "snippet": "response agent ordinal (entry 937)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00937"
+  },
+  {
+    "title": "Result 00938 — dive analysis",
+    "snippet": "ordinal retrieval indexing (entry 938)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00938"
+  },
+  {
+    "title": "Result 00939 — introduction introduction",
+    "snippet": "ordinal chunking chunking (entry 939)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00939"
+  },
+  {
+    "title": "Result 00940 — guide guide",
+    "snippet": "summary search cache (entry 940)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00940"
+  },
+  {
+    "title": "Result 00941 — analysis reference",
+    "snippet": "budget partition tool (entry 941)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00941"
+  },
+  {
+    "title": "Result 00942 — guide overview",
+    "snippet": "deterministic summary ordinal (entry 942)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00942"
+  },
+  {
+    "title": "Result 00943 — analysis practical",
+    "snippet": "cache indexing pagination (entry 943)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00943"
+  },
+  {
+    "title": "Result 00944 — introduction deep",
+    "snippet": "indexing summary retrieval (entry 944)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00944"
+  },
+  {
+    "title": "Result 00945 — introduction practical",
+    "snippet": "tool agent cache (entry 945)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00945"
+  },
+  {
+    "title": "Result 00946 — overview comparison",
+    "snippet": "summary search indexing (entry 946)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00946"
+  },
+  {
+    "title": "Result 00947 — analysis comparison",
+    "snippet": "partition response tool (entry 947)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00947"
+  },
+  {
+    "title": "Result 00948 — practical dive",
+    "snippet": "pagination pagination pagination (entry 948)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00948"
+  },
+  {
+    "title": "Result 00949 — dive guide",
+    "snippet": "retrieval agent agent (entry 949)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00949"
+  },
+  {
+    "title": "Result 00950 — dive tutorial",
+    "snippet": "indexing tool ordinal (entry 950)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00950"
+  },
+  {
+    "title": "Result 00951 — analysis practical",
+    "snippet": "response response ordinal (entry 951)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00951"
+  },
+  {
+    "title": "Result 00952 — dive practical",
+    "snippet": "search pagination deterministic (entry 952)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00952"
+  },
+  {
+    "title": "Result 00953 — analysis deep",
+    "snippet": "agent tool search (entry 953)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00953"
+  },
+  {
+    "title": "Result 00954 — comparison overview",
+    "snippet": "indexing ordinal deterministic (entry 954)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00954"
+  },
+  {
+    "title": "Result 00955 — practical practical",
+    "snippet": "search summary search (entry 955)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00955"
+  },
+  {
+    "title": "Result 00956 — practical analysis",
+    "snippet": "agent deterministic tool (entry 956)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00956"
+  },
+  {
+    "title": "Result 00957 — practical deep",
+    "snippet": "budget ordinal ordinal (entry 957)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00957"
+  },
+  {
+    "title": "Result 00958 — analysis introduction",
+    "snippet": "retrieval response chunking (entry 958)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00958"
+  },
+  {
+    "title": "Result 00959 — analysis tutorial",
+    "snippet": "pagination response pagination (entry 959)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00959"
+  },
+  {
+    "title": "Result 00960 — overview introduction",
+    "snippet": "tool summary retrieval (entry 960)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00960"
+  },
+  {
+    "title": "Result 00961 — analysis practical",
+    "snippet": "ordinal cache search (entry 961)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00961"
+  },
+  {
+    "title": "Result 00962 — comparison reference",
+    "snippet": "agent agent ordinal (entry 962)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00962"
+  },
+  {
+    "title": "Result 00963 — comparison guide",
+    "snippet": "agent cache agent (entry 963)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00963"
+  },
+  {
+    "title": "Result 00964 — analysis tutorial",
+    "snippet": "budget ordinal cache (entry 964)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00964"
+  },
+  {
+    "title": "Result 00965 — analysis dive",
+    "snippet": "pagination tool cache (entry 965)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00965"
+  },
+  {
+    "title": "Result 00966 — tutorial overview",
+    "snippet": "agent budget deterministic (entry 966)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00966"
+  },
+  {
+    "title": "Result 00967 — deep guide",
+    "snippet": "pagination pagination retrieval (entry 967)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00967"
+  },
+  {
+    "title": "Result 00968 — comparison tutorial",
+    "snippet": "chunking cache ordinal (entry 968)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00968"
+  },
+  {
+    "title": "Result 00969 — reference introduction",
+    "snippet": "retrieval summary budget (entry 969)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00969"
+  },
+  {
+    "title": "Result 00970 — analysis overview",
+    "snippet": "indexing pagination pagination (entry 970)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00970"
+  },
+  {
+    "title": "Result 00971 — analysis reference",
+    "snippet": "search agent retrieval (entry 971)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00971"
+  },
+  {
+    "title": "Result 00972 — dive practical",
+    "snippet": "indexing cache ordinal (entry 972)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00972"
+  },
+  {
+    "title": "Result 00973 — introduction analysis",
+    "snippet": "partition response budget (entry 973)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00973"
+  },
+  {
+    "title": "Result 00974 — analysis practical",
+    "snippet": "retrieval cache search (entry 974)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00974"
+  },
+  {
+    "title": "Result 00975 — comparison guide",
+    "snippet": "partition response cache (entry 975)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00975"
+  },
+  {
+    "title": "Result 00976 — introduction tutorial",
+    "snippet": "cache cache chunking (entry 976)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00976"
+  },
+  {
+    "title": "Result 00977 — dive guide",
+    "snippet": "ordinal response indexing (entry 977)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00977"
+  },
+  {
+    "title": "Result 00978 — guide dive",
+    "snippet": "chunking tool deterministic (entry 978)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00978"
+  },
+  {
+    "title": "Result 00979 — overview tutorial",
+    "snippet": "partition cache deterministic (entry 979)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00979"
+  },
+  {
+    "title": "Result 00980 — practical tutorial",
+    "snippet": "retrieval ordinal chunking (entry 980)",
+    "domain": "github.com",
+    "url": "https://github.com/posts/00980"
+  },
+  {
+    "title": "Result 00981 — comparison comparison",
+    "snippet": "summary indexing agent (entry 981)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00981"
+  },
+  {
+    "title": "Result 00982 — guide analysis",
+    "snippet": "agent search budget (entry 982)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00982"
+  },
+  {
+    "title": "Result 00983 — dive deep",
+    "snippet": "tool partition deterministic (entry 983)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00983"
+  },
+  {
+    "title": "Result 00984 — reference overview",
+    "snippet": "cache tool retrieval (entry 984)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00984"
+  },
+  {
+    "title": "Result 00985 — guide reference",
+    "snippet": "budget chunking agent (entry 985)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00985"
+  },
+  {
+    "title": "Result 00986 — guide comparison",
+    "snippet": "partition deterministic pagination (entry 986)",
+    "domain": "arxiv.org",
+    "url": "https://arxiv.org/posts/00986"
+  },
+  {
+    "title": "Result 00987 — tutorial introduction",
+    "snippet": "tool cache pagination (entry 987)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00987"
+  },
+  {
+    "title": "Result 00988 — dive tutorial",
+    "snippet": "chunking chunking pagination (entry 988)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00988"
+  },
+  {
+    "title": "Result 00989 — deep comparison",
+    "snippet": "pagination cache response (entry 989)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00989"
+  },
+  {
+    "title": "Result 00990 — tutorial tutorial",
+    "snippet": "agent search response (entry 990)",
+    "domain": "developer.mozilla.org",
+    "url": "https://developer.mozilla.org/posts/00990"
+  },
+  {
+    "title": "Result 00991 — introduction comparison",
+    "snippet": "partition summary deterministic (entry 991)",
+    "domain": "medium.com",
+    "url": "https://medium.com/posts/00991"
+  },
+  {
+    "title": "Result 00992 — practical dive",
+    "snippet": "partition agent deterministic (entry 992)",
+    "domain": "mdn.dev",
+    "url": "https://mdn.dev/posts/00992"
+  },
+  {
+    "title": "Result 00993 — introduction comparison",
+    "snippet": "summary chunking response (entry 993)",
+    "domain": "stackoverflow.com",
+    "url": "https://stackoverflow.com/posts/00993"
+  },
+  {
+    "title": "Result 00994 — practical tutorial",
+    "snippet": "budget search agent (entry 994)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00994"
+  },
+  {
+    "title": "Result 00995 — guide comparison",
+    "snippet": "search indexing partition (entry 995)",
+    "domain": "reddit.com",
+    "url": "https://reddit.com/posts/00995"
+  },
+  {
+    "title": "Result 00996 — tutorial guide",
+    "snippet": "partition tool ordinal (entry 996)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00996"
+  },
+  {
+    "title": "Result 00997 — reference reference",
+    "snippet": "ordinal retrieval ordinal (entry 997)",
+    "domain": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/posts/00997"
+  },
+  {
+    "title": "Result 00998 — overview comparison",
+    "snippet": "chunking chunking retrieval (entry 998)",
+    "domain": "wikipedia.org",
+    "url": "https://wikipedia.org/posts/00998"
+  },
+  {
+    "title": "Result 00999 — reference guide",
+    "snippet": "ordinal response search (entry 999)",
+    "domain": "example.com",
+    "url": "https://example.com/posts/00999"
+  }
+]
