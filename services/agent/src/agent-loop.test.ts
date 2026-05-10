@@ -25,6 +25,7 @@ import type {
 } from '@neo-search/contracts';
 import type { ToolRegistry } from '@neo-search/tools';
 import { createAgent, type SynthesisFn } from './index.js';
+import type { AgentLogger, AgentToolInvokedFields } from './index.js';
 import type { Clock } from './run-with-budget.js';
 
 // -----------------------------------------------------------------------------
@@ -833,5 +834,227 @@ describe('Response shape conforms to AgentSearchResponseContract', () => {
     expect(Array.isArray(response.value.references)).toBe(true);
     expect(Array.isArray(response.value.results)).toBe(true);
     expect(typeof response.value.pagination.page).toBe('number');
+  });
+});
+
+// =============================================================================
+// Review iteration 1 follow-ups (PR #14)
+// =============================================================================
+
+/**
+ * Capturing logger for log-shape assertions. Records every line emitted by
+ * the agent so we can assert the convention's `event` field is populated.
+ */
+const createCapturingLogger = (): {
+  readonly logger: AgentLogger;
+  readonly lines: ReadonlyArray<{
+    level: 'info' | 'warn' | 'error';
+    fields: AgentToolInvokedFields;
+  }>;
+} => {
+  const lines: { level: 'info' | 'warn' | 'error'; fields: AgentToolInvokedFields }[] = [];
+  return {
+    logger: {
+      log(level, fields) {
+        lines.push({ level, fields });
+      },
+    },
+    get lines() {
+      return lines;
+    },
+  };
+};
+
+describe('foundation/conventions.md "Logging": every agent log line carries event="agent.tool-invoked"', () => {
+  it('LIVE happy path → every emitted line has event === "agent.tool-invoked"', async () => {
+    const registry = createFakeRegistry({
+      'web-search': okResult<WebSearchOutputContract>({
+        results: [sampleCard(1)],
+        fetchedAt: '2026-05-10T12:00:00.000Z',
+        provider: 'tavily',
+      }),
+      'data-store': async (input): Promise<Result<DataStoreOutputContract, ToolErrorContract>> => {
+        const i = input as DataStoreInputContract;
+        if (i.op === 'cache.write') return okResult({ op: 'cache.write', chunkIds: ['c-1'] });
+        if (i.op === 'history.append') return okResult({ op: 'history.append', id: 'h-1' });
+        return errResult({ kind: 'terminal', message: `unexpected op: ${i.op}` });
+      },
+    });
+    const cap = createCapturingLogger();
+    const agent = createAgent({
+      registry,
+      synthesize: synthFake,
+      clock: passiveClock,
+      idGenerator: stableId,
+      now: stableNow,
+      logger: cap.logger,
+    });
+    await agent({ query: 'logged', sourceFilter: 'LIVE', page: 1, budgetMs: 10_000 }, liveSignal());
+    // The LIVE happy path emits at least one line per tool call (web-search,
+    // cache.write, history.append). Every one MUST carry event token.
+    expect(cap.lines.length).toBeGreaterThan(0);
+    for (const line of cap.lines) {
+      expect(line.fields.event).toBe('agent.tool-invoked');
+      expect(typeof line.fields.tool).toBe('string');
+      expect(typeof line.fields.outcome).toBe('string');
+      expect(typeof line.fields.attempt).toBe('number');
+      expect(typeof line.fields.elapsedMs).toBe('number');
+    }
+  });
+
+  it('a transient → final-failure log line also carries event="agent.tool-invoked"', async () => {
+    let calls = 0;
+    const registry = createFakeRegistry({
+      'web-search': async () => {
+        calls++;
+        return errResult({ kind: 'transient', message: `flake-${calls}` });
+      },
+      'data-store': async () => errResult({ kind: 'terminal', message: 'should not be called' }),
+    });
+    const cap = createCapturingLogger();
+    const agent = createAgent({
+      registry,
+      synthesize: synthFake,
+      clock: passiveClock,
+      idGenerator: stableId,
+      now: stableNow,
+      logger: cap.logger,
+    });
+    await agent({ query: 'flaky', sourceFilter: 'LIVE', page: 1, budgetMs: 10_000 }, liveSignal());
+    // Three transient attempts + one final-failure summary line.
+    expect(cap.lines.length).toBeGreaterThan(0);
+    for (const line of cap.lines) {
+      expect(line.fields.event).toBe('agent.tool-invoked');
+    }
+    // The "final" summary line MUST be present and tagged.
+    const finalLines = cap.lines.filter((l) => l.fields.note === 'final');
+    expect(finalLines.length).toBeGreaterThanOrEqual(1);
+    for (const f of finalLines) {
+      expect(f.fields.event).toBe('agent.tool-invoked');
+    }
+  });
+});
+
+describe('FR-023 / I-26: a thrown SynthesisFn surfaces as terminal across the API↔Agent seam (no rejected Promise)', () => {
+  // The reviewer (PR #14) flagged that synthesize(...) was called directly,
+  // not through the registry — so a thrown `SynthesisFn` would propagate as
+  // a rejected Promise, violating FR-023 / I-26. The agent function now wraps
+  // the closure body in a try/catch; this test locks that behavior.
+  it('a SynthesisFn that throws surfaces as { ok: false, error: { kind: "terminal" } }', async () => {
+    const registry = createFakeRegistry({
+      'web-search': okResult<WebSearchOutputContract>({
+        results: [sampleCard(1)],
+        fetchedAt: '2026-05-10T12:00:00.000Z',
+        provider: 'tavily',
+      }),
+      'data-store': async (input): Promise<Result<DataStoreOutputContract, ToolErrorContract>> => {
+        const i = input as DataStoreInputContract;
+        if (i.op === 'cache.write') return okResult({ op: 'cache.write', chunkIds: ['c-1'] });
+        if (i.op === 'history.append') return okResult({ op: 'history.append', id: 'h-1' });
+        return errResult({ kind: 'terminal', message: `unexpected op: ${i.op}` });
+      },
+    });
+    const throwingSynth: SynthesisFn = async () => {
+      throw new Error('synthesis exploded: model-unreachable');
+    };
+    const agent = buildAgent(registry, { synthesize: throwingSynth });
+    const response = await agent(
+      { query: 'kaboom', sourceFilter: 'LIVE', page: 1, budgetMs: 10_000 },
+      liveSignal(),
+    );
+    expect(response.ok).toBe(false);
+    if (response.ok) throw new Error('expected failure');
+    expect(response.error.kind).toBe('terminal');
+    expect(response.error.message).toMatch(/synthesis exploded/);
+    // The thrown Error MUST be preserved on `details` for forensics.
+    expect(response.error.details).toBeInstanceOf(Error);
+  });
+
+  it('a SynthesisFn that throws a non-Error value still surfaces as terminal (defensive)', async () => {
+    const registry = createFakeRegistry({
+      'web-search': okResult<WebSearchOutputContract>({
+        results: [sampleCard(1)],
+        fetchedAt: '2026-05-10T12:00:00.000Z',
+        provider: 'tavily',
+      }),
+      'data-store': async (input): Promise<Result<DataStoreOutputContract, ToolErrorContract>> => {
+        const i = input as DataStoreInputContract;
+        if (i.op === 'cache.write') return okResult({ op: 'cache.write', chunkIds: ['c-1'] });
+        if (i.op === 'history.append') return okResult({ op: 'history.append', id: 'h-1' });
+        return errResult({ kind: 'terminal', message: `unexpected op: ${i.op}` });
+      },
+    });
+    const throwingSynth: SynthesisFn = async () => {
+      throw 'string-thrown';
+    };
+    const agent = buildAgent(registry, { synthesize: throwingSynth });
+    const response = await agent(
+      { query: 'string-throw', sourceFilter: 'LIVE', page: 1, budgetMs: 10_000 },
+      liveSignal(),
+    );
+    expect(response.ok).toBe(false);
+    if (response.ok) throw new Error('expected failure');
+    expect(response.error.kind).toBe('terminal');
+    // We do NOT crash; the thrown string is preserved as `details`.
+    expect(response.error.details).toBe('string-thrown');
+  });
+
+  it('the agent function never returns a rejected Promise, even on synthesis throw', async () => {
+    const registry = createFakeRegistry({
+      'web-search': okResult<WebSearchOutputContract>({
+        results: [sampleCard(1)],
+        fetchedAt: '2026-05-10T12:00:00.000Z',
+        provider: 'tavily',
+      }),
+      'data-store': async (input): Promise<Result<DataStoreOutputContract, ToolErrorContract>> => {
+        const i = input as DataStoreInputContract;
+        if (i.op === 'cache.write') return okResult({ op: 'cache.write', chunkIds: ['c-1'] });
+        if (i.op === 'history.append') return okResult({ op: 'history.append', id: 'h-1' });
+        return errResult({ kind: 'terminal', message: `unexpected op: ${i.op}` });
+      },
+    });
+    const throwingSynth: SynthesisFn = async () => {
+      throw new Error('boom');
+    };
+    const agent = buildAgent(registry, { synthesize: throwingSynth });
+    // .resolves not .rejects — this is the API ↔ Agent seam guarantee.
+    await expect(
+      agent({ query: 'x', sourceFilter: 'LIVE', page: 1, budgetMs: 10_000 }, liveSignal()),
+    ).resolves.toMatchObject({ ok: false, error: { kind: 'terminal' } });
+  });
+});
+
+describe('package.json: @langchain/langgraph is NOT a runtime dependency (deviation locked)', () => {
+  // Locks the iteration-1 fix: the runtime dependency was removed because
+  // the agent is hand-rolled. The intentional deviation is documented at
+  // the top of `agent-loop.ts` citing FR-011 / NFR-006. If a future change
+  // wants to (re-)introduce LangGraph it MUST also update the deviation
+  // comment and reinstate the dep — this guard catches the silent variant.
+  const here = dirname(fileURLToPath(import.meta.url));
+  const pkg = JSON.parse(readFileSync(join(here, '..', 'package.json'), 'utf8')) as {
+    dependencies?: Record<string, string>;
+    devDependencies?: Record<string, string>;
+  };
+
+  it('package.json has no @langchain/langgraph dependency', () => {
+    expect(pkg.dependencies?.['@langchain/langgraph']).toBeUndefined();
+    expect(pkg.devDependencies?.['@langchain/langgraph']).toBeUndefined();
+  });
+
+  it('agent-loop.ts does not import @langchain/langgraph', () => {
+    const source = readFileSync(join(here, 'agent-loop.ts'), 'utf8');
+    expect(source).not.toMatch(/from\s+['"]@langchain\/langgraph['"]/);
+    expect(source).not.toMatch(/require\(['"]@langchain\/langgraph['"]\)/);
+  });
+
+  it('agent-loop.ts top-of-file comment cites FR-011 and NFR-006 for the deviation', () => {
+    const source = readFileSync(join(here, 'agent-loop.ts'), 'utf8');
+    const headerEnd = source.indexOf('*/');
+    const header = source.slice(0, headerEnd > 0 ? headerEnd : 4096);
+    // The deviation block MUST be in the file's leading TSDoc, not buried
+    // somewhere downstream.
+    expect(header).toMatch(/INTENTIONAL DEVIATION/);
+    expect(header).toMatch(/FR-011/);
+    expect(header).toMatch(/NFR-006/);
   });
 });

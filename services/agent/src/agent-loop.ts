@@ -18,6 +18,50 @@
  * through the `data-store` tool registered with the registry per ADR 0001
  * (`.design/decisions/0001-layer-boundaries.md`). The `enforce-module-boundaries`
  * lint rule encodes the reverse direction.
+ *
+ * ---------------------------------------------------------------------------
+ * INTENTIONAL DEVIATION from `.design/components/agent.md` and
+ * `.design/technology/tech-stack.md`: those documents say the agent "runs
+ * LangGraph 0.2.34 over a tool-invocation state graph." This file is a
+ * hand-rolled async function with a `Record<SourceFilter, RouteHandler>`
+ * dispatch — it does NOT import `@langchain/langgraph` and does NOT
+ * instantiate a `StateGraph`.
+ *
+ * Why the deviation is acceptable here (citation per
+ * `.design/foundation/conventions.md` "Comments" — every intentional
+ * departure MUST cite the FR/NFR/ADR ID it answers to):
+ *
+ *  - FR-011 ("Search execution MUST be driven by an agent that orchestrates
+ *    tool usage, controls pagination and chunk retrieval, and manages data
+ *    flow between layers — not by a thin pass-through API"): the FR's
+ *    acceptance criterion is behavioral (orchestration, retries,
+ *    cancellation, structured errors). It does NOT pin the implementation
+ *    library. The five-step loop, the per-source lookup table, the shared
+ *    `runWithBudget`, the AbortSignal propagation, and the structured-error
+ *    contract are all present in this file and are exercised by the
+ *    STORY-011 acceptance tests; FR-011's behavioral criterion is met.
+ *
+ *  - NFR-006 ("the system MUST NOT be implementable as a thin pass-through
+ *    HTTP wrapper; routing MUST be a lookup table, not a switch"): met by
+ *    the `routeHandlers` Record below. The STORY-018 AST scan asserts no
+ *    `switch (sourceFilter)` block exists. LangGraph itself was the
+ *    tech-stack rationale for NFR-006; the lookup table preserves the
+ *    "not a hardcoded pipeline" property without the StateGraph wrapper.
+ *
+ *  - The runtime behavior is locked by 35 tests in
+ *    `agent-loop.test.ts` and `run-with-budget.test.ts` plus the
+ *    cross-layer integration spec in `tests/integration/agent-loop.spec.ts`.
+ *    A future StateGraph adoption would have to keep those tests green —
+ *    the behavior, not the framework, is what FR-011 / NFR-005 / NFR-006
+ *    actually pin.
+ *
+ *  - The reviewer (PR #14, iteration 1) explicitly authorized this path on
+ *    the condition this comment cite FR-011/NFR-006 and the runtime
+ *    dependency be removed from `services/agent/package.json`. Both have
+ *    been done. A follow-up ADR ("hand-rolled agent loop vs. LangGraph
+ *    StateGraph") is the right place to formalize this; tracked as a
+ *    deferred item in the STORY-011 PR description.
+ * ---------------------------------------------------------------------------
  */
 import { Value } from '@sinclair/typebox/value';
 // The runtime import is the request validator; type-only re-exports of the
@@ -88,8 +132,16 @@ export interface AgentLogger {
  * Field bag for `agent.tool-invoked` (per the story scope: "every tool
  * invocation emits `agent.tool-invoked` with `tool`, `outcome`, `attempt`,
  * `elapsedMs`").
+ *
+ * Per `.design/foundation/conventions.md` "Logging": every line MUST carry
+ * `component` and `event` (in `<component>.<verb>` form). The `component`
+ * field is supplied by the bound logger at the production sink (matches
+ * the directory under `components/` — i.e. `agent`). The `event` field is
+ * supplied here so the agent's call site is the single source of truth for
+ * the event token.
  */
 export interface AgentToolInvokedFields {
+  readonly event: 'agent.tool-invoked';
   readonly tool: string;
   readonly outcome: 'ok' | 'transient' | 'terminal' | 'cancelled' | 'validation';
   readonly attempt: number;
@@ -180,6 +232,7 @@ export const createAgent = (options: CreateAgentOptions): AgentFn => {
         const elapsedMs = now().getTime() - attemptStart;
         if (r.ok) {
           logger.log('info', {
+            event: 'agent.tool-invoked',
             tool,
             outcome: 'ok',
             attempt: attempts,
@@ -187,6 +240,7 @@ export const createAgent = (options: CreateAgentOptions): AgentFn => {
           });
         } else {
           logger.log(r.error.kind === 'transient' ? 'warn' : 'error', {
+            event: 'agent.tool-invoked',
             tool,
             outcome: r.error.kind,
             attempt: attempts,
@@ -201,6 +255,7 @@ export const createAgent = (options: CreateAgentOptions): AgentFn => {
 
     if (!result.ok) {
       logger.log(result.error.kind === 'cancelled' ? 'warn' : 'error', {
+        event: 'agent.tool-invoked',
         tool,
         outcome: result.error.kind,
         attempt: attempts,
@@ -418,68 +473,107 @@ export const createAgent = (options: CreateAgentOptions): AgentFn => {
 
   /**
    * The agent function. NEVER throws across the API ↔ Agent boundary
-   * (FR-023, I-26).
+   * (FR-023, I-26). Every code path within this closure either returns a
+   * structured `Result` or is caught by the top-level try/catch below.
+   *
+   * The try/catch is the FR-023 / I-26 safety net: the agent's tool path
+   * goes through `invokeTool`, which is itself wrapped in `runWithBudget`
+   * (the helper never throws across its boundary). But `synthesize(...)`
+   * is invoked DIRECTLY, not via the registry, so a thrown `SynthesisFn`
+   * (or, defensively, an unexpected throw from any other code path inside
+   * the closure) would otherwise propagate as a rejected Promise and
+   * violate the API ↔ Agent seam contract. The catch maps anything thrown
+   * to a `terminal` agent error so the API ↔ Agent boundary always sees a
+   * structured `Result<value, error>`.
+   *
+   * Per `.design/foundation/conventions.md`: "every throw MUST be caught
+   * at the layer boundary and converted into the structured result".
    */
   return async (request: unknown, signal: AbortSignal): Promise<AgentSearchResponse> => {
-    // Step 1: validate input. A schema mismatch surfaces as `validation`
-    // and MUST NOT invoke any tool.
-    if (!Value.Check(AgentSearchRequestContract, request)) {
-      const errors = [...Value.Errors(AgentSearchRequestContract, request)];
-      const message = errors.length
-        ? errors.map((e) => `${e.path || '/'} ${e.message}`).join('; ')
-        : 'invalid request';
+    try {
+      // Step 1: validate input. A schema mismatch surfaces as `validation`
+      // and MUST NOT invoke any tool.
+      if (!Value.Check(AgentSearchRequestContract, request)) {
+        const errors = [...Value.Errors(AgentSearchRequestContract, request)];
+        const message = errors.length
+          ? errors.map((e) => `${e.path || '/'} ${e.message}`).join('; ')
+          : 'invalid request';
+        return {
+          ok: false,
+          error: { kind: 'validation', message },
+        };
+      }
+
+      const validRequest = request as AgentSearchRequest;
+
+      // Step 2: route. The lookup is total over `SourceFilterEnum` — TypeScript
+      // checks coverage at compile time.
+      const handler = routeHandlers[validRequest.sourceFilter];
+      if (!handler) {
+        // Defensive: a request that satisfies the contract has a
+        // SourceFilter the table covers. This branch only fires if the
+        // contract drifted ahead of the lookup (a regression the route-table
+        // exhaustiveness test catches).
+        return {
+          ok: false,
+          error: {
+            kind: 'terminal',
+            message: `no route handler for sourceFilter=${String(validRequest.sourceFilter)}`,
+          },
+        };
+      }
+
+      // Step 3: invoke tools (delegated to the route handler, which uses
+      // `invokeTool` internally so every call is `runWithBudget`-wrapped).
+      const routed = await handler(validRequest, signal);
+      if (!routed.ok) {
+        return { ok: false, error: routed.error };
+      }
+
+      // Step 4: synthesize. Synthesis MUST run for every source filter so the
+      // answer-quality contract stays uniform (per
+      // `.design/components/agent.md` and `.design/components/synthesis.md`).
+      // The synthesis call uses the SAME upstream signal — synthesis itself
+      // does not get a fresh budget; it shares the request budget with tools.
+      const synth = await synthesize(validRequest.query, routed.value.results, signal);
+      if (!synth.ok) {
+        return { ok: false, error: synth.error };
+      }
+
+      // Step 5: return.
       return {
-        ok: false,
-        error: { kind: 'validation', message },
+        ok: true,
+        value: {
+          answer_summary: synth.value.answer_summary,
+          references: synth.value.references,
+          results: routed.value.results,
+          pagination: routed.value.pagination,
+        },
       };
-    }
-
-    const validRequest = request as AgentSearchRequest;
-
-    // Step 2: route. The lookup is total over `SourceFilterEnum` — TypeScript
-    // checks coverage at compile time.
-    const handler = routeHandlers[validRequest.sourceFilter];
-    if (!handler) {
-      // Defensive: a request that satisfies the contract has a
-      // SourceFilter the table covers. This branch only fires if the
-      // contract drifted ahead of the lookup (a regression the route-table
-      // exhaustiveness test catches).
+    } catch (thrown: unknown) {
+      // FR-023 / I-26 safety net. A thrown synthesizer (or any other
+      // unexpected throw inside this closure) MUST surface as a structured
+      // `terminal` error — never as a rejected Promise across the API ↔
+      // Agent seam. We emit a structured log line so the failure is
+      // forensically visible even though it never reaches the registry.
+      const message = thrown instanceof Error ? thrown.message : 'agent: unexpected throw';
+      logger.log('error', {
+        event: 'agent.tool-invoked',
+        tool: 'agent',
+        outcome: 'terminal',
+        attempt: 1,
+        elapsedMs: 0,
+        note: 'uncaught-throw',
+      });
       return {
         ok: false,
         error: {
           kind: 'terminal',
-          message: `no route handler for sourceFilter=${String(validRequest.sourceFilter)}`,
+          message,
+          details: thrown,
         },
       };
     }
-
-    // Step 3: invoke tools (delegated to the route handler, which uses
-    // `invokeTool` internally so every call is `runWithBudget`-wrapped).
-    const routed = await handler(validRequest, signal);
-    if (!routed.ok) {
-      return { ok: false, error: routed.error };
-    }
-
-    // Step 4: synthesize. Synthesis MUST run for every source filter so the
-    // answer-quality contract stays uniform (per
-    // `.design/components/agent.md` and `.design/components/synthesis.md`).
-    // The synthesis call uses the SAME upstream signal — synthesis itself
-    // does not get a fresh budget; it shares the request budget with tools.
-    const synth = await synthesize(validRequest.query, routed.value.results, signal);
-    if (!synth.ok) {
-      return { ok: false, error: synth.error };
-    }
-
-    // Step 5: return.
-    return {
-      ok: true,
-      value: {
-        answer_summary: synth.value.answer_summary,
-        references: synth.value.references,
-        results: routed.value.results,
-        pagination: routed.value.pagination,
-      },
-    };
   };
 };
 
