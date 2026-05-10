@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/ui-tokens/src",
   "projectType": "library",
+  "tags": ["layer:shared"],
   "targets": {
     "build": {
       "executor": "nx:run-commands",

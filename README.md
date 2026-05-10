@@ -83,6 +83,55 @@ fixture-based tests cover the failure-mode surface without a live key.
 - Nx `20.1.4`
 - Prettier `3.3.3`
 - ESLint `9.14.0` + `typescript-eslint` `8.13.0`
+- Vitest `2.1.4` + `@vitest/coverage-v8`
+- madge `8.0.0` (cycle check)
+- lefthook `1.8.2` (pre-commit)
 
 All dependency versions are pinned exactly. `^` and `~` ranges are forbidden by
-`.design/technology/tech-stack.md`.
+`.design/technology/tech-stack.md`. The `tools/lint/dependency-version-audit.test.ts`
+gate fails the build on any unpinned range.
+
+## Quality gates
+
+STORY-018 wires the structural gates listed in `.design/technology/testing.md`.
+Every gate runs in CI on push + PR and as part of the `pnpm pre-commit` hook
+where applicable. A red gate MUST NOT be bypassed by `--no-verify`.
+
+| Gate               | Command                                   | What it asserts                                                                                                                                                                                                                                                                                                    |
+| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Format             | `pnpm format`                             | Prettier reports zero unformatted files.                                                                                                                                                                                                                                                                           |
+| Lint               | `pnpm lint`                               | ESLint passes. Includes Nx `@nx/enforce-module-boundaries` (FR-024 layer constraints), `no-restricted-syntax` (`*Contract` outside `@neo-search/contracts` per ADR 0002, inline hex outside `apps/ui/src` per NFR-002), `no-console` for production code, and the bare-`TODO:` rule (`foundation/conventions.md`). |
+| Type-check         | `pnpm type-check`                         | `tsc --noEmit` across every package via `nx run-many`.                                                                                                                                                                                                                                                             |
+| Cycle check        | `pnpm madge`                              | `madge --circular --extensions ts,tsx apps services packages` exits 0 (I-20).                                                                                                                                                                                                                                      |
+| Unit + integration | `pnpm test`                               | Full Vitest suite passes. Includes the `tools/lint/*.test.ts` structural guards: AST scans for hardcoded flows (NFR-006), repo-grep for forbidden user-id columns (NFR-006 / OQ-005), boundary-lint integration tests, the FR/NFR test-name presence audit, and the dependency-version audit.                      |
+| Coverage           | `pnpm coverage`                           | `vitest run --coverage`; ≥ 80% lines/functions/statements (and ≥ 70% branches) on `services/agent`, `packages/contracts`, `packages/data-*`, `packages/tools*`. UI coverage is intentionally not gated — Playwright (STORY-019) covers UI behavior.                                                                |
+| Contract tests     | `pnpm exec vitest run packages/contracts` | Every FR-021 boundary contract validates its example payload (ties STORY-002's contract tests to CI).                                                                                                                                                                                                              |
+| Pre-commit         | `pnpm pre-commit`                         | Lefthook runs `prettier --check`, `eslint --max-warnings=0`, and `vitest run --changed` on staged files.                                                                                                                                                                                                           |
+| All-in-one local   | `pnpm gates`                              | Runs format → lint → type-check → madge → test → coverage in sequence; matches CI's failure points.                                                                                                                                                                                                                |
+
+### Boundary lint (`@nx/enforce-module-boundaries`)
+
+Every package's `project.json` carries a `tags` entry:
+
+| Tag            | Packages                                                                   | May import                                       |
+| -------------- | -------------------------------------------------------------------------- | ------------------------------------------------ |
+| `layer:ui`     | `apps/ui`                                                                  | `layer:shared`                                   |
+| `layer:api`    | `services/api`                                                             | `layer:agent`, `layer:shared`                    |
+| `layer:agent`  | `services/agent`                                                           | `layer:tools`, `layer:shared` (NOT `layer:data`) |
+| `layer:tools`  | `packages/tools`, `packages/tools-web-search`, `packages/tools-data-store` | `layer:tools`, `layer:data`, `layer:shared`      |
+| `layer:data`   | `packages/data-history`, `packages/data-bookmarks`, `packages/data-cache`  | `layer:shared`                                   |
+| `layer:shared` | `packages/contracts`, `packages/ui-tokens`, `packages/test-fixtures`       | `layer:shared`                                   |
+
+A new package added to the workspace MUST declare a `tags: ["layer:<name>"]` entry. The Nx rule fails lint on any cross-layer import that violates this matrix; see `.design/components/communication.md` "Edges that MUST NOT exist".
+
+The intra-`layer:tools` self-edge encodes Edge 5 of `.design/components/communication.md`: every tool handler (`@neo-search/tools-web-search`, `@neo-search/tools-data-store`) registers itself with the registry (`@neo-search/tools`) via `defineTool`. Both packages live in `layer:tools`; the cross-layer prohibitions (agent→data, ui→agent, etc.) still hold.
+
+The Nx rule reads its constraints from a cached project graph. CI warms the
+graph with `pnpm exec nx show projects --json` before lint and test runs;
+locally, the graph is warmed automatically the first time you run any `nx`
+command. If `pnpm lint` reports `No cached ProjectGraph is available`, run
+`pnpm exec nx show projects --json` once and re-run.
+
+### FR / NFR test-name presence audit
+
+`tools/lint/fr-nfr-test-presence.test.ts` greps every `*.test.ts` / `*.spec.ts` for test names containing each FR-### / NFR-### ID under `.requirements/`. IDs whose owning story has not yet shipped tests are listed in `tools/lint/fr-nfr-test-presence.config.ts` `PENDING_IDS`; the audit fails on any pending entry that DOES have tests, forcing maintainers to remove the entry the moment the gating story lands.
