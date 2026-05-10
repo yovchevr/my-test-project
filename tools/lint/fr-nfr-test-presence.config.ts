@@ -49,27 +49,17 @@
  * owning story lands tests citing the ID.
  */
 export const PENDING_IDS: Record<string, string> = {
-  // Wave 5 — agent + tools
-  'FR-011': 'STORY-011 (agent orchestration loop)',
-  // STORY-009 shipped the web-search tool but did NOT cite NFR-005 in any test
-  // name (its retry-helper integration tests live in `packages/tools-web-search`
-  // but use AC-prose names rather than the NFR ID). Pending until either the
-  // tool's retry tests are renamed or STORY-011's `runWithBudget` lands tests
-  // citing NFR-005 directly.
-  'NFR-005': 'STORY-009 follow-up + STORY-011 (rename a retry test to cite NFR-005)',
+  // STORY-011 (wave 5/6) shipped tests citing FR-011, FR-013, FR-022, NFR-005:
+  //   - run-with-budget.test.ts cites NFR-005 (the five sub-cases) and FR-023.
+  //   - agent-loop.test.ts cites FR-013 (synthesis uniformity).
+  //   - tests/integration/agent-loop.spec.ts cites FR-011, FR-022, FR-023.
+  // Their entries have been removed from the pending list.
   // Wave 6 — synthesis
   'FR-007': 'STORY-013 (synthesis step)',
   'FR-008': 'STORY-013 (synthesis: grounded citations)',
-  'FR-013': 'STORY-013 (synthesis step)',
   // Wave 7 — UI cards / pagination
   'FR-004': 'STORY-016 (results list cards)',
   'FR-006': 'STORY-016 (pagination / progressive loading)',
   // STORY-008 (wave 5) shipped `packages/data-cache/src/large-set.spec.ts` whose
   // describe-block + test names cite NFR-003 — entry removed.
-  // Wave 1 — tool registry: STORY-003 shipped the registry but its test names
-  // cite "MCP-style tool registry" and the agent-tools spec cites FR-021/FR-023
-  // by name. Adding FR-022 to a test name is a STORY-003 follow-up; until then
-  // the registry's behavior is covered structurally by the lint guard
-  // (registry tests exist, they just don't grep for the FR ID by name).
-  'FR-022': 'STORY-003 follow-up (rename a registry test to cite FR-022)',
 };

@@ -214,9 +214,55 @@ importers:
         specifier: 3.4.14
         version: 3.4.14(ts-node@10.9.1(@types/node@22.9.0)(typescript@5.9.3))
 
-  services/agent: {}
+  services/agent:
+    dependencies:
+      '@neo-search/contracts':
+        specifier: workspace:*
+        version: link:../../packages/contracts
+      '@neo-search/tools':
+        specifier: workspace:*
+        version: link:../../packages/tools
+      '@neo-search/tools-data-store':
+        specifier: workspace:*
+        version: link:../../packages/tools-data-store
+      '@neo-search/tools-web-search':
+        specifier: workspace:*
+        version: link:../../packages/tools-web-search
+      '@sinclair/typebox':
+        specifier: 0.33.17
+        version: 0.33.17
 
   services/api: {}
+
+  tests/integration:
+    dependencies:
+      '@neo-search/agent':
+        specifier: workspace:*
+        version: link:../../services/agent
+      '@neo-search/contracts':
+        specifier: workspace:*
+        version: link:../../packages/contracts
+      '@neo-search/data-bookmarks':
+        specifier: workspace:*
+        version: link:../../packages/data-bookmarks
+      '@neo-search/data-cache':
+        specifier: workspace:*
+        version: link:../../packages/data-cache
+      '@neo-search/data-history':
+        specifier: workspace:*
+        version: link:../../packages/data-history
+      '@neo-search/tools':
+        specifier: workspace:*
+        version: link:../../packages/tools
+      '@neo-search/tools-data-store':
+        specifier: workspace:*
+        version: link:../../packages/tools-data-store
+      '@neo-search/tools-web-search':
+        specifier: workspace:*
+        version: link:../../packages/tools-web-search
+      '@sinclair/typebox':
+        specifier: 0.33.17
+        version: 0.33.17
 
 packages:
 

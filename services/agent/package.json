@@ -11,6 +11,14 @@
   "scripts": {
     "build": "tsc --noEmit -p tsconfig.json",
     "type-check": "tsc --noEmit -p tsconfig.json",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@neo-search/contracts": "workspace:*",
+    "@neo-search/tools": "workspace:*",
+    "@neo-search/tools-data-store": "workspace:*",
+    "@neo-search/tools-web-search": "workspace:*",
+    "@sinclair/typebox": "0.33.17"
   }
 }
