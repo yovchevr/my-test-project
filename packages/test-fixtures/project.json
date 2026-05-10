@@ -1,0 +1,34 @@
+{
+  "name": "test-fixtures",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/test-fixtures/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/test-fixtures",
+        "command": "tsc --noEmit -p tsconfig.json"
+      },
+      "cache": true,
+      "inputs": ["default", "^default"]
+    },
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/test-fixtures",
+        "command": "tsc --noEmit -p tsconfig.json"
+      },
+      "cache": true,
+      "inputs": ["default", "^default"]
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/test-fixtures",
+        "command": "eslint ."
+      },
+      "cache": true
+    }
+  }
+}

@@ -1,0 +1,14 @@
+node_modules
+dist
+build
+coverage
+.nx
+pnpm-lock.yaml
+
+# Governance / spec documents are owned by other agents and have their own
+# formatting conventions. Prettier MUST NOT rewrite them.
+.design/
+.requirements/
+.initiatives/
+.stories/
+.claude/

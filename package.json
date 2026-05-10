@@ -1,0 +1,31 @@
+{
+  "name": "@neo-search/monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.12.3",
+  "engines": {
+    "node": "22.11.0"
+  },
+  "scripts": {
+    "build": "nx run-many -t build",
+    "lint": "eslint .",
+    "format": "prettier --check .",
+    "format:write": "prettier --write .",
+    "test": "vitest run",
+    "type-check": "nx run-many -t type-check",
+    "clean": "nx reset && rm -rf node_modules **/node_modules **/dist **/build **/coverage"
+  },
+  "devDependencies": {
+    "@types/node": "22.9.0",
+    "@typescript-eslint/eslint-plugin": "8.13.0",
+    "@typescript-eslint/parser": "8.13.0",
+    "eslint": "9.14.0",
+    "globals": "15.12.0",
+    "nx": "20.1.4",
+    "prettier": "3.3.3",
+    "typescript": "5.6.3",
+    "typescript-eslint": "8.13.0",
+    "vitest": "2.1.4"
+  }
+}
