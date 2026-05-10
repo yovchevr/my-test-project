@@ -64,8 +64,8 @@ export const PENDING_IDS: Record<string, string> = {
   // Wave 7 — UI cards / pagination
   'FR-004': 'STORY-016 (results list cards)',
   'FR-006': 'STORY-016 (pagination / progressive loading)',
-  // Wave 4 — large result set capacity (this story sits in wave 4 alongside)
-  'NFR-003': 'STORY-008 (large-result-set capacity)',
+  // STORY-008 (wave 5) shipped `packages/data-cache/src/large-set.spec.ts` whose
+  // describe-block + test names cite NFR-003 — entry removed.
   // Wave 1 — tool registry: STORY-003 shipped the registry but its test names
   // cite "MCP-style tool registry" and the agent-tools spec cites FR-021/FR-023
   // by name. Adding FR-022 to a test name is a STORY-003 follow-up; until then
