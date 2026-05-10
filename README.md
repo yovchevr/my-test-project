@@ -55,6 +55,26 @@ Token values (palette, typography, spacing, cards, focus ring, breakpoints) live
 in `packages/ui-tokens/` and are consumed via the Tailwind preset; see
 `packages/ui-tokens/README.md` for the documented checklist (NFR-002).
 
+## Environment variables
+
+The agent and its tools read configuration from `process.env`. Each variable is
+optional unless a tool explicitly requires it; absent required keys surface as
+`terminal` tool errors per `.design/components/web-search-tool.md`.
+
+| Variable                         | Owner                                      | Required when                                | Purpose                                                                                                                                                                                                                                                      |
+| -------------------------------- | ------------------------------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `TAVILY_API_KEY`                 | `@neo-search/tools-web-search` (STORY-009) | running a `LIVE` search; STORY-019 smoke job | API key for the Tavily web-search provider (FR-012). Free tier suffices for prototype use. Get one at https://tavily.com. The unit + integration tests use a recorded fixture and DO NOT require this key; only the smoke E2E (STORY-019) hits the live API. |
+| `WEB_SEARCH_DEFAULT_MAX_RESULTS` | `@neo-search/tools-web-search` (STORY-009) | optional                                     | Override the default `maxResults` (50) when an input does not specify one. Bounded to `[1, 1000]` by `WebSearchInputContract`.                                                                                                                               |
+
+A typical local setup:
+
+```sh
+export TAVILY_API_KEY="tvly-xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+```
+
+CI does not export `TAVILY_API_KEY` for the unit/integration jobs; the
+fixture-based tests cover the failure-mode surface without a live key.
+
 ## Pinned tooling
 
 - Node `22.11.0`

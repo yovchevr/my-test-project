@@ -1,0 +1,37 @@
+{
+  "query": "what is the capital of france",
+  "follow_up_questions": null,
+  "answer": "The capital of France is Paris.",
+  "images": [],
+  "results": [
+    {
+      "title": "Paris - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Paris",
+      "content": "Paris is the capital and largest city of France. With an estimated population of 2,102,650 residents in January 2023 in an area of more than 105 km^2.",
+      "score": 0.97812,
+      "raw_content": null
+    },
+    {
+      "title": "France - The World Factbook",
+      "url": "https://www.cia.gov/the-world-factbook/countries/france/",
+      "content": "France's capital is Paris. France is a developed country with the world's seventh-largest economy by nominal figures.",
+      "score": 0.94531,
+      "raw_content": null
+    },
+    {
+      "title": "Paris | History, Map, Population, Facts, & Points of Interest",
+      "url": "https://www.britannica.com/place/Paris",
+      "content": "Paris, city and capital of France, situated in the north-central part of the country. People were living on the site of the present-day city by 7600 BCE.",
+      "score": 0.92118,
+      "raw_content": null
+    },
+    {
+      "title": "Visit Paris - Official Tourism Website",
+      "url": "https://en.parisinfo.com/",
+      "content": "The Paris Convention and Visitors Bureau presents the official guide for your stay in Paris: events, hotels, restaurants, sights and activities.",
+      "score": 0.88404,
+      "raw_content": null
+    }
+  ],
+  "response_time": 1.42
+}
