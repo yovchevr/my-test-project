@@ -7,3 +7,11 @@
  */
 export { AppShell } from './components/AppShell.js';
 export type { AppShellProps } from './components/AppShell.js';
+
+// STORY-015 — search controls + source-filter bar (FR-002, FR-003).
+export { SearchBar } from './components/SearchBar.js';
+export type { SearchBarProps } from './components/SearchBar.js';
+export { SourceFilterBar } from './components/SourceFilterBar.js';
+export type { SourceFilterBarProps } from './components/SourceFilterBar.js';
+export { SearchPanel } from './components/SearchPanel.js';
+export type { SearchPanelProps } from './components/SearchPanel.js';
