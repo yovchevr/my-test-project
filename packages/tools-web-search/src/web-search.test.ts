@@ -26,8 +26,25 @@
 import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { describe, expect, it, vi } from 'vitest';
-import { createWebSearchHandler, webSearchTool, type FetchLike, type EnvReader } from './index.js';
+import { beforeAll, describe, expect, it, vi } from 'vitest';
+import {
+  createWebSearchHandler,
+  registerWebSearchFormats,
+  resolveMaxResults,
+  webSearchTool,
+  type FetchLike,
+  type EnvReader,
+} from './index.js';
+
+// `WebSearchOutputContract` declares `format: "uri"` and `format: "date-time"`,
+// which TypeBox 0.33 treats as Check failures unless registered. Tests that
+// drive the handler to a successful `Value.Check` path (env-override,
+// clock-injection) need the formats live; failure-path tests don't, but
+// registering once at file-load is harmless and matches the composition
+// root pattern.
+beforeAll(() => {
+  registerWebSearchFormats();
+});
 
 // A small, well-formed body the handler accepts without complaint. Used as
 // the response payload for the no-throw success path so we can isolate the
@@ -313,7 +330,60 @@ describe('AC: tool registers itself with the registry under name: "web-search"',
 });
 
 describe('AC: handler honors WEB_SEARCH_DEFAULT_MAX_RESULTS env override', () => {
-  it('passes the env-supplied default to the provider when input does not specify maxResults', async () => {
+  // The env-override branch is reachable only when `input.maxResults` is
+  // missing or <= 0; the registry validates against the input contract
+  // (`maxResults: Type.Integer({ minimum: 1 })`) before the handler ever
+  // runs, so production traffic never hits it. Asserting the resolver
+  // directly via the exported `resolveMaxResults` seam keeps the test
+  // typed (no `as never` cast) and decouples it from the fetch-path
+  // plumbing — per the reviewer note on the prior round.
+  it('resolveMaxResults: explicit input wins over the env override', () => {
+    const result = resolveMaxResults(
+      { maxResults: 7 },
+      { TAVILY_API_KEY: 'k', WEB_SEARCH_DEFAULT_MAX_RESULTS: '17' },
+    );
+    expect(result).toBe(7);
+  });
+
+  it('resolveMaxResults: env override applies when input.maxResults is absent', () => {
+    const result = resolveMaxResults(
+      {} /* maxResults missing */,
+      { TAVILY_API_KEY: 'k', WEB_SEARCH_DEFAULT_MAX_RESULTS: '17' },
+    );
+    expect(result).toBe(17);
+  });
+
+  it('resolveMaxResults: env override applies when input.maxResults is <= 0', () => {
+    const result = resolveMaxResults(
+      { maxResults: 0 },
+      { TAVILY_API_KEY: 'k', WEB_SEARCH_DEFAULT_MAX_RESULTS: '17' },
+    );
+    expect(result).toBe(17);
+  });
+
+  it('resolveMaxResults: clamps env override outside [1, 1000] back to module default', () => {
+    expect(
+      resolveMaxResults({}, { TAVILY_API_KEY: 'k', WEB_SEARCH_DEFAULT_MAX_RESULTS: '0' }),
+    ).toBe(50);
+    expect(
+      resolveMaxResults({}, { TAVILY_API_KEY: 'k', WEB_SEARCH_DEFAULT_MAX_RESULTS: '1001' }),
+    ).toBe(50);
+    expect(
+      resolveMaxResults(
+        {},
+        { TAVILY_API_KEY: 'k', WEB_SEARCH_DEFAULT_MAX_RESULTS: 'not-a-number' },
+      ),
+    ).toBe(50);
+  });
+
+  it('resolveMaxResults: falls back to module default when neither input nor env supply a value', () => {
+    expect(resolveMaxResults({}, { TAVILY_API_KEY: 'k' })).toBe(50);
+  });
+
+  it('handler serializes the resolved max_results into the request body', async () => {
+    // Companion to the resolver-direct tests above: this asserts the
+    // resolver's output is what actually crosses the wire. Uses a valid
+    // input (no `as never`) so the input-contract path is honest.
     const seenBodies: string[] = [];
     const fakeFetch = makeFetch(async (_url, init) => {
       if (init?.body !== undefined && typeof init.body === 'string') seenBodies.push(init.body);
@@ -325,19 +395,118 @@ describe('AC: handler honors WEB_SEARCH_DEFAULT_MAX_RESULTS env override', () =>
     });
     const handler = createWebSearchHandler({
       fetch: fakeFetch,
-      env: { TAVILY_API_KEY: 'k', WEB_SEARCH_DEFAULT_MAX_RESULTS: '17' },
+      env: { TAVILY_API_KEY: 'k' },
     });
 
-    // Pass a maxResults of 0 / undefined-ish to fall through to the env
-    // override. The contract enforces minimum: 1, so we can't pass 0
-    // through the registry — but `createWebSearchHandler` is a direct seam
-    // and we want to assert the default-resolver branch. We pass a value
-    // outside the contract here precisely to force the env-override fork;
-    // production calls always come pre-validated by the registry per AC.
-    await handler({ query: 'x', maxResults: 0 } as never, new AbortController().signal);
+    await handler({ query: 'x', maxResults: 23 }, new AbortController().signal);
 
     expect(seenBodies).toHaveLength(1);
-    expect(seenBodies[0]).toContain('"max_results":17');
+    expect(seenBodies[0]).toContain('"max_results":23');
+  });
+});
+
+describe('API-key transport: key MUST travel only in the Authorization header, not the body', () => {
+  // Doubles the leakage surface to send the same secret in both places
+  // (request logs, error reports, upstream proxies that scrub headers
+  // but not bodies). Header-only is what the story scope spells out.
+  it('serializes the request body without an `api_key` field', async () => {
+    const seenBodies: string[] = [];
+    const seenAuth: (string | undefined)[] = [];
+    const fakeFetch = makeFetch(async (_url, init) => {
+      if (init?.body !== undefined && typeof init.body === 'string') seenBodies.push(init.body);
+      seenAuth.push(init?.headers?.['Authorization']);
+      return {
+        ok: true,
+        status: 200,
+        json: async () => validTavilyBody,
+      };
+    });
+    const handler = createWebSearchHandler({
+      fetch: fakeFetch,
+      env: { TAVILY_API_KEY: 'sek-ret' },
+    });
+
+    await handler({ query: 'q', maxResults: 5 }, new AbortController().signal);
+
+    expect(seenBodies).toHaveLength(1);
+    expect(seenBodies[0]).not.toContain('api_key');
+    expect(seenBodies[0]).not.toContain('sek-ret');
+    expect(seenAuth[0]).toBe('Bearer sek-ret');
+  });
+});
+
+describe('AC (Determinism): `fetchedAt` MUST be sourced from the injected clock', () => {
+  // `.design/foundation/conventions.md` Determinism rule: "Time and
+  // randomness MUST be injected (clock and RNG passed as constructor
+  // args or function parameters), not read directly from `Date.now()` /
+  // `Math.random()` inside business logic." `fetchedAt` is in the
+  // public output contract; the test pins the clock and asserts the
+  // exact ISO-8601 stamp.
+  it('uses the clock the caller passed (frozen instant)', async () => {
+    const frozen = new Date('2027-03-14T15:09:26.535Z');
+    const fakeFetch = makeFetch(async () => ({
+      ok: true,
+      status: 200,
+      json: async () => validTavilyBody,
+    }));
+    const handler = createWebSearchHandler({
+      fetch: fakeFetch,
+      env: { TAVILY_API_KEY: 'k' },
+      clock: () => frozen,
+    });
+
+    const result = await handler({ query: 'q', maxResults: 1 }, new AbortController().signal);
+
+    if (!result.ok) throw new Error(`expected success, got: ${JSON.stringify(result.error)}`);
+    expect(result.value.fetchedAt).toBe(frozen.toISOString());
+  });
+
+  it('reads the clock per-invocation (advances on the next call)', async () => {
+    // Asserts the clock is invoked freshly each request — not captured
+    // once at handler construction — so a long-lived handler stamps the
+    // current instant on each call.
+    let tick = 0;
+    const ticks = [new Date('2027-03-14T00:00:00.000Z'), new Date('2027-03-14T00:00:01.000Z')];
+    const fakeFetch = makeFetch(async () => ({
+      ok: true,
+      status: 200,
+      json: async () => validTavilyBody,
+    }));
+    const handler = createWebSearchHandler({
+      fetch: fakeFetch,
+      env: { TAVILY_API_KEY: 'k' },
+      clock: () => ticks[tick++ % ticks.length]!,
+    });
+
+    const a = await handler({ query: 'q', maxResults: 1 }, new AbortController().signal);
+    const b = await handler({ query: 'q', maxResults: 1 }, new AbortController().signal);
+
+    if (!a.ok || !b.ok) throw new Error('expected success');
+    expect(a.value.fetchedAt).toBe('2027-03-14T00:00:00.000Z');
+    expect(b.value.fetchedAt).toBe('2027-03-14T00:00:01.000Z');
+  });
+
+  it('defaults `clock` to wall-clock when caller omits it (parseable ISO-8601)', async () => {
+    const fakeFetch = makeFetch(async () => ({
+      ok: true,
+      status: 200,
+      json: async () => validTavilyBody,
+    }));
+    const handler = createWebSearchHandler({
+      fetch: fakeFetch,
+      env: { TAVILY_API_KEY: 'k' },
+      // clock omitted — should fall back to `() => new Date()`
+    });
+
+    const before = Date.now();
+    const result = await handler({ query: 'q', maxResults: 1 }, new AbortController().signal);
+    const after = Date.now();
+
+    if (!result.ok) throw new Error(`expected success, got: ${JSON.stringify(result.error)}`);
+    const stamped = Date.parse(result.value.fetchedAt);
+    expect(Number.isNaN(stamped)).toBe(false);
+    expect(stamped).toBeGreaterThanOrEqual(before);
+    expect(stamped).toBeLessThanOrEqual(after);
   });
 });
 

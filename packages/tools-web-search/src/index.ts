@@ -39,25 +39,48 @@ import { defineTool } from '@neo-search/tools';
 // compiler / value-check sources). The two formats this tool's output
 // contract uses — `uri` (`ResultCardContract.url`) and `date-time`
 // (`WebSearchOutputContract.fetchedAt`) — are NOT registered by default.
-// We register them here at module load so both `Value.Check` (this
-// handler's defensive validator) and the registry's `TypeCompiler.Compile`
-// validator agree on what counts as malformed.
+// Both `Value.Check` (this handler's defensive validator) and the
+// registry's `TypeCompiler.Compile` validator must agree on what counts
+// as malformed, which means a runtime format validator MUST be installed
+// before this handler runs.
 //
-// `FormatRegistry.Set` is idempotent: repeated calls silently overwrite,
-// so importing this module from multiple call sites is safe. The
-// production wire validator (Fastify, STORY-013) will additionally
-// register Ajv's full format suite — these shims are the floor.
+// We expose registration as an explicit, named, idempotent helper rather
+// than mutating the global TypeBox `FormatRegistry` at module-import
+// time. Import-time mutation makes the production-side import order
+// influence which validators are active for any other consumer of the
+// same TypeBox singleton. The contracts package keeps its analogous shim
+// gated the same way (see `packages/contracts/src/__tests__/formats.ts`'s
+// `registerFormats()`); this module mirrors that pattern.
 //
-// Patterns mirror the test-only shim in
-// `packages/contracts/src/__tests__/formats.ts` so the integration tier
-// and the unit tier agree on what "valid" looks like.
+// The composition root MUST call `registerWebSearchFormats()` once
+// before invoking the `web-search` tool. `createWebSearchHandler` does
+// NOT call it — the handler is constructed per-request in tests, and
+// each construction touching a global would be the same import-time
+// mutation in slower motion.
 const URI_PATTERN = /^[a-z][a-z0-9+\-.]*:\/\/[^\s/$.?#].[^\s]*$/i;
-if (!FormatRegistry.Has('uri')) {
-  FormatRegistry.Set('uri', (value) => URI_PATTERN.test(value));
-}
-if (!FormatRegistry.Has('date-time')) {
-  FormatRegistry.Set('date-time', (value) => !Number.isNaN(Date.parse(value)));
-}
+
+let formatsRegistered = false;
+
+/**
+ * Register the format validators (`uri`, `date-time`) the
+ * `WebSearchOutputContract` depends on, on the global TypeBox
+ * `FormatRegistry`. Idempotent: subsequent calls are no-ops.
+ *
+ * Call this once from the composition root that wires `webSearchTool`
+ * into the registry. Tests that exercise the validator-driven success
+ * path call this in setup; tests that exercise pure failure-shape
+ * surfaces (status codes, abort, missing API key) do not need it.
+ */
+export const registerWebSearchFormats = (): void => {
+  if (formatsRegistered) return;
+  formatsRegistered = true;
+  if (!FormatRegistry.Has('uri')) {
+    FormatRegistry.Set('uri', (value) => URI_PATTERN.test(value));
+  }
+  if (!FormatRegistry.Has('date-time')) {
+    FormatRegistry.Set('date-time', (value) => !Number.isNaN(Date.parse(value)));
+  }
+};
 
 /**
  * Tavily REST endpoint per `.design/technology/tech-stack.md`. Pinned as a
@@ -113,15 +136,27 @@ export interface EnvReader {
 }
 
 /**
- * Options accepted by `createWebSearchHandler`. Both fields are required on
- * the type so a caller MUST decide whether to bind production defaults
+ * Options accepted by `createWebSearchHandler`. `fetch` and `env` are
+ * required so a caller MUST decide whether to bind production defaults
  * (`undici.fetch`, `process.env`) or test stubs — there is no implicit
  * fallback inside this module that would make a misconfigured handler appear
  * to work in unit tests but fail in production.
+ *
+ * `clock` is the time injection seam mandated by
+ * `.design/foundation/conventions.md`'s Determinism rule: time MUST be
+ * injected, not read directly from `Date.now()` / `new Date()` inside
+ * business logic. The default is wall-clock; tests pin it to assert the
+ * `fetchedAt` field on the output contract.
  */
 export interface CreateWebSearchHandlerOptions {
   readonly fetch: FetchLike;
   readonly env: EnvReader;
+  /**
+   * Returns the wall-clock instant used to stamp `WebSearchOutputContract.fetchedAt`.
+   * Defaults to `() => new Date()`. Tests pass a fixed `Date` to make
+   * the output deterministic.
+   */
+  readonly clock?: () => Date;
 }
 
 const transient = (message: string, cause?: unknown): ToolErrorContract =>
@@ -197,8 +232,18 @@ const parseRow = (row: TavilyResultRow): ResultCardContract => {
  * `WEB_SEARCH_DEFAULT_MAX_RESULTS` env var (clamped to the contract's bounds);
  * otherwise the module default. The input contract has already validated the
  * input bounds before this handler runs (registry validates per STORY-003).
+ *
+ * Exported so the env-override branch can be tested directly without
+ * forcing an out-of-contract input through the handler. The input
+ * accepted here is intentionally narrower than `WebSearchInputContract`
+ * — the tests want to assert "what does the resolver do when no
+ * `maxResults` is supplied?" without pretending the registry would ever
+ * deliver such an input in production.
  */
-const resolveMaxResults = (input: WebSearchInputContract, env: EnvReader): number => {
+export const resolveMaxResults = (
+  input: { readonly maxResults?: number },
+  env: EnvReader,
+): number => {
   if (typeof input.maxResults === 'number' && input.maxResults > 0) return input.maxResults;
   const raw = env.WEB_SEARCH_DEFAULT_MAX_RESULTS;
   if (typeof raw === 'string' && raw.length > 0) {
@@ -226,7 +271,7 @@ const resolveMaxResults = (input: WebSearchInputContract, env: EnvReader): numbe
  *  - Body fails `WebSearchOutputContract` → terminal `malformed-provider-response`.
  */
 export const createWebSearchHandler = (options: CreateWebSearchHandlerOptions) => {
-  const { fetch, env } = options;
+  const { fetch, env, clock = () => new Date() } = options;
 
   return async (
     input: WebSearchInputContract,
@@ -251,8 +296,13 @@ export const createWebSearchHandler = (options: CreateWebSearchHandlerOptions) =
     }
 
     const maxResults = resolveMaxResults(input, env);
+    // Send the query body WITHOUT a duplicate `api_key` field. The key
+    // travels exclusively in the `Authorization: Bearer ...` header
+    // (the form the story scope calls for). Sending it in the body too
+    // would double the leakage surface (request logs, error reports,
+    // upstream proxies that scrub headers but not bodies) for no
+    // additional functional value.
     const requestBody = JSON.stringify({
-      api_key: apiKey,
       query: input.query,
       max_results: maxResults,
     });
@@ -264,10 +314,6 @@ export const createWebSearchHandler = (options: CreateWebSearchHandlerOptions) =
         body: requestBody,
         signal,
         headers: {
-          // Tavily accepts the key in the body for the `/search` endpoint;
-          // the Authorization header is also supported and is what the
-          // story scope spells out (`Authorization: ...`). We send both
-          // so a future Tavily-only-Authorization shift does not break us.
           Authorization: `Bearer ${apiKey}`,
           'Content-Type': 'application/json',
         },
@@ -324,7 +370,11 @@ export const createWebSearchHandler = (options: CreateWebSearchHandlerOptions) =
 
     const candidate: WebSearchOutputContract = {
       results,
-      fetchedAt: new Date().toISOString(),
+      // Read time through the injected `clock` per the Determinism rule
+      // in `.design/foundation/conventions.md`. The default
+      // `() => new Date()` preserves wall-clock production behavior;
+      // tests pin it to assert `fetchedAt` exactly.
+      fetchedAt: clock().toISOString(),
       provider: PROVIDER_NAME,
     };
 
@@ -345,18 +395,23 @@ export const createWebSearchHandler = (options: CreateWebSearchHandlerOptions) =
  * registry; tests build their own handlers via `createWebSearchHandler` so
  * they can inject stubs.
  *
- * The closure captures `process.env` by reference at call time (re-read on
- * every invocation), so an env var set after registration but before the
- * first invocation is observed correctly — this is what the AC for
+ * The two getters re-read `process.env` on every property access, so an
+ * env var set after registration but before the first invocation is
+ * observed correctly — this is what the AC for
  * "A handler invocation with no TAVILY_API_KEY env var MUST return
- * { kind: 'terminal', message: 'missing-api-key' }" requires.
+ * { kind: 'terminal', message: 'missing-api-key' }" requires. We use a
+ * plain object with explicit getters rather than a `Proxy` because the
+ * surface is exactly two known keys: a `Proxy` would advertise
+ * unbounded-key access the type does not actually support.
  */
-const defaultEnvReader: EnvReader = new Proxy({} as EnvReader, {
-  get: (_target, prop) => {
-    if (typeof prop !== 'string') return undefined;
-    return process.env[prop];
+const defaultEnvReader: EnvReader = {
+  get TAVILY_API_KEY() {
+    return process.env.TAVILY_API_KEY;
   },
-});
+  get WEB_SEARCH_DEFAULT_MAX_RESULTS() {
+    return process.env.WEB_SEARCH_DEFAULT_MAX_RESULTS;
+  },
+};
 
 const defaultHandler = createWebSearchHandler({
   fetch: undiciFetch as unknown as FetchLike,

@@ -16,11 +16,20 @@
 import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { describe, expect, it } from 'vitest';
+import { beforeAll, describe, expect, it } from 'vitest';
 import { Value } from '@sinclair/typebox/value';
 import { Type } from '@sinclair/typebox';
 import { ResultCardContract, WebSearchOutputContract } from '@neo-search/contracts';
-import { createWebSearchHandler, type FetchLike } from './index.js';
+import { createWebSearchHandler, registerWebSearchFormats, type FetchLike } from './index.js';
+
+// `WebSearchOutputContract` declares `format: "uri"` and `format:
+// "date-time"`. TypeBox 0.33 treats an unregistered format as a Check
+// failure, which would silently turn every "happy path" assertion into
+// `malformed-provider-response`. The composition root will call this in
+// production; tests register at file-load. Idempotent.
+beforeAll(() => {
+  registerWebSearchFormats();
+});
 
 const here = dirname(fileURLToPath(import.meta.url));
 
