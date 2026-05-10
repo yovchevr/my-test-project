@@ -1,5 +1,13 @@
 /**
- * `@neo-search/data-cache` — STORY-001 placeholder. Re-exports nothing yet; concrete shape lands in
- * a later wave story.
+ * `@neo-search/data-cache` — public surface.
+ *
+ * STORY-004 ships the deterministic chunker (FR-017, FR-019, ADR 0003).
+ * STORY-005 will add the SQLite-backed `SearchCache` that consumes it.
  */
-export {};
+export {
+  chunk,
+  DEFAULT_MAX_CHUNK_SIZE,
+  DEFAULT_OVERSIZE_BYTE_LIMIT,
+  type Chunk,
+  type ChunkOptions,
+} from './chunker.js';
