@@ -94,7 +94,11 @@ importers:
         specifier: 5.4.10
         version: 5.4.10(@types/node@22.9.0)
 
-  packages/contracts: {}
+  packages/contracts:
+    dependencies:
+      '@sinclair/typebox':
+        specifier: 0.33.17
+        version: 0.33.17
 
   packages/data-bookmarks: {}
 
@@ -910,6 +914,9 @@ packages:
 
   '@sinclair/typebox@0.27.10':
     resolution: {integrity: sha512-MTBk/3jGLNB2tVxv6uLlFh1iu64iYOQ2PbdOSK3NW8JZsmlaOh2q6sdtKowBhfw8QFLmYNzTW4/oK4uATIi6ZA==}
+
+  '@sinclair/typebox@0.33.17':
+    resolution: {integrity: sha512-75232GRx3wp3P7NP+yc4nRK3XUAnaQShxTAzapgmQrgs0QvSq0/mOJGoZXRpH15cFCKyys+4laCPbBselqJ5Ag==}
 
   '@testing-library/dom@10.4.1':
     resolution: {integrity: sha512-o4PXJQidqJl82ckFaXUeoAW+XysPLauYI43Abki5hABd853iMhitooc6znOnczgbTYmEP6U6/y1ZyKAIsvMKGg==}
@@ -3137,6 +3144,8 @@ snapshots:
     optional: true
 
   '@sinclair/typebox@0.27.10': {}
+
+  '@sinclair/typebox@0.33.17': {}
 
   '@testing-library/dom@10.4.1':
     dependencies:
