@@ -172,7 +172,26 @@ importers:
         specifier: 0.33.17
         version: 0.33.17
 
-  packages/tools-data-store: {}
+  packages/tools-data-store:
+    dependencies:
+      '@neo-search/contracts':
+        specifier: workspace:*
+        version: link:../contracts
+      '@neo-search/data-bookmarks':
+        specifier: workspace:*
+        version: link:../data-bookmarks
+      '@neo-search/data-cache':
+        specifier: workspace:*
+        version: link:../data-cache
+      '@neo-search/data-history':
+        specifier: workspace:*
+        version: link:../data-history
+      '@neo-search/tools':
+        specifier: workspace:*
+        version: link:../tools
+      '@sinclair/typebox':
+        specifier: 0.33.17
+        version: 0.33.17
 
   packages/tools-web-search:
     dependencies:
