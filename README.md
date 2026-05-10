@@ -55,6 +55,26 @@ Token values (palette, typography, spacing, cards, focus ring, breakpoints) live
 in `packages/ui-tokens/` and are consumed via the Tailwind preset; see
 `packages/ui-tokens/README.md` for the documented checklist (NFR-002).
 
+## Environment variables
+
+The agent and its tools read configuration from `process.env`. Each variable is
+optional unless a tool explicitly requires it; absent required keys surface as
+`terminal` tool errors per `.design/components/web-search-tool.md`.
+
+| Variable                         | Owner                                      | Required when                                | Purpose                                                                                                                                                                                                                                                      |
+| -------------------------------- | ------------------------------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `TAVILY_API_KEY`                 | `@neo-search/tools-web-search` (STORY-009) | running a `LIVE` search; STORY-019 smoke job | API key for the Tavily web-search provider (FR-012). Free tier suffices for prototype use. Get one at https://tavily.com. The unit + integration tests use a recorded fixture and DO NOT require this key; only the smoke E2E (STORY-019) hits the live API. |
+| `WEB_SEARCH_DEFAULT_MAX_RESULTS` | `@neo-search/tools-web-search` (STORY-009) | optional                                     | Override the default `maxResults` (50) when an input does not specify one. Bounded to `[1, 1000]` by `WebSearchInputContract`.                                                                                                                               |
+
+A typical local setup:
+
+```sh
+export TAVILY_API_KEY="tvly-xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+```
+
+CI does not export `TAVILY_API_KEY` for the unit/integration jobs; the
+fixture-based tests cover the failure-mode surface without a live key.
+
 ## Pinned tooling
 
 - Node `22.11.0`
@@ -98,11 +118,13 @@ Every package's `project.json` carries a `tags` entry:
 | `layer:ui`     | `apps/ui`                                                                  | `layer:shared`                                   |
 | `layer:api`    | `services/api`                                                             | `layer:agent`, `layer:shared`                    |
 | `layer:agent`  | `services/agent`                                                           | `layer:tools`, `layer:shared` (NOT `layer:data`) |
-| `layer:tools`  | `packages/tools`, `packages/tools-web-search`, `packages/tools-data-store` | `layer:data`, `layer:shared`                     |
+| `layer:tools`  | `packages/tools`, `packages/tools-web-search`, `packages/tools-data-store` | `layer:tools`, `layer:data`, `layer:shared`      |
 | `layer:data`   | `packages/data-history`, `packages/data-bookmarks`, `packages/data-cache`  | `layer:shared`                                   |
 | `layer:shared` | `packages/contracts`, `packages/ui-tokens`, `packages/test-fixtures`       | `layer:shared`                                   |
 
 A new package added to the workspace MUST declare a `tags: ["layer:<name>"]` entry. The Nx rule fails lint on any cross-layer import that violates this matrix; see `.design/components/communication.md` "Edges that MUST NOT exist".
+
+The intra-`layer:tools` self-edge encodes Edge 5 of `.design/components/communication.md`: every tool handler (`@neo-search/tools-web-search`, `@neo-search/tools-data-store`) registers itself with the registry (`@neo-search/tools`) via `defineTool`. Both packages live in `layer:tools`; the cross-layer prohibitions (agent→data, ui→agent, etc.) still hold.
 
 The Nx rule reads its constraints from a cached project graph. CI warms the
 graph with `pnpm exec nx show projects --json` before lint and test runs;

@@ -16,11 +16,15 @@
  *   - FR-007 summarized answer          → STORY-013 (wave 6)
  *   - FR-008 grounded citations         → STORY-013 (wave 6)
  *   - FR-011 agent orchestration        → STORY-011 (wave 5)
- *   - FR-012 live web search            → STORY-009 (wave 5)
  *   - FR-013 synthesis step             → STORY-013 (wave 6)
- *   - FR-020 indexing strategy doc      → STORY-005 (wave 3) — TODO check status
  *   - NFR-003 large-result-set capacity → STORY-008 (wave 4)
- *   - NFR-005 retry budget              → STORY-009 (wave 5)
+ *   - NFR-005 retry budget              → STORY-009 follow-up / STORY-011
+ *
+ * STORY-005 (wave 3) and STORY-009 (wave 5) shipped tests that cite their FR
+ * IDs in describe-block names; their entries have been removed from the pending
+ * list. NFR-005 stays pending: STORY-009 covered the retry semantics but its
+ * describe blocks use the AC prose ("MUST return transient ...") rather than
+ * the NFR-005 token.
  *
  * The story acceptance criterion is "every FR-001..FR-025, NFR-001..NFR-006
  * has at least one test name containing the ID." But the same story also
@@ -47,8 +51,12 @@
 export const PENDING_IDS: Record<string, string> = {
   // Wave 5 — agent + tools
   'FR-011': 'STORY-011 (agent orchestration loop)',
-  'FR-012': 'STORY-009 (web-search tool)',
-  'NFR-005': 'STORY-009 (retry helper) + STORY-011 (budget)',
+  // STORY-009 shipped the web-search tool but did NOT cite NFR-005 in any test
+  // name (its retry-helper integration tests live in `packages/tools-web-search`
+  // but use AC-prose names rather than the NFR ID). Pending until either the
+  // tool's retry tests are renamed or STORY-011's `runWithBudget` lands tests
+  // citing NFR-005 directly.
+  'NFR-005': 'STORY-009 follow-up + STORY-011 (rename a retry test to cite NFR-005)',
   // Wave 6 — synthesis
   'FR-007': 'STORY-013 (synthesis step)',
   'FR-008': 'STORY-013 (synthesis: grounded citations)',
@@ -58,9 +66,6 @@ export const PENDING_IDS: Record<string, string> = {
   'FR-006': 'STORY-016 (pagination / progressive loading)',
   // Wave 4 — large result set capacity (this story sits in wave 4 alongside)
   'NFR-003': 'STORY-008 (large-result-set capacity)',
-  // Wave 3 — indexing strategy doc + cache
-  'FR-016': 'STORY-005 (indexed search cache)',
-  'FR-020': 'STORY-005 (indexing strategy doc)',
   // Wave 1 — tool registry: STORY-003 shipped the registry but its test names
   // cite "MCP-style tool registry" and the agent-tools spec cites FR-021/FR-023
   // by name. Adding FR-022 to a test name is a STORY-003 follow-up; until then

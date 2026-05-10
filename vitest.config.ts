@@ -39,15 +39,15 @@ export default defineConfig({
         '**/*.spec.{ts,tsx}',
         '**/__tests__/**',
         '**/__fixtures__/**',
-        // The `services/agent/src/index.ts` and `packages/tools-{web-search,data-store}/src/index.ts`
-        // files are wave-1 placeholder barrels (`export {};`) — keeping them
-        // in the gated set with no covering tests blocks the threshold for
-        // packages that do not yet have implementation. Their coverage will
-        // tighten when the owning stories (STORY-009, STORY-010, STORY-011)
-        // ship.
+        // `services/agent/src/index.ts` and `packages/tools-data-store/src/index.ts`
+        // are wave-1 placeholder barrels (`export {};`) — keeping them in the
+        // gated set with no covering tests blocks the threshold for packages
+        // that do not yet have implementation. Their coverage tightens when
+        // the owning stories (STORY-010, STORY-011) ship.
+        // STORY-009 shipped real code in `tools-web-search/src/index.ts`, so
+        // it is now in the gated set and contributes its own coverage.
         'services/agent/src/index.ts',
         'packages/tools-data-store/src/index.ts',
-        'packages/tools-web-search/src/index.ts',
       ],
       thresholds: {
         lines: 80,

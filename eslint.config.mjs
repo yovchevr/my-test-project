@@ -61,10 +61,18 @@ export default tseslint.config(
   // NOT exist" set in `.design/components/communication.md`:
   //   layer:ui     → layer:shared
   //   layer:api    → layer:agent, layer:shared
-  //   layer:agent  → layer:tools, layer:shared          (NOT layer:data)
-  //   layer:tools  → layer:data, layer:shared
+  //   layer:agent  → layer:tools, layer:shared                       (NOT layer:data)
+  //   layer:tools  → layer:tools, layer:data, layer:shared
   //   layer:data   → layer:shared
   //   layer:shared → layer:shared
+  //
+  // The intra-`layer:tools` self-edge is required by `communication.md` Edge 5:
+  // every tool handler (`packages/tools-web-search`, `packages/tools-data-store`)
+  // MUST register itself with the registry (`packages/tools`) via `defineTool`.
+  // Tools and the registry both live in `layer:tools`. The forbidden edges
+  // (agent→data, ui→agent, etc.) are still encoded above; this self-edge does
+  // not relax any of them.
+  //
   // The rule fires only on TS/TSX source files (not on test or fixture files).
   {
     files: ['apps/**/*.{ts,tsx}', 'services/**/*.{ts,tsx}', 'packages/**/*.{ts,tsx}'],
@@ -87,7 +95,7 @@ export default tseslint.config(
             },
             {
               sourceTag: 'layer:tools',
-              onlyDependOnLibsWithTags: ['layer:data', 'layer:shared'],
+              onlyDependOnLibsWithTags: ['layer:tools', 'layer:data', 'layer:shared'],
             },
             { sourceTag: 'layer:data', onlyDependOnLibsWithTags: ['layer:shared'] },
             { sourceTag: 'layer:shared', onlyDependOnLibsWithTags: ['layer:shared'] },
