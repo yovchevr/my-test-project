@@ -153,7 +153,20 @@ importers:
 
   packages/tools-data-store: {}
 
-  packages/tools-web-search: {}
+  packages/tools-web-search:
+    dependencies:
+      '@neo-search/contracts':
+        specifier: workspace:*
+        version: link:../contracts
+      '@neo-search/tools':
+        specifier: workspace:*
+        version: link:../tools
+      '@sinclair/typebox':
+        specifier: 0.33.17
+        version: 0.33.17
+      undici:
+        specifier: 6.21.0
+        version: 6.21.0
 
   packages/ui-tokens:
     dependencies:
@@ -2457,6 +2470,10 @@ packages:
 
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+
+  undici@6.21.0:
+    resolution: {integrity: sha512-BUgJXc752Kou3oOIuU1i+yZZypyZRqNPW0vqoMPl8VaoalSfeR0D8/t4iAS3yirs79SSMTxTag+ZC86uswv+Cw==}
+    engines: {node: '>=18.17'}
 
   update-browserslist-db@1.2.3:
     resolution: {integrity: sha512-Js0m9cx+qOgDxo0eMiFGEueWztz+d4+M3rGlmKPT+T4IS/jP4ylw3Nwpu6cpTTP8R1MAC1kF4VbdLt3ARf209w==}
@@ -4832,6 +4849,8 @@ snapshots:
   typescript@5.6.3: {}
 
   undici-types@6.19.8: {}
+
+  undici@6.21.0: {}
 
   update-browserslist-db@1.2.3(browserslist@4.28.2):
     dependencies:
