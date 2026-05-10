@@ -113,13 +113,43 @@ importers:
         specifier: 7.6.12
         version: 7.6.12
 
-  packages/data-cache: {}
+  packages/data-cache:
+    dependencies:
+      '@neo-search/contracts':
+        specifier: workspace:*
+        version: link:../contracts
+    devDependencies:
+      '@neo-search/test-fixtures':
+        specifier: workspace:*
+        version: link:../test-fixtures
 
-  packages/data-history: {}
+  packages/data-history:
+    dependencies:
+      '@neo-search/contracts':
+        specifier: workspace:*
+        version: link:../contracts
+      better-sqlite3:
+        specifier: 11.5.0
+        version: 11.5.0
+    devDependencies:
+      '@types/better-sqlite3':
+        specifier: 7.6.11
+        version: 7.6.11
 
-  packages/test-fixtures: {}
+  packages/test-fixtures:
+    dependencies:
+      '@neo-search/contracts':
+        specifier: workspace:*
+        version: link:../contracts
 
-  packages/tools: {}
+  packages/tools:
+    dependencies:
+      '@neo-search/contracts':
+        specifier: workspace:*
+        version: link:../contracts
+      '@sinclair/typebox':
+        specifier: 0.33.17
+        version: 0.33.17
 
   packages/tools-data-store: {}
 
@@ -975,6 +1005,9 @@ packages:
 
   '@types/babel__traverse@7.28.0':
     resolution: {integrity: sha512-8PvcXf70gTDZBgt9ptxJ8elBeBjcLOAcOtoO/mPJjtji1+CdGbHgm77om1GrsPxsiE+uXIpNSK64UYaIwQXd4Q==}
+
+  '@types/better-sqlite3@7.6.11':
+    resolution: {integrity: sha512-i8KcD3PgGtGBLl3+mMYA8PdKkButvPyARxA7IQAd6qeslht13qxb1zzO8dRCtE7U3IoJS782zDBAeoKiM695kg==}
 
   '@types/better-sqlite3@7.6.12':
     resolution: {integrity: sha512-fnQmj8lELIj7BSrZQAdBMHEHX8OZLYIHXqAKT1O7tDfLxaINzf00PMjw22r3N/xXh0w/sGHlO6SVaCQ2mj78lg==}
@@ -3299,6 +3332,10 @@ snapshots:
   '@types/babel__traverse@7.28.0':
     dependencies:
       '@babel/types': 7.29.0
+
+  '@types/better-sqlite3@7.6.11':
+    dependencies:
+      '@types/node': 22.9.0
 
   '@types/better-sqlite3@7.6.12':
     dependencies:
