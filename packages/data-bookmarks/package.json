@@ -12,5 +12,12 @@
     "build": "tsc --noEmit -p tsconfig.json",
     "type-check": "tsc --noEmit -p tsconfig.json",
     "lint": "eslint ."
+  },
+  "dependencies": {
+    "@neo-search/contracts": "workspace:*",
+    "better-sqlite3": "11.5.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "7.6.12"
   }
 }
