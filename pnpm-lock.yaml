@@ -118,10 +118,16 @@ importers:
       '@neo-search/contracts':
         specifier: workspace:*
         version: link:../contracts
+      better-sqlite3:
+        specifier: 11.5.0
+        version: 11.5.0
     devDependencies:
       '@neo-search/test-fixtures':
         specifier: workspace:*
         version: link:../test-fixtures
+      '@types/better-sqlite3':
+        specifier: 7.6.11
+        version: 7.6.11
 
   packages/data-history:
     dependencies:
