@@ -14,9 +14,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@neo-search/contracts": "workspace:*"
+    "@neo-search/contracts": "workspace:*",
+    "better-sqlite3": "11.5.0"
   },
   "devDependencies": {
-    "@neo-search/test-fixtures": "workspace:*"
+    "@neo-search/test-fixtures": "workspace:*",
+    "@types/better-sqlite3": "7.6.11"
   }
 }
