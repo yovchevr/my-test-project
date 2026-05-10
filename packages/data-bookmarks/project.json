@@ -1,0 +1,34 @@
+{
+  "name": "data-bookmarks",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/data-bookmarks/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/data-bookmarks",
+        "command": "tsc --noEmit -p tsconfig.json"
+      },
+      "cache": true,
+      "inputs": ["default", "^default"]
+    },
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/data-bookmarks",
+        "command": "tsc --noEmit -p tsconfig.json"
+      },
+      "cache": true,
+      "inputs": ["default", "^default"]
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/data-bookmarks",
+        "command": "eslint ."
+      },
+      "cache": true
+    }
+  }
+}

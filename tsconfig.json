@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [],
+  "references": [
+    { "path": "./packages/contracts" },
+    { "path": "./packages/tools" },
+    { "path": "./packages/tools-web-search" },
+    { "path": "./packages/tools-data-store" },
+    { "path": "./packages/data-history" },
+    { "path": "./packages/data-bookmarks" },
+    { "path": "./packages/data-cache" },
+    { "path": "./packages/test-fixtures" },
+    { "path": "./packages/ui-tokens" },
+    { "path": "./services/api" },
+    { "path": "./services/agent" },
+    { "path": "./apps/ui" }
+  ]
+}
