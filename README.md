@@ -41,6 +41,20 @@ pnpm format
 These four commands are the wave-1 acceptance gate for STORY-001 and the first
 checkpoint for FR-025 ("runnable from a clean checkout").
 
+## Running the UI shell
+
+STORY-014 stands up the wave-2 UI shell in `apps/ui` (Vite + React + Tailwind +
+Radix). Boot the dev server and visit http://localhost:5173:
+
+```sh
+pnpm --filter @neo-search/ui dev
+```
+
+The dev server proxies `/api/*` to `http://localhost:3001` (the API service).
+Token values (palette, typography, spacing, cards, focus ring, breakpoints) live
+in `packages/ui-tokens/` and are consumed via the Tailwind preset; see
+`packages/ui-tokens/README.md` for the documented checklist (NFR-002).
+
 ## Pinned tooling
 
 - Node `22.11.0`

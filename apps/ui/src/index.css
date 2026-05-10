@@ -1,0 +1,8 @@
+/**
+ * Tailwind entry stylesheet for `apps/ui`. The three @tailwind directives are the
+ * documented Tailwind 3.x bootstrap. Custom values MUST come through the
+ * `@neo-search/ui-tokens` preset (loaded by `tailwind.config.ts`), not raw CSS here.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

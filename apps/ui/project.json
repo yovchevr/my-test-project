@@ -2,16 +2,23 @@
   "name": "ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/ui/src",
-  "projectType": "library",
+  "projectType": "application",
   "targets": {
     "build": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "apps/ui",
-        "command": "tsc --noEmit -p tsconfig.json"
+        "command": "vite build"
       },
       "cache": true,
       "inputs": ["default", "^default"]
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/ui",
+        "command": "vite"
+      }
     },
     "type-check": {
       "executor": "nx:run-commands",
