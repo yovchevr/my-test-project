@@ -61,19 +61,26 @@ The agent and its tools read configuration from `process.env`. Each variable is
 optional unless a tool explicitly requires it; absent required keys surface as
 `terminal` tool errors per `.design/components/web-search-tool.md`.
 
-| Variable                         | Owner                                      | Required when                                | Purpose                                                                                                                                                                                                                                                      |
-| -------------------------------- | ------------------------------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `TAVILY_API_KEY`                 | `@neo-search/tools-web-search` (STORY-009) | running a `LIVE` search; STORY-019 smoke job | API key for the Tavily web-search provider (FR-012). Free tier suffices for prototype use. Get one at https://tavily.com. The unit + integration tests use a recorded fixture and DO NOT require this key; only the smoke E2E (STORY-019) hits the live API. |
-| `WEB_SEARCH_DEFAULT_MAX_RESULTS` | `@neo-search/tools-web-search` (STORY-009) | optional                                     | Override the default `maxResults` (50) when an input does not specify one. Bounded to `[1, 1000]` by `WebSearchInputContract`.                                                                                                                               |
+| Variable                         | Owner                                      | Required when                                                             | Purpose                                                                                                                                                                                                                                                                                                                                        |
+| -------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `TAVILY_API_KEY`                 | `@neo-search/tools-web-search` (STORY-009) | running a `LIVE` search; STORY-019 smoke job                              | API key for the Tavily web-search provider (FR-012). Free tier suffices for prototype use. Get one at https://tavily.com. The unit + integration tests use a recorded fixture and DO NOT require this key; only the smoke E2E (STORY-019) hits the live API.                                                                                   |
+| `WEB_SEARCH_DEFAULT_MAX_RESULTS` | `@neo-search/tools-web-search` (STORY-009) | optional                                                                  | Override the default `maxResults` (50) when an input does not specify one. Bounded to `[1, 1000]` by `WebSearchInputContract`.                                                                                                                                                                                                                 |
+| `ANTHROPIC_API_KEY`              | `@neo-search/agent` synthesis (STORY-012)  | running any synthesis call against the live API; STORY-019 smoke job      | API key for the Anthropic SDK (FR-013). Required by the real `Anthropic` client constructed at the API composition root; STORY-019 is the smoke job that exercises the live model. Unit and integration tests build a fake `AnthropicLike` client and DO NOT depend on this var — only the STORY-019 smoke job sets it.                        |
+| `ANTHROPIC_MODEL`                | `@neo-search/agent` synthesis (STORY-012)  | running any synthesis call (live or fake) without an explicit `model` arg | Model identifier passed to `messages.create`. Per `.design/technology/tech-stack.md` ("The model ID is selected per-environment via env var; no model name MUST be hardcoded"), the synthesizer reads this when `createSynthesizer({ model })` is not supplied. Tests pass `model: 'claude-fake'` explicitly so they do not depend on the var. |
+| `ANTHROPIC_SYNTHESIS_PROMPT`     | `@neo-search/agent` synthesis (STORY-012)  | optional                                                                  | Override the baseline synthesis system prompt (`DEFAULT_SYNTHESIS_PROMPT` in `services/agent/src/synthesis/prompt.ts`). The composition root passes this through to `createSynthesizer({ prompt })` when set. Useful for prompt tuning without a code change.                                                                                  |
 
 A typical local setup:
 
 ```sh
 export TAVILY_API_KEY="tvly-xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+export ANTHROPIC_API_KEY="sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+export ANTHROPIC_MODEL="claude-3-5-sonnet-20241022"
 ```
 
-CI does not export `TAVILY_API_KEY` for the unit/integration jobs; the
-fixture-based tests cover the failure-mode surface without a live key.
+CI does not export `TAVILY_API_KEY` or `ANTHROPIC_API_KEY` for the
+unit/integration jobs; the fixture-based tests and the fake `AnthropicLike`
+client cover the failure-mode surface without a live key. Only the
+STORY-019 smoke job exports these vars and exercises the live APIs.
 
 ## Pinned tooling
 
