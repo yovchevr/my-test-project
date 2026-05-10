@@ -108,7 +108,14 @@ importers:
 
   packages/test-fixtures: {}
 
-  packages/tools: {}
+  packages/tools:
+    dependencies:
+      '@neo-search/contracts':
+        specifier: workspace:*
+        version: link:../contracts
+      '@sinclair/typebox':
+        specifier: 0.33.17
+        version: 0.33.17
 
   packages/tools-data-store: {}
 
