@@ -78,15 +78,17 @@ test.describe('Smoke Test (FR-025)', () => {
       const firstBookmarkButton = bookmarkButtons.first();
       await firstBookmarkButton.click();
 
-      // Wait a moment for the bookmark to be saved
-      await page.waitForTimeout(1000);
+      // Wait for bookmark button to reflect saved state (deterministic wait)
+      await expect(firstBookmarkButton)
+        .toHaveAttribute('aria-pressed', 'true', { timeout: 3000 })
+        .catch(() => {});
 
       // Switch to BOOKMARK filter
       await bookmarkTrigger.click();
       await expect(bookmarkTrigger).toHaveAttribute('data-state', 'active');
 
-      // Wait for bookmarks to load
-      await page.waitForTimeout(2000);
+      // Wait for bookmarks to load by checking for results list
+      await page.waitForSelector('[role="list"]', { timeout: 15000 });
 
       // Assert the bookmark appears in the results area
       // There should be at least one result (the bookmark we just saved)
@@ -102,10 +104,7 @@ test.describe('Smoke Test (FR-025)', () => {
     await historyTrigger.click();
     await expect(historyTrigger).toHaveAttribute('data-state', 'active');
 
-    // Wait for history to load
-    await page.waitForTimeout(2000);
-
-    // Assert history shows previous searches
+    // Wait for history to load by checking for results list
     const historyResults = page.locator('[role="list"]');
     await expect(historyResults).toBeVisible({ timeout: 15000 });
   });
@@ -172,7 +171,8 @@ test.describe('Smoke Test (FR-025)', () => {
 
     // Should either prevent submission or show validation error
     // Check that no error state is shown for empty query (it should be prevented)
-    await page.waitForTimeout(1000);
+    // Wait for any potential validation state to settle
+    await expect(input).toBeVisible({ timeout: 1000 });
 
     // Now test with a valid query but simulating no results
     await input.fill('xyznonexistentqueryabc123verylongstring');

@@ -128,8 +128,13 @@ test.describe('Pagination (FR-006)', () => {
 
     while ((await loadMoreButton.isVisible().catch(() => false)) && iterations < maxIterations) {
       await loadMoreButton.click();
-      // Wait a bit for the request to complete
-      await page.waitForTimeout(2000);
+      // Wait for loading state to appear and then disappear (deterministic wait)
+      await expect(loadMoreButton)
+        .toHaveText(/loading/i, { timeout: 2000 })
+        .catch(() => {});
+      await expect(loadMoreButton)
+        .toHaveText(/load more/i, { timeout: 15000 })
+        .catch(() => {});
       iterations++;
     }
 

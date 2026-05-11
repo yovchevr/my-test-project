@@ -160,6 +160,8 @@ test.describe('Web Search Failure Handling (NFR-005)', () => {
   });
 
   test('hang exceeding 10s shows cancelled FR-005 error state', async ({ page }) => {
+    const startTime = Date.now();
+
     await page.route('**/api/search', async () => {
       // Delay indefinitely (simulate hang)
       await new Promise(() => {
@@ -181,6 +183,11 @@ test.describe('Web Search Failure Handling (NFR-005)', () => {
       name: /(timed out|network error|connection error|service unavailable|unexpected error)/i,
     });
     await expect(errorHeading).toBeVisible({ timeout: 25000 });
+
+    // Verify NFR-005 timing constraint: error state must appear within ~10s (+buffer for rendering)
+    const elapsed = Date.now() - startTime;
+    expect(elapsed).toBeLessThan(15000); // 10s timeout + 5s buffer for UI rendering
+    expect(elapsed).toBeGreaterThan(9000); // Must be at least ~10s (not instant failure)
   });
 
   test('network error shows FR-005 error state', async ({ page }) => {

@@ -18,7 +18,7 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 4 : undefined,
   reporter: 'html',
   use: {
     baseURL: 'http://localhost:5173',
@@ -30,11 +30,13 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      testMatch: /.*\.e2e\.ts$/, // Match .e2e.ts files (Playwright default only matches .spec/.test)
       testIgnore: /.*\.(smoke|live-search)\.e2e\.ts$/,
     },
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
+      testMatch: /.*\.e2e\.ts$/, // Match .e2e.ts files (Playwright default only matches .spec/.test)
       testIgnore: /.*\.(smoke|live-search)\.e2e\.ts$/,
     },
     {
