@@ -54,9 +54,12 @@ export const PENDING_IDS: Record<string, string> = {
   //   - agent-loop.test.ts cites FR-013 (synthesis uniformity).
   //   - tests/integration/agent-loop.spec.ts cites FR-011, FR-022, FR-023.
   // Their entries have been removed from the pending list.
-  // Wave 6 — synthesis
-  'FR-007': 'STORY-013 (synthesis step)',
-  'FR-008': 'STORY-013 (synthesis: grounded citations)',
+  // STORY-012 (wave 7) shipped synthesis tests citing FR-007, FR-008, FR-009,
+  // and FR-013 in:
+  //   - services/agent/src/synthesis/synthesis.test.ts
+  //   - services/agent/src/synthesis/validator.test.ts
+  //   - services/agent/src/references.test.ts
+  // Their entries have been removed from the pending list.
   // Wave 7 — UI cards / pagination
   'FR-004': 'STORY-016 (results list cards)',
   'FR-006': 'STORY-016 (pagination / progressive loading)',
