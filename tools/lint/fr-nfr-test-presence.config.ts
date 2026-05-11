@@ -60,9 +60,12 @@ export const PENDING_IDS: Record<string, string> = {
   //   - services/agent/src/synthesis/validator.test.ts
   //   - services/agent/src/references.test.ts
   // Their entries have been removed from the pending list.
-  // Wave 7 — UI cards / pagination
-  'FR-004': 'STORY-016 (results list cards)',
-  'FR-006': 'STORY-016 (pagination / progressive loading)',
+  // STORY-016 (wave 9) shipped tests citing FR-004 and FR-006 in:
+  //   - apps/ui/src/components/ResultCard.test.tsx (FR-004)
+  //   - apps/ui/src/components/ResultsList.test.tsx (FR-004)
+  //   - apps/ui/src/components/LoadMoreButton.test.tsx (FR-006)
+  //   - apps/ui/src/hooks/useSearch.test.tsx (FR-006)
+  // Their entries have been removed from the pending list.
   // STORY-008 (wave 5) shipped `packages/data-cache/src/large-set.spec.ts` whose
   // describe-block + test names cite NFR-003 — entry removed.
 };
