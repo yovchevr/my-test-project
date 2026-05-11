@@ -171,3 +171,16 @@ command. If `pnpm lint` reports `No cached ProjectGraph is available`, run
 ### FR / NFR test-name presence audit
 
 `tools/lint/fr-nfr-test-presence.test.ts` greps every `*.test.ts` / `*.spec.ts` for test names containing each FR-### / NFR-### ID under `.requirements/`. IDs whose owning story has not yet shipped tests are listed in `tools/lint/fr-nfr-test-presence.config.ts` `PENDING_IDS`; the audit fails on any pending entry that DOES have tests, forcing maintainers to remove the entry the moment the gating story lands.
+
+## Deliverables
+
+The eight FR-025 deliverable artifacts live under `docs/`:
+
+- [docs/architecture.md](docs/architecture.md) — System diagram, data flow, agent interactions, tool interactions. Cross-references FR-024.
+- [docs/problem-decomposition.md](docs/problem-decomposition.md) — How we broke down the problem (four-layer split), why this architecture (ADR 0001), tradeoffs considered (ADR 0001/0002/0003). Cross-references the three ADRs.
+- [docs/agent-design.md](docs/agent-design.md) — Agent responsibilities, how decisions are made (lookup-table routing), how orchestration works (five-step loop), the `runWithBudget` discipline (NFR-005). Cross-references FR-011, FR-013.
+- [docs/data-strategy.md](docs/data-strategy.md) — Chunking approach (ADR 0003), indexing approach (SQLite), storage format (segmented JSON + SQLite). Includes NFR-003/004 evidence. Cross-references FR-019, FR-020.
+- [docs/contracts.md](docs/contracts.md) — The four FR-021 contracts (UI ↔ API, API ↔ Agent, Agent ↔ Tools, Agent ↔ Data) with example payload from `packages/contracts/src/__fixtures__/example-ui-api-answer.json`. Cross-references FR-010, FR-021.
+- [docs/design-patterns.md](docs/design-patterns.md) — Neo workflow design patterns: contract binding (FR-021), agent orchestration (FR-011/FR-013), data partitioning (FR-017/FR-019/FR-020), tool abstraction (FR-022/FR-023). Expressed exclusively in Neo vocabulary per constraints.md.
+- [docs/test-cases.md](docs/test-cases.md) — The seven initiative test cases: live web results (FR-012), summary+citations (FR-007/008/009), history (FR-014), bookmarks (FR-015), chunked retrieval (FR-018), large dataset (NFR-003), UI controls (FR-001..FR-006). Each with test file path and assertion summary.
+- **Runnable prototype gate** — `pnpm e2e:smoke` (STORY-019, to be wired). Evidence the prototype runs end-to-end from a clean checkout (FR-025 a).

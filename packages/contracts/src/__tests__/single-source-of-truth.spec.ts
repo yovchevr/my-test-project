@@ -59,7 +59,13 @@ describe('FR-021 — Contract-suffixed types live only in @neo-search/contracts'
     for (const file of allFiles) {
       // The contracts package itself is the legal home — skip it.
       if (file.startsWith(contractsDir)) continue;
-      const text = readFileSync(file, 'utf8');
+      let text = readFileSync(file, 'utf8');
+      // Strip out all import statements (both single-line and multi-line)
+      // to avoid false positives on type-only imports like `type FooContract`
+      text = text.replace(
+        /import\s+(?:type\s+)?(?:\{[^}]*\}|\*\s+as\s+\w+|\w+)(?:\s+from\s+['"][^'"]+['"])?;?/gs,
+        '',
+      );
       let match: RegExpExecArray | null;
       CONTRACT_DECL.lastIndex = 0;
       while ((match = CONTRACT_DECL.exec(text)) !== null) {
