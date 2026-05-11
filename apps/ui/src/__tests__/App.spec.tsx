@@ -14,6 +14,8 @@ import type { ReactNode } from 'react';
 import type { UiApiAnswerContract } from '@neo-search/contracts';
 import { AppShell } from '../components/AppShell.js';
 import { SearchPanel } from '../components/SearchPanel.js';
+import { AnswerSummary } from '../components/AnswerSummary.js';
+import { ReferencesList } from '../components/ReferencesList.js';
 import { ResultsList } from '../components/ResultsList.js';
 import { EmptyState } from '../components/EmptyState.js';
 import { ErrorState } from '../components/ErrorState.js';
@@ -45,7 +47,13 @@ function TestApp() {
 
           {!error && !isLoading && data && data.results.length === 0 && <EmptyState />}
 
-          {!error && data && data.results.length > 0 && <ResultsList results={data.results} />}
+          {!error && data && data.results.length > 0 && (
+            <div className="flex flex-col gap-6">
+              <AnswerSummary answerSummary={data.answerSummary} />
+              <ReferencesList references={data.references} />
+              <ResultsList results={data.results} />
+            </div>
+          )}
 
           {!error && data && data.pagination.hasMore && (
             <LoadMoreButton onClick={loadMore} isLoading={isLoading} disabled={isLoading} />
@@ -251,5 +259,74 @@ describe('App integration', () => {
     expect(
       within(container).getByText(/We couldn't reach the search service/i),
     ).toBeInTheDocument();
+  });
+
+  it('renders AnswerSummary, ReferencesList, and ResultsList in the expected DOM order (STORY-017 integration)', async () => {
+    const user = userEvent.setup();
+
+    const mockResponse: UiApiAnswerContract = {
+      answer_summary: 'TypeScript is a superset of JavaScript [1]. It adds static types [2].',
+      references: [
+        {
+          id: 'ref-001',
+          title: 'TypeScript Official Docs',
+          url: 'https://www.typescriptlang.org/docs/',
+          context: 'Official TypeScript documentation homepage.',
+        },
+        {
+          id: 'ref-002',
+          title: 'Static Typing Guide',
+          url: 'https://example.com/static-typing',
+          context: 'A guide to static typing in TypeScript.',
+        },
+      ],
+      results: [
+        {
+          title: 'TypeScript Handbook',
+          snippet: 'Learn TypeScript basics',
+          domain: 'typescriptlang.org',
+          url: 'https://www.typescriptlang.org/handbook/',
+        },
+      ],
+      pagination: { page: 1, totalChunks: 1, hasMore: false },
+    };
+
+    (global.fetch as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ok: true,
+      json: async () => ({ ok: true, value: mockResponse }),
+    });
+
+    const Wrapper = createWrapper();
+    const { container } = render(<TestApp />, { wrapper: Wrapper });
+
+    const searchInput = within(container).getByPlaceholderText(/search/i);
+    await user.type(searchInput, 'typescript{Enter}');
+
+    // Wait for the result card to render (confirms full response has been processed).
+    await waitFor(() =>
+      expect(within(container).getByText('TypeScript Handbook')).toBeInTheDocument(),
+    );
+
+    // Now all three sections should be present. Query them individually.
+    const answerSummary = within(container).getByTestId('answer-summary');
+    const referencesList = within(container).getByTestId('references-list');
+    const resultsFirstCard = within(container).getByText('TypeScript Handbook').closest('article');
+
+    // Assert the DOM order: AnswerSummary → ReferencesList → ResultsList.
+    const comparePosition = answerSummary.compareDocumentPosition(referencesList);
+    expect(comparePosition & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+
+    if (resultsFirstCard) {
+      const compareRefToResult = referencesList.compareDocumentPosition(resultsFirstCard);
+      expect(compareRefToResult & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    }
+
+    // Assert citation markers are rendered (proving AnswerSummary parsed the content).
+    const citationLinks = within(answerSummary).getAllByRole('link');
+    expect(citationLinks.length).toBeGreaterThanOrEqual(2);
+
+    // Assert the references list has the expected entries.
+    expect(within(referencesList).getByText('TypeScript Official Docs')).toBeInTheDocument();
+    expect(within(referencesList).getByText('Static Typing Guide')).toBeInTheDocument();
   });
 });

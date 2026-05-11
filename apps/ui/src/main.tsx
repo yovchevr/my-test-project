@@ -14,6 +14,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { SearchRequestContract } from '@neo-search/contracts';
 import { AppShell } from './components/AppShell.js';
 import { SearchPanel } from './components/SearchPanel.js';
+import { AnswerSummary } from './components/AnswerSummary.js';
+import { ReferencesList } from './components/ReferencesList.js';
 import { ResultsList } from './components/ResultsList.js';
 import { EmptyState } from './components/EmptyState.js';
 import { ErrorState } from './components/ErrorState.js';
@@ -73,8 +75,19 @@ function App() {
           {/* Empty state: zero-result successful query */}
           {!error && !isLoading && data && data.results.length === 0 && <EmptyState />}
 
-          {/* Results list: N > 0 results */}
-          {!error && data && data.results.length > 0 && <ResultsList results={data.results} />}
+          {/* Answer summary + references + results list: N > 0 results */}
+          {!error && data && data.results.length > 0 && (
+            <div className="flex flex-col gap-6">
+              {/* AnswerSummary: FR-007 + FR-008 */}
+              <AnswerSummary answerSummary={data.answerSummary} />
+
+              {/* ReferencesList: FR-009 */}
+              <ReferencesList references={data.references} />
+
+              {/* ResultsList: FR-004 */}
+              <ResultsList results={data.results} />
+            </div>
+          )}
 
           {/* Load-more button: visible when pagination.hasMore */}
           {!error && data && data.pagination.hasMore && (
