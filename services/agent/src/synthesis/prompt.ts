@@ -22,6 +22,11 @@
  * so the validator's expectations and the prompt's instructions stay in sync;
  * tuning paragraphs / tone is acceptable, but removing the citation
  * instruction would break I-2 / FR-008 enforcement.
+ *
+ * The array-then-join construction makes the prompt easy to edit in future
+ * tuning rounds — each instruction is a separate line. Future tuning MAY add
+ * bullet formatting or examples without requiring ADR approval provided the
+ * structural rules (citation markers, no fabrication, no duplicates) remain.
  */
 export const DEFAULT_SYNTHESIS_PROMPT = [
   'You synthesize web search results into a concise answer summary plus a structured references list.',

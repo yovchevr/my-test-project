@@ -155,28 +155,32 @@ export const createSynthesizer = (options: CreateSynthesizerOptions): SynthesisF
       return cancelledError(signal.reason);
     }
 
-    // FR-005 empty path: results.length === 0 short-circuits to a deterministic
-    // "no results" output. The model is NOT called — see the module-level
-    // comment for the rationale.
-    if (results.length === 0) {
-      return {
-        ok: true,
-        value: {
-          answer_summary: 'No results were available for this query.',
-          references: [],
-        },
-      };
-    }
-
-    // The model name is required for a real call. We treat an unset model as
-    // a configuration error and surface terminal — the composition root has
-    // a clear contract (env-driven) that it MUST satisfy.
+    // Validate the model configuration BEFORE the empty-input path — even when
+    // results.length === 0, an unconfigured model is a terminal configuration
+    // error that MUST be surfaced (per reviewer finding: "unconfigured model
+    // not caught on empty-input path"). The empty path is deterministic and
+    // does not call the model, but the synthesizer MUST still fail-fast on
+    // misconfiguration rather than silently succeeding.
     if (!model || model.trim().length === 0) {
       return {
         ok: false,
         error: {
           kind: 'terminal',
           message: 'synthesis: model not configured (set ANTHROPIC_MODEL)',
+        },
+      };
+    }
+
+    // FR-005 empty path: results.length === 0 short-circuits to a deterministic
+    // "no results" output. The model is NOT called — see the module-level
+    // comment for the rationale. Per reviewer finding: "the message MUST NOT
+    // be generic boilerplate" — we acknowledge the query context explicitly.
+    if (results.length === 0) {
+      return {
+        ok: true,
+        value: {
+          answer_summary: `No results were found for "${query}".`,
+          references: [],
         },
       };
     }
@@ -279,6 +283,13 @@ const callModel = async (args: CallModelArgs): Promise<CallOutcome> => {
   // The user message carries the structured input the model needs: the
   // query plus the candidate results, formatted as JSON. The prompt
   // instructs the model to return JSON in turn.
+  //
+  // Query length is unbounded in the LLM payload (per reviewer finding:
+  // "acceptable for prototype scope"). The assumption is that typical web
+  // search queries stay under ~1000 chars, well within Claude's context
+  // window. A future requirement for multi-kilobyte queries or adversarial
+  // inputs MAY require truncation; the design currently treats the query
+  // as opaque user input forwarded verbatim.
   const userPayload = JSON.stringify({
     query: args.query,
     results: args.results.map((r) => ({
