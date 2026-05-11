@@ -1,4 +1,4 @@
-# STORY-018 — quality-gates CI workflow.
+# STORY-018 + STORY-019 — quality-gates CI workflow.
 #
 # Runs every gate listed in `.design/technology/testing.md`:
 #   - format            (prettier --check)
@@ -8,6 +8,8 @@
 #   - unit + integration tests (vitest run)
 #   - coverage floor    (vitest run --coverage with thresholds in vitest.config.ts)
 #   - contract tests    (vitest run packages/contracts)
+#   - e2e               (playwright test, non-smoke; STORY-019)
+#   - e2e-smoke         (playwright test, smoke; STORY-019, main push only)
 #
 # The story's acceptance criterion:
 #   "The CI workflow MUST run each gate on push and on PR; a red gate MUST
@@ -16,10 +18,6 @@
 # Each gate is a separate job so the cause of a red build is visible at a
 # glance. Jobs run in parallel where they can; `cycle-check` and `coverage`
 # depend on the same `pnpm install` step but otherwise share no state.
-#
-# E2E (Playwright) is NOT wired here — STORY-019 owns the Playwright config
-# and adds its own job. The `e2e:` job below is intentionally absent until
-# STORY-019.
 
 name: ci
 
@@ -28,6 +26,7 @@ on:
     branches: [main]
   pull_request:
     branches: [main, 'initiative/**']
+  workflow_dispatch:
 
 env:
   NODE_VERSION: '22.11.0'
@@ -143,3 +142,58 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec vitest run packages/contracts
+
+  e2e:
+    name: e2e (playwright test, non-smoke)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium firefox
+      - name: Run Playwright E2E tests (non-smoke)
+        run: pnpm e2e
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report-e2e
+          path: playwright-report/
+          retention-days: 30
+
+  e2e-smoke:
+    name: e2e-smoke (playwright test, smoke; main push only)
+    runs-on: ubuntu-latest
+    # Only run smoke tests on main push or manual dispatch
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+      - name: Run Playwright smoke tests
+        run: pnpm e2e:smoke
+        env:
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report-smoke
+          path: playwright-report/
+          retention-days: 30

@@ -41,16 +41,28 @@ pnpm format
 These four commands are the wave-1 acceptance gate for STORY-001 and the first
 checkpoint for FR-025 ("runnable from a clean checkout").
 
-## Running the UI shell
+## Running the full stack (UI + API + agent)
 
-STORY-014 stands up the wave-2 UI shell in `apps/ui` (Vite + React + Tailwind +
-Radix). Boot the dev server and visit http://localhost:5173:
+STORY-013 + STORY-014 wire `pnpm dev` to run the UI (port 5173) and API + agent
+(port 3001) concurrently. This is the command the E2E smoke suite uses:
 
 ```sh
+pnpm dev
+```
+
+Visit http://localhost:5173. The UI proxies `/api/*` to the API service. Press
+`Ctrl+C` to stop both servers.
+
+Alternatively, run each service independently:
+
+```sh
+# Terminal 1: API + agent on port 3001
+pnpm --filter @neo-search/api start
+
+# Terminal 2: UI on port 5173
 pnpm --filter @neo-search/ui dev
 ```
 
-The dev server proxies `/api/*` to `http://localhost:3001` (the API service).
 Token values (palette, typography, spacing, cards, focus ring, breakpoints) live
 in `packages/ui-tokens/` and are consumed via the Tailwind preset; see
 `packages/ui-tokens/README.md` for the documented checklist (NFR-002).
@@ -91,8 +103,10 @@ STORY-019 smoke job exports these vars and exercises the live APIs.
 - Prettier `3.3.3`
 - ESLint `9.14.0` + `typescript-eslint` `8.13.0`
 - Vitest `2.1.4` + `@vitest/coverage-v8`
+- Playwright `1.48.2` (E2E test runner)
 - madge `8.0.0` (cycle check)
 - lefthook `1.8.2` (pre-commit)
+- concurrently `9.1.0` (parallel dev server orchestration)
 
 All dependency versions are pinned exactly. `^` and `~` ranges are forbidden by
 `.design/technology/tech-stack.md`. The `tools/lint/dependency-version-audit.test.ts`
@@ -100,9 +114,10 @@ gate fails the build on any unpinned range.
 
 ## Quality gates
 
-STORY-018 wires the structural gates listed in `.design/technology/testing.md`.
-Every gate runs in CI on push + PR and as part of the `pnpm pre-commit` hook
-where applicable. A red gate MUST NOT be bypassed by `--no-verify`.
+STORY-018 + STORY-019 wire the structural gates listed in
+`.design/technology/testing.md`. Every gate runs in CI on push + PR and as part
+of the `pnpm pre-commit` hook where applicable. A red gate MUST NOT be bypassed
+by `--no-verify`.
 
 | Gate               | Command                                   | What it asserts                                                                                                                                                                                                                                                                                                    |
 | ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -113,8 +128,22 @@ where applicable. A red gate MUST NOT be bypassed by `--no-verify`.
 | Unit + integration | `pnpm test`                               | Full Vitest suite passes. Includes the `tools/lint/*.test.ts` structural guards: AST scans for hardcoded flows (NFR-006), repo-grep for forbidden user-id columns (NFR-006 / OQ-005), boundary-lint integration tests, the FR/NFR test-name presence audit, and the dependency-version audit.                      |
 | Coverage           | `pnpm coverage`                           | `vitest run --coverage`; ≥ 80% lines/functions/statements (and ≥ 70% branches) on `services/agent`, `packages/contracts`, `packages/data-*`, `packages/tools*`. UI coverage is intentionally not gated — Playwright (STORY-019) covers UI behavior.                                                                |
 | Contract tests     | `pnpm exec vitest run packages/contracts` | Every FR-021 boundary contract validates its example payload (ties STORY-002's contract tests to CI).                                                                                                                                                                                                              |
+| E2E                | `pnpm e2e`                                | Playwright runs FR-001..FR-006 + NFR-001/002/005 tests in Chromium + Firefox (non-smoke; does not require API keys). Starts `pnpm dev` via the `webServer` config.                                                                                                                                                 |
+| E2E smoke          | `pnpm e2e:smoke`                          | Playwright runs the live-API smoke suite (FR-012 + FR-025). Requires `TAVILY_API_KEY` and `ANTHROPIC_API_KEY`. CI runs this on `main` push or manual dispatch only; PRs run the non-smoke E2E gate.                                                                                                                |
 | Pre-commit         | `pnpm pre-commit`                         | Lefthook runs `prettier --check`, `eslint --max-warnings=0`, and `vitest run --changed` on staged files.                                                                                                                                                                                                           |
 | All-in-one local   | `pnpm gates`                              | Runs format → lint → type-check → madge → test → coverage in sequence; matches CI's failure points.                                                                                                                                                                                                                |
+
+### E2E test prerequisites
+
+The non-smoke E2E suite (`pnpm e2e`) runs against mocked APIs and does not
+require real API keys. The smoke suite (`pnpm e2e:smoke`) hits the live Tavily
+and Anthropic APIs and requires these environment variables:
+
+- `TAVILY_API_KEY` — for live web search (FR-012)
+- `ANTHROPIC_API_KEY` — for live synthesis (FR-013)
+
+If either key is missing, the smoke tests are skipped (not failed). The
+`playwright.config.ts` gates the smoke project on both keys being present.
 
 ### Boundary lint (`@nx/enforce-module-boundaries`)
 
