@@ -11,6 +11,27 @@
   "scripts": {
     "build": "tsc --noEmit -p tsconfig.json",
     "type-check": "tsc --noEmit -p tsconfig.json",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "start": "node --loader ts-node/esm src/main.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.32.1",
+    "@fastify/cors": "10.0.1",
+    "@fastify/type-provider-typebox": "5.0.0",
+    "@neo-search/agent": "workspace:*",
+    "@neo-search/contracts": "workspace:*",
+    "@neo-search/data-bookmarks": "workspace:*",
+    "@neo-search/data-cache": "workspace:*",
+    "@neo-search/data-history": "workspace:*",
+    "@neo-search/tools": "workspace:*",
+    "@neo-search/tools-data-store": "workspace:*",
+    "@neo-search/tools-web-search": "workspace:*",
+    "@sinclair/typebox": "0.33.17",
+    "fastify": "5.1.0",
+    "pino": "9.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.9.0",
+    "ts-node": "10.9.2"
   }
 }
