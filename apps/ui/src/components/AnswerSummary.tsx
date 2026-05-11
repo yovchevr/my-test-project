@@ -32,12 +32,8 @@ export type AnswerSummaryProps = {
  * as citation markers; other bracket patterns render as literal text.
  */
 function parseAnswerSummary(
-  text: string | undefined,
+  text: string,
 ): Array<{ type: 'text' | 'marker'; value: string | number }> {
-  if (!text) {
-    return [];
-  }
-
   const citationRegex = /\[(\d+)\]/g;
   const chunks: Array<{ type: 'text' | 'marker'; value: string | number }> = [];
   let lastIndex = 0;
@@ -49,7 +45,8 @@ function parseAnswerSummary(
       chunks.push({ type: 'text', value: text.slice(lastIndex, match.index) });
     }
     // Add the citation marker as a marker chunk.
-    const markerNumber = parseInt(match[1], 10);
+    // The regex guarantees match[1] exists when exec succeeds.
+    const markerNumber = parseInt(match[1]!, 10);
     chunks.push({ type: 'marker', value: markerNumber });
     lastIndex = citationRegex.lastIndex;
   }

@@ -79,7 +79,7 @@ function App() {
           {!error && data && data.results.length > 0 && (
             <div className="flex flex-col gap-6">
               {/* AnswerSummary: FR-007 + FR-008 */}
-              <AnswerSummary answerSummary={data.answer_summary} />
+              <AnswerSummary answerSummary={data.answerSummary} />
 
               {/* ReferencesList: FR-009 */}
               <ReferencesList references={data.references} />

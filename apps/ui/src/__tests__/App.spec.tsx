@@ -49,7 +49,7 @@ function TestApp() {
 
           {!error && data && data.results.length > 0 && (
             <div className="flex flex-col gap-6">
-              <AnswerSummary answerSummary={data.answer_summary} />
+              <AnswerSummary answerSummary={data.answerSummary} />
               <ReferencesList references={data.references} />
               <ResultsList results={data.results} />
             </div>
@@ -261,9 +261,7 @@ describe('App integration', () => {
     ).toBeInTheDocument();
   });
 
-  // Note: Integration test for full composition exists, but has issues with async rendering in test env.
-  // The components are covered by dedicated unit tests (AnswerSummary.test.tsx, ReferencesList.test.tsx).
-  it.skip('renders AnswerSummary, ReferencesList, and ResultsList in the expected DOM order (STORY-017 integration)', async () => {
+  it('renders AnswerSummary, ReferencesList, and ResultsList in the expected DOM order (STORY-017 integration)', async () => {
     const user = userEvent.setup();
 
     const mockResponse: UiApiAnswerContract = {
@@ -304,22 +302,17 @@ describe('App integration', () => {
     const searchInput = within(container).getByPlaceholderText(/search/i);
     await user.type(searchInput, 'typescript{Enter}');
 
-    // Wait for all three sections to render.
-    await waitFor(
-      () => {
-        expect(within(container).getByTestId('answer-summary')).toBeInTheDocument();
-        expect(within(container).getByTestId('references-list')).toBeInTheDocument();
-        expect(within(container).getByText('TypeScript Handbook')).toBeInTheDocument();
-      },
-      { timeout: 3000 },
+    // Wait for the result card to render (confirms full response has been processed).
+    await waitFor(() =>
+      expect(within(container).getByText('TypeScript Handbook')).toBeInTheDocument(),
     );
 
-    // Assert the DOM order: AnswerSummary → ReferencesList → ResultsList.
+    // Now all three sections should be present. Query them individually.
     const answerSummary = within(container).getByTestId('answer-summary');
     const referencesList = within(container).getByTestId('references-list');
     const resultsFirstCard = within(container).getByText('TypeScript Handbook').closest('article');
 
-    // Compare positions in the document.
+    // Assert the DOM order: AnswerSummary → ReferencesList → ResultsList.
     const comparePosition = answerSummary.compareDocumentPosition(referencesList);
     expect(comparePosition & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
 

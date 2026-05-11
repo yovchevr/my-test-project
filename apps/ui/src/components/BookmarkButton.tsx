@@ -33,6 +33,11 @@ export type BookmarkButtonProps = {
    * Optional: ARIA label for the button. Defaults to "Bookmark this {kind}".
    */
   ariaLabel?: string;
+  /**
+   * Optional: auto-dismiss error notification after this many milliseconds.
+   * Defaults to 5000ms. Injected per foundation/conventions.md line 52.
+   */
+  autoErrorDismissMs?: number;
 };
 
 export function BookmarkButton({
@@ -40,6 +45,7 @@ export function BookmarkButton({
   payload,
   initialSaved = false,
   ariaLabel,
+  autoErrorDismissMs = 5000,
 }: BookmarkButtonProps): JSX.Element {
   const [isSaved, setIsSaved] = useState(initialSaved);
   const [isLoading, setIsLoading] = useState(false);
@@ -65,8 +71,8 @@ export function BookmarkButton({
       // AC#7: a failed bookmark save MUST surface a brief inline error
       // notification but MUST NOT replace the answer/results view with ErrorState.
       setError(result.error.message);
-      // Auto-dismiss the error after 5 seconds.
-      setTimeout(() => setError(null), 5000);
+      // Auto-dismiss the error. Per foundation/conventions.md line 52, time is injected.
+      setTimeout(() => setError(null), autoErrorDismissMs);
     }
   };
 
