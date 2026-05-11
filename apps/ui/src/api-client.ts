@@ -11,6 +11,8 @@ import type {
   UiApiAnswerContract,
   BookmarkSaveRequestContract,
   BookmarkSaveResponseContract,
+  BookmarkListResponseContract,
+  HistoryListResponseContract,
 } from '@neo-search/contracts';
 
 /**
@@ -120,6 +122,96 @@ export async function postBookmark(
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
+      signal,
+    });
+
+    if (!response.ok) {
+      const body = await response.json().catch(() => ({}));
+      const kind = mapStatusToKind(response.status, body);
+      const message = body?.error?.message ?? `HTTP ${response.status}`;
+      return { ok: false, error: { kind, message } };
+    }
+
+    const body = await response.json();
+
+    if (body.ok === false) {
+      return {
+        ok: false,
+        error: {
+          kind: body.error?.kind ?? 'internal',
+          message: body.error?.message ?? 'Unknown error',
+        },
+      };
+    }
+
+    return { ok: true, value: body.value };
+  } catch (err) {
+    if (err instanceof Error && err.name === 'AbortError') {
+      return { ok: false, error: { kind: 'cancelled', message: 'Request cancelled' } };
+    }
+    return { ok: false, error: { kind: 'network', message: 'Network error' } };
+  }
+}
+
+/**
+ * GET /api/bookmarks with pagination.
+ *
+ * @param page - The page number (1-indexed).
+ * @param signal - Optional AbortSignal for cancellation.
+ * @returns A `Result` wrapping the `BookmarkListResponseContract` or an `ApiError`.
+ */
+export async function listBookmarks(
+  page: number = 1,
+  signal?: AbortSignal,
+): Promise<Result<BookmarkListResponseContract, ApiError>> {
+  try {
+    const response = await fetch(`/api/bookmarks?page=${page}`, {
+      method: 'GET',
+      signal,
+    });
+
+    if (!response.ok) {
+      const body = await response.json().catch(() => ({}));
+      const kind = mapStatusToKind(response.status, body);
+      const message = body?.error?.message ?? `HTTP ${response.status}`;
+      return { ok: false, error: { kind, message } };
+    }
+
+    const body = await response.json();
+
+    if (body.ok === false) {
+      return {
+        ok: false,
+        error: {
+          kind: body.error?.kind ?? 'internal',
+          message: body.error?.message ?? 'Unknown error',
+        },
+      };
+    }
+
+    return { ok: true, value: body.value };
+  } catch (err) {
+    if (err instanceof Error && err.name === 'AbortError') {
+      return { ok: false, error: { kind: 'cancelled', message: 'Request cancelled' } };
+    }
+    return { ok: false, error: { kind: 'network', message: 'Network error' } };
+  }
+}
+
+/**
+ * GET /api/history with pagination.
+ *
+ * @param page - The page number (1-indexed).
+ * @param signal - Optional AbortSignal for cancellation.
+ * @returns A `Result` wrapping the `HistoryListResponseContract` or an `ApiError`.
+ */
+export async function listHistory(
+  page: number = 1,
+  signal?: AbortSignal,
+): Promise<Result<HistoryListResponseContract, ApiError>> {
+  try {
+    const response = await fetch(`/api/history?page=${page}`, {
+      method: 'GET',
       signal,
     });
 
