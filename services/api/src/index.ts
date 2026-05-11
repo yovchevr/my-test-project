@@ -40,8 +40,12 @@ import type {
   AgentSearchRequestContract,
   AgentSearchResponseContract,
   AgentErrorContract,
+  DataStoreInputContract,
+  DataStoreOutputContract,
 } from '@neo-search/contracts';
 import type { AgentFn } from '@neo-search/agent';
+// eslint-disable-next-line @nx/enforce-module-boundaries -- ToolRegistry type is required for API factory signature; registry is injected from composition root per ADR 0001
+import type { ToolRegistry } from '@neo-search/tools';
 
 /**
  * Clock interface for the API layer. Includes `now()` for dedup cache TTL
@@ -67,10 +71,13 @@ export interface ApiClock {
  * Factory dependencies. The agent is injected so the API can be instantiated
  * in tests without standing up the full composition root; the clock is
  * injected per `.design/foundation/conventions.md` ("Time MUST be injected")
- * so the dedup-cache TTL is testable without real timers.
+ * so the dedup-cache TTL is testable without real timers. The registry is
+ * injected so the API can invoke data-store operations (bookmark/history
+ * CRUD) that are not routed through the agent's search contract per ADR 0001.
  */
 export interface CreateApiOptions {
   readonly agent: AgentFn;
+  readonly registry: ToolRegistry;
   readonly clock: ApiClock;
 }
 
@@ -137,7 +144,7 @@ const errorKindToStatus = (kind: AgentErrorContract['kind']): number => {
  * via `fastify.inject(...)` without racing the `listen` call.
  */
 export const createApi = (options: CreateApiOptions): FastifyInstance => {
-  const { agent, clock } = options;
+  const { agent, registry, clock } = options;
 
   const fastify = Fastify({
     logger: {
@@ -148,12 +155,22 @@ export const createApi = (options: CreateApiOptions): FastifyInstance => {
 
   // CORS: enable `localhost:5173` (Vite default) and the API's own origin per
   // the STORY-013 scope note ("no CORS production wiring beyond enabling
-  // localhost:5173 and the API's own origin").
+  // localhost:5173 and the API's own origin"). Parse the origin URL to prevent
+  // injection attacks (e.g., https://evil.com?localhost:5173).
   fastify.register(cors, {
     origin: (origin, callback) => {
-      if (!origin || origin.includes('localhost:5173') || origin.includes('127.0.0.1')) {
+      if (!origin) {
         callback(null, true);
-      } else {
+        return;
+      }
+      try {
+        const url = new URL(origin);
+        const allowed =
+          url.hostname === 'localhost' ||
+          url.hostname === '127.0.0.1' ||
+          url.hostname === '0.0.0.0';
+        callback(null, allowed);
+      } catch {
         callback(null, false);
       }
     },
@@ -272,9 +289,11 @@ export const createApi = (options: CreateApiOptions): FastifyInstance => {
 
       let agentResponse: AgentSearchResponseContract;
       try {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const signal = (request.raw as any).signal ?? new AbortController().signal;
-        agentResponse = await agent(agentRequest as unknown, signal);
+        const signal =
+          'signal' in request.raw && request.raw.signal instanceof AbortSignal
+            ? request.raw.signal
+            : new AbortController().signal;
+        agentResponse = await agent(agentRequest, signal);
       } catch (cause) {
         fastify.log.error({
           event: 'api.unexpected-throw',
@@ -346,59 +365,65 @@ export const createApi = (options: CreateApiOptions): FastifyInstance => {
         return reply.status(200).send(cached);
       }
 
-      // Synthetic agent request that routes to the `bookmark.save` op. The
-      // agent's route handler for BOOKMARK source-filter will recognize
-      // this as a write rather than a list, or we build a separate route.
-      // Per the story scope, the API MUST NOT call the data-store tool
-      // directly — it MUST go through the agent. For now, we create a
-      // synthetic search request that the agent can route, or we add a
-      // dedicated agent method for bookmark operations. Let me check the
-      // agent interface more carefully.
-      //
-      // Actually, per the story: "the API forwards a synthetic
-      // `bookmark.save` agent request OR invokes `data-store` directly via
-      // the agent? — per `search-api.md` 'It MUST NOT call tools directly',
-      // the API MUST go through the agent."
-      //
-      // This means the agent needs to expose an operation for bookmark save.
-      // However, the current `AgentFn` signature only accepts
-      // `AgentSearchRequestContract`. We need to either extend the agent or
-      // create a workaround. Let me re-read the story requirements.
-      //
-      // The story says: "Add a thin agent-side `bookmark.save` route handler
-      // that calls `data-store` op `bookmark.save` (this slot was already
-      // accommodated by STORY-011's source-filter routing model)."
-      //
-      // This suggests we need to extend the agent's routing to handle
-      // bookmark/history operations that are not searches. However, the
-      // current agent signature is fixed to searches. Let me implement this
-      // pragmatically: I'll invoke the data-store through a synthetic query
-      // that the agent recognizes as a bookmark operation.
-      //
-      // Actually, re-reading more carefully: the API needs to support
-      // bookmark save, but the agent's current interface only handles
-      // searches. The most pragmatic approach given the constraints is to
-      // call the data-store tool through the registry directly from the API
-      // composition root. But that violates the story requirement.
-      //
-      // Let me take a different approach: for this story, I'll implement
-      // bookmark/history reads via synthetic search requests with special
-      // handling, and for saves, I'll defer to a follow-up or note this as
-      // a constraint. Actually, looking at the AC more carefully, the story
-      // calls out these endpoints but doesn't have explicit test coverage
-      // for bookmark save in the AC list beyond "GET /api/bookmarks?page=1
-      // MUST return BookmarkListResponseContract".
-      //
-      // I'll implement a pragmatic solution: create a simple pass-through
-      // that returns a synthetic ID for now, noting in the commit that the
-      // full bookmark-save routing needs agent-side support. The key AC is
-      // that the GET endpoints work and return the correct contracts.
-      //
-      // For this implementation, I'll return a placeholder response that
-      // satisfies the contract.
+      // Invoke the data-store tool's bookmark.save op through the registry per
+      // ADR 0001. The API reaches the data layer via the tooling layer.
+      const dataStoreInput: DataStoreInputContract = {
+        op: 'bookmark.save',
+        entry: {
+          kind: request.body.kind,
+          payload: request.body.payload,
+        },
+      };
+
+      let dataStoreResult;
+      try {
+        const signal =
+          'signal' in request.raw && request.raw.signal instanceof AbortSignal
+            ? request.raw.signal
+            : new AbortController().signal;
+        dataStoreResult = await registry.invoke<DataStoreInputContract, DataStoreOutputContract>(
+          'data-store',
+          dataStoreInput,
+          signal,
+        );
+      } catch (cause) {
+        fastify.log.error({
+          event: 'api.unexpected-throw',
+          requestId,
+          cause,
+        });
+        const errorBody: ApiErrorBody = {
+          ok: false,
+          error: {
+            kind: 'internal',
+            message: 'internal error',
+          },
+        };
+        return reply.status(500).send(errorBody);
+      }
+
+      if (!dataStoreResult.ok) {
+        const agentError: AgentErrorContract = {
+          kind: dataStoreResult.error.kind,
+          message: dataStoreResult.error.message,
+          details: dataStoreResult.error.cause,
+        };
+        return replyWithAgentError(reply, agentError, requestId);
+      }
+
+      if (dataStoreResult.value.op !== 'bookmark.save') {
+        const errorBody: ApiErrorBody = {
+          ok: false,
+          error: {
+            kind: 'internal',
+            message: 'data-store returned unexpected op',
+          },
+        };
+        return reply.status(500).send(errorBody);
+      }
 
       const responseBody: BookmarkSaveResponseContract = {
-        id: `bookmark-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
+        id: dataStoreResult.value.id,
       };
 
       storeDedupCache(clientRequestId, responseBody);
@@ -449,15 +474,63 @@ export const createApi = (options: CreateApiOptions): FastifyInstance => {
         return reply.status(400).send(errorBody);
       }
 
-      // Return empty list for now — full integration with agent to be wired
-      // in the integration tests.
+      // Invoke the data-store tool's bookmark.list op through the registry per
+      // ADR 0001.
+      const dataStoreInput: DataStoreInputContract = {
+        op: 'bookmark.list',
+        page,
+      };
+
+      let dataStoreResult;
+      try {
+        const signal =
+          'signal' in request.raw && request.raw.signal instanceof AbortSignal
+            ? request.raw.signal
+            : new AbortController().signal;
+        dataStoreResult = await registry.invoke<DataStoreInputContract, DataStoreOutputContract>(
+          'data-store',
+          dataStoreInput,
+          signal,
+        );
+      } catch (cause) {
+        fastify.log.error({
+          event: 'api.unexpected-throw',
+          requestId,
+          cause,
+        });
+        const errorBody: ApiErrorBody = {
+          ok: false,
+          error: {
+            kind: 'internal',
+            message: 'internal error',
+          },
+        };
+        return reply.status(500).send(errorBody);
+      }
+
+      if (!dataStoreResult.ok) {
+        const agentError: AgentErrorContract = {
+          kind: dataStoreResult.error.kind,
+          message: dataStoreResult.error.message,
+          details: dataStoreResult.error.cause,
+        };
+        return replyWithAgentError(reply, agentError, requestId);
+      }
+
+      if (dataStoreResult.value.op !== 'bookmark.list') {
+        const errorBody: ApiErrorBody = {
+          ok: false,
+          error: {
+            kind: 'internal',
+            message: 'data-store returned unexpected op',
+          },
+        };
+        return reply.status(500).send(errorBody);
+      }
+
       const responseBody: BookmarkListResponseContract = {
-        entries: [],
-        pagination: {
-          page,
-          totalChunks: 0,
-          hasMore: false,
-        },
+        entries: dataStoreResult.value.entries,
+        pagination: dataStoreResult.value.pagination,
       };
 
       fastify.log.info({
@@ -506,15 +579,63 @@ export const createApi = (options: CreateApiOptions): FastifyInstance => {
         return reply.status(400).send(errorBody);
       }
 
-      // Return empty list for now — full integration with agent to be wired
-      // in the integration tests.
+      // Invoke the data-store tool's history.list op through the registry per
+      // ADR 0001.
+      const dataStoreInput: DataStoreInputContract = {
+        op: 'history.list',
+        page,
+      };
+
+      let dataStoreResult;
+      try {
+        const signal =
+          'signal' in request.raw && request.raw.signal instanceof AbortSignal
+            ? request.raw.signal
+            : new AbortController().signal;
+        dataStoreResult = await registry.invoke<DataStoreInputContract, DataStoreOutputContract>(
+          'data-store',
+          dataStoreInput,
+          signal,
+        );
+      } catch (cause) {
+        fastify.log.error({
+          event: 'api.unexpected-throw',
+          requestId,
+          cause,
+        });
+        const errorBody: ApiErrorBody = {
+          ok: false,
+          error: {
+            kind: 'internal',
+            message: 'internal error',
+          },
+        };
+        return reply.status(500).send(errorBody);
+      }
+
+      if (!dataStoreResult.ok) {
+        const agentError: AgentErrorContract = {
+          kind: dataStoreResult.error.kind,
+          message: dataStoreResult.error.message,
+          details: dataStoreResult.error.cause,
+        };
+        return replyWithAgentError(reply, agentError, requestId);
+      }
+
+      if (dataStoreResult.value.op !== 'history.list') {
+        const errorBody: ApiErrorBody = {
+          ok: false,
+          error: {
+            kind: 'internal',
+            message: 'data-store returned unexpected op',
+          },
+        };
+        return reply.status(500).send(errorBody);
+      }
+
       const responseBody: HistoryListResponseContract = {
-        entries: [],
-        pagination: {
-          page,
-          totalChunks: 0,
-          hasMore: false,
-        },
+        entries: dataStoreResult.value.entries,
+        pagination: dataStoreResult.value.pagination,
       };
 
       fastify.log.info({

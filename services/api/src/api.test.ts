@@ -18,9 +18,16 @@
  * a real agent; these unit tests focus on the API's error-handling and
  * caching logic in isolation.
  */
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { createApi, type ApiClock } from './index.js';
-import type { AgentSearchResponseContract } from '@neo-search/contracts';
+import type {
+  AgentSearchResponseContract,
+  DataStoreInputContract,
+  Result,
+  ToolErrorContract,
+} from '@neo-search/contracts';
+// eslint-disable-next-line @nx/enforce-module-boundaries -- ToolRegistry type required for test doubles; see index.ts justification
+import type { ToolRegistry } from '@neo-search/tools';
 
 /**
  * Test clock — monotonic millisecond counter. Starts at `initialNow` and
@@ -49,10 +56,67 @@ const createFakeAgent = (response: AgentSearchResponseContract | Error) => {
   };
 };
 
+/**
+ * Fake registry that returns canned data-store responses. Tests inject this
+ * to exercise bookmark/history routes without standing up real stores.
+ */
+const createFakeRegistry = (): ToolRegistry => {
+  const invoke = async <I, O>(
+    _tool: string,
+    input: I,
+    _signal: AbortSignal,
+  ): Promise<Result<O, ToolErrorContract>> => {
+    const dataInput = input as unknown as DataStoreInputContract;
+    if (dataInput.op === 'bookmark.list') {
+      return {
+        ok: true,
+        value: {
+          op: 'bookmark.list',
+          entries: [],
+          pagination: { page: dataInput.page, totalChunks: 0, hasMore: false },
+        } as unknown as O,
+      };
+    }
+    if (dataInput.op === 'history.list') {
+      return {
+        ok: true,
+        value: {
+          op: 'history.list',
+          entries: [],
+          pagination: { page: dataInput.page, totalChunks: 0, hasMore: false },
+        } as unknown as O,
+      };
+    }
+    if (dataInput.op === 'bookmark.save') {
+      return {
+        ok: true,
+        value: {
+          op: 'bookmark.save',
+          id: 'test-bookmark-id',
+        } as unknown as O,
+      };
+    }
+    return {
+      ok: false,
+      error: {
+        kind: 'terminal',
+        message: 'unsupported op',
+      },
+    };
+  };
+
+  return {
+    register: vi.fn(),
+    list: vi.fn(() => []),
+    invoke: invoke as ToolRegistry['invoke'],
+  };
+};
+
 describe('createApi', () => {
   describe('POST /api/search', () => {
     it('returns 200 with UiApiAnswerContract on happy path', async () => {
       const clock = createTestClock();
+      const registry = createFakeRegistry();
       const agent = createFakeAgent({
         ok: true,
         value: {
@@ -70,7 +134,7 @@ describe('createApi', () => {
         },
       });
 
-      const api = createApi({ agent, clock });
+      const api = createApi({ agent, registry, clock });
       const response = await api.inject({
         method: 'POST',
         url: '/api/search',
@@ -88,6 +152,38 @@ describe('createApi', () => {
       expect(body.references[0].title).toBe('Example');
     });
 
+    it('forwards AbortSignal to agent call', async () => {
+      const clock = createTestClock();
+      const registry = createFakeRegistry();
+      let receivedSignal: AbortSignal | null = null;
+      const agent = async (_req: unknown, signal: AbortSignal) => {
+        receivedSignal = signal;
+        return {
+          ok: true,
+          value: {
+            answer_summary: 'Test',
+            references: [],
+            results: [],
+            pagination: { page: 1, totalChunks: 0, hasMore: false },
+          },
+        } as AgentSearchResponseContract;
+      };
+
+      const api = createApi({ agent, registry, clock });
+      await api.inject({
+        method: 'POST',
+        url: '/api/search',
+        payload: {
+          query: 'test',
+          sourceFilter: 'LIVE',
+          page: 1,
+        },
+      });
+
+      expect(receivedSignal).not.toBeNull();
+      expect(receivedSignal).toBeInstanceOf(AbortSignal);
+    });
+
     it('returns 400 with validation error for malformed body', async () => {
       const clock = createTestClock();
       const agent = createFakeAgent({
@@ -100,7 +196,8 @@ describe('createApi', () => {
         },
       });
 
-      const api = createApi({ agent, clock });
+      const registry = createFakeRegistry();
+      const api = createApi({ agent, registry, clock });
       const response = await api.inject({
         method: 'POST',
         url: '/api/search',
@@ -127,7 +224,8 @@ describe('createApi', () => {
         },
       });
 
-      const api = createApi({ agent, clock });
+      const registry = createFakeRegistry();
+      const api = createApi({ agent, registry, clock });
       const response = await api.inject({
         method: 'POST',
         url: '/api/search',
@@ -155,7 +253,8 @@ describe('createApi', () => {
         },
       });
 
-      const api = createApi({ agent, clock });
+      const registry = createFakeRegistry();
+      const api = createApi({ agent, registry, clock });
       const response = await api.inject({
         method: 'POST',
         url: '/api/search',
@@ -182,7 +281,8 @@ describe('createApi', () => {
         },
       });
 
-      const api = createApi({ agent, clock });
+      const registry = createFakeRegistry();
+      const api = createApi({ agent, registry, clock });
       const response = await api.inject({
         method: 'POST',
         url: '/api/search',
@@ -209,7 +309,8 @@ describe('createApi', () => {
         },
       });
 
-      const api = createApi({ agent, clock });
+      const registry = createFakeRegistry();
+      const api = createApi({ agent, registry, clock });
       const response = await api.inject({
         method: 'POST',
         url: '/api/search',
@@ -230,7 +331,8 @@ describe('createApi', () => {
       const clock = createTestClock();
       const agent = createFakeAgent(new Error('unexpected boom'));
 
-      const api = createApi({ agent, clock });
+      const registry = createFakeRegistry();
+      const api = createApi({ agent, registry, clock });
       const response = await api.inject({
         method: 'POST',
         url: '/api/search',
@@ -266,7 +368,8 @@ describe('createApi', () => {
         return agent(req, signal);
       };
 
-      const api = createApi({ agent: countingAgent, clock });
+      const registry = createFakeRegistry();
+      const api = createApi({ agent: countingAgent, registry, clock });
       const clientRequestId = '12345678-1234-1234-1234-123456789abc';
 
       const response1 = await api.inject({
@@ -320,7 +423,8 @@ describe('createApi', () => {
         return agent(req, signal);
       };
 
-      const api = createApi({ agent: countingAgent, clock });
+      const registry = createFakeRegistry();
+      const api = createApi({ agent: countingAgent, registry, clock });
       const clientRequestId = '12345678-1234-1234-1234-123456789abc';
 
       await api.inject({
@@ -366,7 +470,8 @@ describe('createApi', () => {
         },
       });
 
-      const api = createApi({ agent, clock });
+      const registry = createFakeRegistry();
+      const api = createApi({ agent, registry, clock });
       const response = await api.inject({
         method: 'GET',
         url: '/api/bookmarks?page=1',
@@ -391,7 +496,8 @@ describe('createApi', () => {
         },
       });
 
-      const api = createApi({ agent, clock });
+      const registry = createFakeRegistry();
+      const api = createApi({ agent, registry, clock });
       const response = await api.inject({
         method: 'GET',
         url: '/api/bookmarks?page=0',
@@ -417,7 +523,8 @@ describe('createApi', () => {
         },
       });
 
-      const api = createApi({ agent, clock });
+      const registry = createFakeRegistry();
+      const api = createApi({ agent, registry, clock });
       const response = await api.inject({
         method: 'GET',
         url: '/api/history?page=1',
@@ -442,7 +549,8 @@ describe('createApi', () => {
         },
       });
 
-      const api = createApi({ agent, clock });
+      const registry = createFakeRegistry();
+      const api = createApi({ agent, registry, clock });
       const response = await api.inject({
         method: 'GET',
         url: '/api/history?page=-1',

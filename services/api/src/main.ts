@@ -128,7 +128,7 @@ const main = async (): Promise<void> => {
 
   console.warn('[@neo-search/api] Agent built.');
 
-  // Bind the API with the agent and a clock that includes `now()`.
+  // Bind the API with the agent, registry, and a clock that includes `now()`.
   const apiClock: ApiClock = {
     now: () => Date.now(),
     wait: (ms) => wallClock.wait(ms, new AbortController().signal),
@@ -136,6 +136,7 @@ const main = async (): Promise<void> => {
 
   const api = createApi({
     agent,
+    registry,
     clock: apiClock,
   });
 

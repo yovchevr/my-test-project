@@ -21,6 +21,7 @@
 import { describe, expect, it, beforeEach, afterEach, beforeAll } from 'vitest';
 import { createApi, type ApiClock } from './index.js';
 import { createAgent, wallClock, type SynthesisFn } from '@neo-search/agent';
+// eslint-disable-next-line @nx/enforce-module-boundaries -- Integration tests require registry and tool construction; composition root pattern per ADR 0001
 import { createRegistry, defineTool } from '@neo-search/tools';
 import {
   WebSearchInputContract,
@@ -31,10 +32,15 @@ import {
   type ToolErrorContract,
   type ResultCardContract,
 } from '@neo-search/contracts';
+// eslint-disable-next-line @nx/enforce-module-boundaries -- Integration tests wire real data-store handler per composition root pattern
 import { createDataStoreHandler } from '@neo-search/tools-data-store';
+// eslint-disable-next-line @nx/enforce-module-boundaries -- Integration tests require real data-layer stores for end-to-end validation
 import { createHistoryStore } from '@neo-search/data-history';
+// eslint-disable-next-line @nx/enforce-module-boundaries -- Integration tests require real data-layer stores for end-to-end validation
 import { createBookmarkStore } from '@neo-search/data-bookmarks';
+// eslint-disable-next-line @nx/enforce-module-boundaries -- Integration tests require real data-layer stores for end-to-end validation
 import { createSearchCache } from '@neo-search/data-cache';
+// eslint-disable-next-line @nx/enforce-module-boundaries -- Integration tests require web-search tool format registration
 import { registerWebSearchFormats } from '@neo-search/tools-web-search';
 import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -163,6 +169,7 @@ describe('createApi integration', () => {
 
     const api = createApi({
       agent,
+      registry,
       clock: apiClock,
     });
 
@@ -248,6 +255,7 @@ describe('createApi integration', () => {
 
     const api = createApi({
       agent,
+      registry,
       clock: apiClock,
     });
 
@@ -328,6 +336,7 @@ describe('createApi integration', () => {
 
     const api = createApi({
       agent,
+      registry,
       clock: apiClock,
     });
 
