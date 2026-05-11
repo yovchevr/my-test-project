@@ -28,10 +28,8 @@ import {
   WebSearchOutputContract,
   DataStoreInputContract,
   DataStoreOutputContract,
-  type Result,
-  type ToolErrorContract,
-  type ResultCardContract,
 } from '@neo-search/contracts';
+import type { Result, ToolErrorContract, ResultCardContract } from '@neo-search/contracts';
 // eslint-disable-next-line @nx/enforce-module-boundaries -- Integration tests wire real data-store handler per composition root pattern
 import { createDataStoreHandler } from '@neo-search/tools-data-store';
 // eslint-disable-next-line @nx/enforce-module-boundaries -- Integration tests require real data-layer stores for end-to-end validation
