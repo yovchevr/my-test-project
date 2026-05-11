@@ -13,9 +13,12 @@ import { test, expect } from '@playwright/test';
 test.describe('Web Search Failure Handling (NFR-005)', () => {
   test('one transient failure recovers within budget (1 retry)', async ({ page }) => {
     let attemptCount = 0;
+    const attemptTimestamps: number[] = [];
 
     await page.route('**/api/search', async (route) => {
       attemptCount++;
+      attemptTimestamps.push(Date.now());
+
       if (attemptCount === 1) {
         // First attempt: fail with 5xx
         await route.fulfill({
@@ -66,13 +69,23 @@ test.describe('Web Search Failure Handling (NFR-005)', () => {
 
     // Verify we made 2 attempts (1 initial + 1 retry)
     expect(attemptCount).toBe(2);
+
+    // Verify NFR-005 retry interval: 500ms between retries (with tolerance for scheduling variance)
+    if (attemptTimestamps.length === 2) {
+      const retryInterval = attemptTimestamps[1] - attemptTimestamps[0];
+      expect(retryInterval).toBeGreaterThanOrEqual(450); // 500ms - 50ms tolerance
+      expect(retryInterval).toBeLessThan(2000); // Should not be excessively delayed
+    }
   });
 
   test('two transient failures recover after 2 retries', async ({ page }) => {
     let attemptCount = 0;
+    const attemptTimestamps: number[] = [];
 
     await page.route('**/api/search', async (route) => {
       attemptCount++;
+      attemptTimestamps.push(Date.now());
+
       if (attemptCount <= 2) {
         // First two attempts: fail with 5xx
         await route.fulfill({
@@ -123,6 +136,18 @@ test.describe('Web Search Failure Handling (NFR-005)', () => {
 
     // Verify we made 3 attempts (1 initial + 2 retries)
     expect(attemptCount).toBe(3);
+
+    // Verify NFR-005 retry interval: 500ms between each retry (with tolerance for scheduling variance)
+    if (attemptTimestamps.length === 3) {
+      const firstRetryInterval = attemptTimestamps[1] - attemptTimestamps[0];
+      const secondRetryInterval = attemptTimestamps[2] - attemptTimestamps[1];
+
+      expect(firstRetryInterval).toBeGreaterThanOrEqual(450); // 500ms - 50ms tolerance
+      expect(firstRetryInterval).toBeLessThan(2000);
+
+      expect(secondRetryInterval).toBeGreaterThanOrEqual(450); // 500ms - 50ms tolerance
+      expect(secondRetryInterval).toBeLessThan(2000);
+    }
   });
 
   test('three transient failures exhaust retries and show FR-005 error state', async ({ page }) => {

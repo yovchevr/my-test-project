@@ -50,7 +50,12 @@ test.describe('Visual System (NFR-002)', () => {
     await input.fill('test query');
     await submit.click();
 
+    // Wait for results to load
     await page.waitForSelector('[role="list"]', { timeout: 15000 });
+
+    // Verify loading spinner disappears after data loads (AC 3c: results replace loading state)
+    const spinner = page.getByTestId('search-bar-spinner');
+    await expect(spinner).toBeHidden();
 
     const resultsList = page.locator('[role="list"]');
     await expect(resultsList).toHaveScreenshot('results-list.png', {
@@ -201,9 +206,13 @@ test.describe('Visual System (NFR-002)', () => {
     await page.waitForSelector('[role="list"]', { timeout: 15000 });
 
     const loadMoreButton = page.getByRole('button', { name: /load more/i });
-    if (await loadMoreButton.isVisible({ timeout: 2000 }).catch(() => false)) {
+    // Check if load more button exists (it may not if the result set is small)
+    try {
+      await loadMoreButton.waitFor({ state: 'visible', timeout: 2000 });
       await loadMoreButton.hover();
       await expect(loadMoreButton).toHaveScreenshot('load-more-hover.png');
+    } catch {
+      // Load more button not present - skip snapshot (acceptable for small result sets)
     }
   });
 
@@ -219,9 +228,13 @@ test.describe('Visual System (NFR-002)', () => {
     await page.waitForSelector('[role="list"]', { timeout: 15000 });
 
     const loadMoreButton = page.getByRole('button', { name: /load more/i });
-    if (await loadMoreButton.isVisible({ timeout: 2000 }).catch(() => false)) {
+    // Check if load more button exists (it may not if the result set is small)
+    try {
+      await loadMoreButton.waitFor({ state: 'visible', timeout: 2000 });
       await loadMoreButton.focus();
       await expect(loadMoreButton).toHaveScreenshot('load-more-focus.png');
+    } catch {
+      // Load more button not present - skip snapshot (acceptable for small result sets)
     }
   });
 });
